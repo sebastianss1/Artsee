@@ -1,24 +1,31 @@
 class Api::ArtworksController < ApplicationController 
 
  def show
-    render json: Artwork.find(params[:id])
+    @artwork = Artwork.find(params[:id])
+
+    if @artwork 
+      render '/api/artworks/show'
+    else
+      render json: @artwork.errors.full_messages 
+    end 
   end
 
     def like
-    like = Like.new(liker_id: params[:liker_id])
-    if like.save
-      render json: like
-    else
-      render json: like.errors.full_messages
-    end
+      like = Like.new(liker_id: params[:liker_id])
+      if like.save
+          # render /api/likes/show?
+      else
+        render json: like.errors.full_messages
+      end
   end
 
     def unlike
-    like = Like.find_by(liker_id: params[:liker_id])
-    if like.destroy
-      render json: like
-    else
-      render json: like.errors.full_messages
-    end
+      like = Like.find_by(liker_id: params[:liker_id])
+
+      if like.destroy
+        # render like?
+      else
+        render json: like.errors.full_messages
+      end
   end
 end 

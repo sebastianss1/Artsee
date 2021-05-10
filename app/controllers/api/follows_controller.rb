@@ -1,8 +1,5 @@
 class Api::FollowsController < ApplicationController 
-
-    def index 
-
-    end 
+    before_action :require_logged_in!
 
     def create
 
