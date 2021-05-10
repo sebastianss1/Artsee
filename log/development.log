@@ -1,0 +1,250 @@
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20210510175226)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar NOT NULL, "name" varchar NOT NULL, "reason_for_using" varchar NOT NULL, "password_digest" varchar NOT NULL, "session_token" varchar NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20210510175226_create_users.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/migrate/20210510175226_create_users.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_users_on_name" ON "users" ("name")[0m
+  ↳ db/migrate/20210510175226_create_users.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_users_on_reason_for_using" ON "users" ("reason_for_using")[0m
+  ↳ db/migrate/20210510175226_create_users.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_users_on_password_digest" ON "users" ("password_digest")[0m
+  ↳ db/migrate/20210510175226_create_users.rb:14
+  [1m[35m (1.9ms)[0m  [1m[31mrollback transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20210510175226)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20210510175226_create_users.rb:3
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar NOT NULL, "name" varchar NOT NULL, "reason_for_using" varchar NOT NULL, "password_digest" varchar NOT NULL, "session_token" varchar NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20210510175226_create_users.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/migrate/20210510175226_create_users.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_users_on_name" ON "users" ("name")[0m
+  ↳ db/migrate/20210510175226_create_users.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_users_on_reason_for_using" ON "users" ("reason_for_using")[0m
+  ↳ db/migrate/20210510175226_create_users.rb:13
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20210510175226)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20210510175226_create_users.rb:3
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar NOT NULL, "name" varchar NOT NULL, "reason_for_using" varchar NOT NULL, "password_digest" varchar NOT NULL, "session_token" varchar NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20210510175226_create_users.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/migrate/20210510175226_create_users.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_users_on_name" ON "users" ("name")[0m
+  ↳ db/migrate/20210510175226_create_users.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_users_on_reason_for_using" ON "users" ("reason_for_using")[0m
+  ↳ db/migrate/20210510175226_create_users.rb:14
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20210510175226)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20210510175226_create_users.rb:3
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar NOT NULL, "name" varchar NOT NULL, "reason_for_using" varchar NOT NULL, "password_digest" varchar NOT NULL, "session_token" varchar NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20210510175226_create_users.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/migrate/20210510175226_create_users.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_users_on_name" ON "users" ("name")[0m
+  ↳ db/migrate/20210510175226_create_users.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_users_on_reason_for_using" ON "users" ("reason_for_using")[0m
+  ↳ db/migrate/20210510175226_create_users.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_session_token" ON "users" ("session_token")[0m
+  ↳ db/migrate/20210510175226_create_users.rb:16
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210510175226"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-05-10 17:59:41.589943"], ["updated_at", "2021-05-10 17:59:41.589943"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateArtworks (20210510180014)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20210510180014_create_artworks.rb:3
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "artworks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar NOT NULL, "year" varchar NOT NULL, "artist_id" integer NOT NULL, "description" varchar NOT NULL, "height_dimensions" float NOT NULL, "width_dimensions" float NOT NULL, "medium_id" integer NOT NULL, "availability" boolean NOT NULL, "price" integer NOT NULL, "about" text, "condition" varchar, "signature" varchar, "certificate_of_authenticity" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20210510180014_create_artworks.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_artworks_on_title" ON "artworks" ("title")[0m
+  ↳ db/migrate/20210510180014_create_artworks.rb:20
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_artworks_on_artist_id" ON "artworks" ("artist_id")[0m
+  ↳ db/migrate/20210510180014_create_artworks.rb:21
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_artworks_on_description" ON "artworks" ("description")[0m
+  ↳ db/migrate/20210510180014_create_artworks.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_artworks_on_height_dimensions" ON "artworks" ("height_dimensions")[0m
+  ↳ db/migrate/20210510180014_create_artworks.rb:23
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_artworks_on_width_dimensions" ON "artworks" ("width_dimensions")[0m
+  ↳ db/migrate/20210510180014_create_artworks.rb:24
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_artworks_on_medium_id" ON "artworks" ("medium_id")[0m
+  ↳ db/migrate/20210510180014_create_artworks.rb:25
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_artworks_on_availability" ON "artworks" ("availability")[0m
+  ↳ db/migrate/20210510180014_create_artworks.rb:26
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_artworks_on_price" ON "artworks" ("price")[0m
+  ↳ db/migrate/20210510180014_create_artworks.rb:27
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_artworks_on_title_and_artist_id" ON "artworks" ("title", "artist_id")[0m
+  ↳ db/migrate/20210510180014_create_artworks.rb:28
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210510180014"]]
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateArtists (20210510180703)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20210510180703_create_artists.rb:3
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "artists" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "birth_year" varchar NOT NULL, "death_year" varchar NOT NULL, "gallery_id" integer NOT NULL, "bio" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20210510180703_create_artists.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_artists_on_name" ON "artists" ("name")[0m
+  ↳ db/migrate/20210510180703_create_artists.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_artists_on_birth_year" ON "artists" ("birth_year")[0m
+  ↳ db/migrate/20210510180703_create_artists.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_artists_on_death_year" ON "artists" ("death_year")[0m
+  ↳ db/migrate/20210510180703_create_artists.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_artists_on_gallery_id" ON "artists" ("gallery_id")[0m
+  ↳ db/migrate/20210510180703_create_artists.rb:16
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210510180703"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateGalleries (20210510180951)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20210510180951_create_galleries.rb:3
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "galleries" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "location" varchar NOT NULL, "about" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20210510180951_create_galleries.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_galleries_on_name" ON "galleries" ("name")[0m
+  ↳ db/migrate/20210510180951_create_galleries.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_galleries_on_location" ON "galleries" ("location")[0m
+  ↳ db/migrate/20210510180951_create_galleries.rb:11
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210510180951"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateMediums (20210510181043)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20210510181043_create_mediums.rb:3
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "mediums" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20210510181043_create_mediums.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_mediums_on_name" ON "mediums" ("name")[0m
+  ↳ db/migrate/20210510181043_create_mediums.rb:7
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210510181043"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateFollows (20210510181127)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20210510181127_create_follows.rb:3
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "follows" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "follower_id" integer NOT NULL, "followable_type" varchar, "followable_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20210510181127_create_follows.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_follows_on_followable_type_and_followable_id" ON "follows" ("followable_type", "followable_id")[0m
+  ↳ db/migrate/20210510181127_create_follows.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210510181127"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateLikes (20210510181421)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20210510181421_create_likes.rb:3
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "likes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "liker_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20210510181421_create_likes.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_likes_on_liker_id" ON "likes" ("liker_id")[0m
+  ↳ db/migrate/20210510181421_create_likes.rb:7
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210510181421"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
