@@ -7,7 +7,6 @@ import LogInFormContainer from './session_form/login_form_container';
 const App = () => (
    <div>
    <header>
-            <h1>Artsee</h1>
         <WelcomeContainer />
     </header>
     <Switch>
