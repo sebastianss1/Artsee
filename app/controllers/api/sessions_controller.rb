@@ -1,16 +1,15 @@
 class Api::SessionsController < ApplicationController 
+    protect_from_forgery
 
-  before_action :require_logged_in!, only: [:destroy]
+
+  # before_action :require_logged_in!, only: [:destroy]
 
     def create
-    @user = User.find_by_credentials(
-      params[:user][:email],
-      params[:user][:password]
-    )
+    @user = User.find_by_credentials(params[:user][:email], params[:user][:password])
 
     if @user
       login!(@user)
-      render '/'
+      render '/api/users/show'
     else
       render json: ["Invalid username/password combination"], status: 401
     end
@@ -20,7 +19,7 @@ class Api::SessionsController < ApplicationController
     @user = current_user
     if @user
       logout!
-      render '/'
+      render '/api/users/show'
     else
       render json: ["Please Login"], status: 404
     end

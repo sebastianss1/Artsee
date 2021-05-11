@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_10_181421) do
+ActiveRecord::Schema.define(version: 2021_05_11_023301) do
 
   create_table "artists", force: :cascade do |t|
     t.string "name", null: false
@@ -89,14 +89,13 @@ ActiveRecord::Schema.define(version: 2021_05_10_181421) do
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
     t.string "name", null: false
-    t.string "reason_for_using", null: false
     t.string "password_digest", null: false
     t.string "session_token", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "reason_for_using"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["name"], name: "index_users_on_name"
-    t.index ["reason_for_using"], name: "index_users_on_reason_for_using"
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
   end
 

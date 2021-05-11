@@ -1,6 +1,6 @@
 class User < ApplicationRecord 
   attr_reader :password
-  validates :email, :name, :reason_for_using, :password_digest, :session_token, presence: true
+  validates :email, :name, :password_digest, :session_token, presence: true
   validates :email, uniqueness: true
   validates :session_token, uniqueness: true 
   validates :password, length: { minimum: 6, allow_nil: true }
@@ -18,7 +18,7 @@ class User < ApplicationRecord
   has_many :followed_galleries,
   foreign_key: :follower_id,
   class_name: :Gallery,
-  dependnet: :destroy
+  dependent: :destroy
 
 
   before_validation :ensure_session_token
