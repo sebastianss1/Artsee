@@ -6,6 +6,6 @@ class Gallery < ApplicationRecord
     foreign_key: :gallery_id,
     class_name: :Artist
 
-    has_many :follows, as: :followable
+    # has_many :follows, as: :followable
 
 end 
