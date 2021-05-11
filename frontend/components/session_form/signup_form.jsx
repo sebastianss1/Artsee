@@ -20,15 +20,15 @@ class SignupForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user);
+        this.props.processForm(user).then(this.props.closeModal)
     }
 
 
     renderErrors() {
         return (
             <ul>
-                {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}>
+                {this.props.errors.map((error, idx) => (
+                    <li key={`error-${idx}`}>
                         {error}
                     </li>
                 ))}
@@ -39,10 +39,12 @@ class SignupForm extends React.Component {
     render() {
         return (
             <div className="login-form-container">
-                <form onSubmit={this.handleSubmit} className="login-form-box">
+                <form onSubmit={this.handleSubmit} className="login-form-modal">
           <br />
+                <span onClick={this.props.closeModal} className="close-x"> X </span>
+
                     {this.renderErrors()}
-                    <div className="login-form">
+                    <div className="signup-form">
                         <br />
                         <label>E-mail:
                             <input type="text"

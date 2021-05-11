@@ -22,7 +22,7 @@ class LoginForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user);
+    this.props.processForm(user).then(this.props.closeModal)
   }
 
   handleDemo(e) {
@@ -45,8 +45,10 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
+        <form onSubmit={this.handleSubmit} className="login-form-modal">
           <br/>
+          <span onClick={this.props.closeModal} className="close-x"> </span>
+
           {this.renderErrors()}
           <div className="login-form">
             <br/>
