@@ -1,7 +1,7 @@
 import React from 'react'
-import SearchContainer from './search_container'
+import SearchContainer from './search/search_container'
 import { Link } from 'react-router-dom'
-import WelcomeContainer from '../welcome/welcome_container'
+import WelcomeContainer from './welcome/welcome_container'
 
 class NavHeader extends React.Component {
     constructor(props) {
