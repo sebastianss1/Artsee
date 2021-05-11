@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2021_05_11_023301) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "artists", force: :cascade do |t|
     t.string "name", null: false
     t.string "birth_year", null: false
@@ -56,7 +59,7 @@ ActiveRecord::Schema.define(version: 2021_05_11_023301) do
   create_table "follows", force: :cascade do |t|
     t.integer "follower_id", null: false
     t.string "followable_type"
-    t.integer "followable_id"
+    t.bigint "followable_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["followable_type", "followable_id"], name: "index_follows_on_followable_type_and_followable_id"
