@@ -15,10 +15,10 @@ class User < ApplicationRecord
   class_name: :Follow,
   dependent: :destroy 
 
-  # has_many :followed_galleries,
-  # foreign_key: :follower_id,
-  # class_name: :Gallery,
-  # dependent: :destroy
+  has_many :followed_galleries,
+  foreign_key: :follower_id,
+  class_name: :Gallery,
+  dependent: :destroy
 
 
   before_validation :ensure_session_token
