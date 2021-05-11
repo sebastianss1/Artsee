@@ -3,8 +3,8 @@ class Follow < ApplicationRecord
 
     belongs_to :followable, polymorphic: true 
 
-    belongs_to :follower,
-    class_name: :follower_id,
+    belongs_to :user,
+    foreign_key: :follower_id,
     class_name: :User
 
 
