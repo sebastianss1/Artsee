@@ -3558,3 +3558,365 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 335ms (Views: 330.8ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/" for ::1 at 2021-05-11 10:32:25 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "lnI52cNsB0mdW-kxMe1n3w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (6.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (28.4ms)
+Completed 500 Internal Server Error in 341ms (ActiveRecord: 1.1ms)
+
+
+
+Sprockets::Rails::Helper::AssetNotFound - The asset "logos/logo.png" is not present in the asset pipeline.:
+  app/views/layouts/application.html.erb:14:in `_app_views_layouts_application_html_erb__3074313312970301735_70258627372280'
+
+Started POST "/__better_errors/55484c809d7aef70/variables" for ::1 at 2021-05-11 10:32:26 -0400
+Started GET "/" for ::1 at 2021-05-11 10:32:32 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "lnI52cNsB0mdW-kxMe1n3w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.6ms)
+
+
+
+Sprockets::Rails::Helper::AssetNotFound - The asset "logos/logo.png" is not present in the asset pipeline.:
+  app/views/layouts/application.html.erb:14:in `_app_views_layouts_application_html_erb__3074313312970301735_70258620194600'
+
+Started POST "/__better_errors/7f0a3b4af81e1593/variables" for ::1 at 2021-05-11 10:32:32 -0400
+Started GET "/" for ::1 at 2021-05-11 10:32:51 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "lnI52cNsB0mdW-kxMe1n3w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.2ms)
+
+
+
+Sprockets::Rails::Helper::AssetNotFound - The asset "logos/logo.png" is not present in the asset pipeline.:
+  app/views/layouts/application.html.erb:14:in `_app_views_layouts_application_html_erb__3074313312970301735_70258537334720'
+
+Started POST "/__better_errors/b1f5542c944b90ef/variables" for ::1 at 2021-05-11 10:32:51 -0400
+Started GET "/" for ::1 at 2021-05-11 10:33:07 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "lnI52cNsB0mdW-kxMe1n3w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.7ms)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 0.1ms)
+
+
+
+Sprockets::Rails::Helper::AssetNotFound - The asset "logos/logo.png" is not present in the asset pipeline.:
+  app/views/layouts/application.html.erb:14:in `_app_views_layouts_application_html_erb__3074313312970301735_70258620256560'
+
+Started POST "/__better_errors/1e726e99c7e827aa/variables" for ::1 at 2021-05-11 10:33:08 -0400
+Started GET "/" for ::1 at 2021-05-11 10:33:40 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "lnI52cNsB0mdW-kxMe1n3w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.6ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.1ms)
+
+
+
+Sprockets::Rails::Helper::AssetNotFound - The asset "logo.png" is not present in the asset pipeline.:
+  app/views/layouts/application.html.erb:14:in `_app_views_layouts_application_html_erb__3074313312970301735_70258911498500'
+
+Started POST "/__better_errors/870d99eedbaf8054/variables" for ::1 at 2021-05-11 10:33:40 -0400
+Started GET "/" for ::1 at 2021-05-11 10:33:58 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "lnI52cNsB0mdW-kxMe1n3w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.1ms)
+
+
+
+Sprockets::Rails::Helper::AssetNotFound - The asset "logo.png" is not present in the asset pipeline.:
+  app/views/layouts/application.html.erb:14:in `_app_views_layouts_application_html_erb__3074313312970301735_70258619921380'
+
+Started POST "/__better_errors/e3dc99586428a821/variables" for ::1 at 2021-05-11 10:33:59 -0400
+Started GET "/" for ::1 at 2021-05-11 10:34:09 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "lnI52cNsB0mdW-kxMe1n3w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 390ms (Views: 388.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 10:39:00 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "lnI52cNsB0mdW-kxMe1n3w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (1.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 51ms (Views: 46.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 10:40:09 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "lnI52cNsB0mdW-kxMe1n3w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.2ms)
+
+
+
+SyntaxError - syntax error, unexpected tLABEL, expecting ')'
+...age_tag("logo/logo.png") width: '100px');@output_buffer.safe...
+...                         ^~~~~~:
+  app/views/layouts/application.html.erb:14:in `'
+
+Started POST "/__better_errors/83703fab6693b5fa/variables" for ::1 at 2021-05-11 10:40:09 -0400
+Started GET "/" for ::1 at 2021-05-11 10:40:26 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "lnI52cNsB0mdW-kxMe1n3w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.2ms)
+
+
+
+SyntaxError - syntax error, unexpected ',', expecting ')'
+...d=( image_tag("logo/logo.png"), width: '100px');@output_buff...
+...                              ^:
+  app/views/layouts/application.html.erb:14:in `'
+
+Started POST "/__better_errors/dbd97186b9ff20e9/variables" for ::1 at 2021-05-11 10:40:26 -0400
+Started GET "/" for ::1 at 2021-05-11 10:42:11 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "lnI52cNsB0mdW-kxMe1n3w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.9ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.2ms)
+
+
+
+SyntaxError - syntax error, unexpected ',', expecting ')'
+...d=( image_tag("logo/logo.png"), width: '100px' > 
+...                              ^
+/Users/sebastiansanchez/Desktop/AppAcademy/Full Stack Project/ARTSEE/app/views/layouts/application.html.erb:15: syntax error, unexpected '<'
+    </header>
+    ^
+/Users/sebastiansanchez/Desktop/AppAcademy/Full Stack Project/ARTSEE/app/views/layouts/application.html.erb:17: unknown regexp options - bdy
+/Users/sebastiansanchez/Desktop/AppAcademy/Full Stack Project/ARTSEE/app/views/layouts/application.html.erb:17: unmatched close parenthesis: /header>
+    <%= yield );@output_buffer.safe_append='
+  </
+/Users/sebastiansanchez/Desktop/AppAcademy/Full Stack Project/ARTSEE/app/views/layouts/application.html.erb:18: syntax error, unexpected '<'
+</html>
+^
+/Users/sebastiansanchez/Desktop/AppAcademy/Full Stack Project/ARTSEE/app/views/layouts/application.html.erb:23: unterminated regexp meets end of file
+          end
+             ^
+/Users/sebastiansanchez/Desktop/AppAcademy/Full Stack Project/ARTSEE/app/views/layouts/application.html.erb:23: syntax error, unexpected end-of-input, expecting ')'
+          end
+             ^:
+  app/views/layouts/application.html.erb:14:in `'
+
+Started POST "/__better_errors/92b79581ba608443/variables" for ::1 at 2021-05-11 10:42:11 -0400
+Started GET "/" for ::1 at 2021-05-11 10:43:18 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "lnI52cNsB0mdW-kxMe1n3w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.8ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.1ms)
+
+
+
+SyntaxError - syntax error, unexpected ',', expecting ')'
+...d=( image_tag("logo/logo.png"), width: '100px' > 
+...                              ^
+/Users/sebastiansanchez/Desktop/AppAcademy/Full Stack Project/ARTSEE/app/views/layouts/application.html.erb:15: syntax error, unexpected '<'
+    </header>
+    ^
+/Users/sebastiansanchez/Desktop/AppAcademy/Full Stack Project/ARTSEE/app/views/layouts/application.html.erb:17: unknown regexp options - bdy
+/Users/sebastiansanchez/Desktop/AppAcademy/Full Stack Project/ARTSEE/app/views/layouts/application.html.erb:17: unmatched close parenthesis: /header>
+    <%= yield );@output_buffer.safe_append='
+  </
+/Users/sebastiansanchez/Desktop/AppAcademy/Full Stack Project/ARTSEE/app/views/layouts/application.html.erb:18: syntax error, unexpected '<'
+</html>
+^
+/Users/sebastiansanchez/Desktop/AppAcademy/Full Stack Project/ARTSEE/app/views/layouts/application.html.erb:23: unterminated regexp meets end of file
+          end
+             ^
+/Users/sebastiansanchez/Desktop/AppAcademy/Full Stack Project/ARTSEE/app/views/layouts/application.html.erb:23: syntax error, unexpected end-of-input, expecting ')'
+          end
+             ^:
+  app/views/layouts/application.html.erb:14:in `'
+
+Started POST "/__better_errors/cb29cb021317d463/variables" for ::1 at 2021-05-11 10:43:18 -0400
+Started GET "/" for ::1 at 2021-05-11 10:44:13 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "lnI52cNsB0mdW-kxMe1n3w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.7ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.2ms)
+
+
+
+SyntaxError - syntax error, unexpected '<'
+    </header>
+    ^
+/Users/sebastiansanchez/Desktop/AppAcademy/Full Stack Project/ARTSEE/app/views/layouts/application.html.erb:17: unknown regexp options - bdy
+/Users/sebastiansanchez/Desktop/AppAcademy/Full Stack Project/ARTSEE/app/views/layouts/application.html.erb:17: unmatched close parenthesis: /header>
+    <%= yield );@output_buffer.safe_append='
+  </
+/Users/sebastiansanchez/Desktop/AppAcademy/Full Stack Project/ARTSEE/app/views/layouts/application.html.erb:18: syntax error, unexpected '<'
+</html>
+^
+/Users/sebastiansanchez/Desktop/AppAcademy/Full Stack Project/ARTSEE/app/views/layouts/application.html.erb:23: unterminated regexp meets end of file
+          end
+             ^
+/Users/sebastiansanchez/Desktop/AppAcademy/Full Stack Project/ARTSEE/app/views/layouts/application.html.erb:23: syntax error, unexpected end-of-input, expecting ')'
+          end
+             ^:
+  app/views/layouts/application.html.erb:15:in `'
+
+Started POST "/__better_errors/3da438f466d1cf27/variables" for ::1 at 2021-05-11 10:44:13 -0400
+Started GET "/" for ::1 at 2021-05-11 10:44:30 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "lnI52cNsB0mdW-kxMe1n3w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 20ms (Views: 18.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/logo/logo.png" for ::1 at 2021-05-11 10:44:30 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/logo/logo.png"):
+  
+actionpack (5.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.5) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.5) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.5) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.5) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2021-05-11 10:44:33 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "lnI52cNsB0mdW-kxMe1n3w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 19ms (Views: 17.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/logo/logo.png" for ::1 at 2021-05-11 10:44:33 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/logo/logo.png"):
+  
+actionpack (5.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.5) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.5) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.5) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.5) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2021-05-11 10:44:38 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "lnI52cNsB0mdW-kxMe1n3w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.1ms)
+
+
+
+Sprockets::Rails::Helper::AssetNotFound - The asset "logo.png" is not present in the asset pipeline.:
+  app/views/layouts/application.html.erb:14:in `_app_views_layouts_application_html_erb__3074313312970301735_70258538596040'
+
+Started POST "/__better_errors/fba26343c6a2abfb/variables" for ::1 at 2021-05-11 10:44:38 -0400
+Started GET "/" for ::1 at 2021-05-11 10:44:40 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "lnI52cNsB0mdW-kxMe1n3w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.1ms)
+
+
+
+Sprockets::Rails::Helper::AssetNotFound - The asset "logo.png" is not present in the asset pipeline.:
+  app/views/layouts/application.html.erb:14:in `_app_views_layouts_application_html_erb__3074313312970301735_70258620076900'
+
+Started POST "/__better_errors/6d51ba9e8d07a58d/variables" for ::1 at 2021-05-11 10:44:40 -0400
+Started GET "/" for ::1 at 2021-05-11 10:44:57 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = ? LIMIT ?[0m  [["session_token", "lnI52cNsB0mdW-kxMe1n3w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 20ms (Views: 18.1ms | ActiveRecord: 0.1ms)
+
+
