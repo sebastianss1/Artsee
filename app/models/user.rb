@@ -17,7 +17,7 @@ class User < ApplicationRecord
 
   has_many :followed_galleries,
   foreign_key: :follower_id,
-  class_name: :Gallery,
+  class_name: :Follow,
   dependent: :destroy
 
 
