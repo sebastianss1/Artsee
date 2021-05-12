@@ -17956,3 +17956,1253 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 26ms (Views: 24.4ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2021-05-11 23:38:47 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 48ms (Views: 44.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2021-05-12 09:17:53 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]", "name"=>""}}
+  [1m[36mUser Load (12.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:27
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:47
+  [1m[36mUser Exists (4.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "test@gmail.com"], ["id", 11], ["LIMIT", 1]]
+  ↳ app/models/user.rb:47
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "y6N_GJd6AuV3OdsmM4lWtw"], ["id", 11], ["LIMIT", 1]]
+  ↳ app/models/user.rb:47
+  [1m[36mUser Update (80.1ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "y6N_GJd6AuV3OdsmM4lWtw"], ["updated_at", "2021-05-12 13:17:54.870306"], ["id", 11]]
+  ↳ app/models/user.rb:47
+  [1m[35m (108.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:47
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (31.4ms)
+  Rendered api/users/show.json.jbuilder (109.9ms)
+Completed 200 OK in 738ms (Views: 118.6ms | ActiveRecord: 207.7ms)
+
+
+Started DELETE "/api/session" for ::1 at 2021-05-12 09:17:57 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "y6N_GJd6AuV3OdsmM4lWtw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered api/users/show.json.jbuilder (3.2ms)
+Completed 200 OK in 12ms (Views: 8.4ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/api/users" for ::1 at 2021-05-12 09:18:17 -0400
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"sebastian@artxcode.io", "password"=>"[FILTERED]", "name"=>"Sebastian Sanchez"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sebastian@artxcode.io"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "epn6tokAVOmeHGqVQ0CzSg"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[36mUser Create (12.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "name", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "sebastian@artxcode.io"], ["name", "Sebastian Sanchez"], ["password_digest", "$2a$12$g9k2GwvwJQsoI4DJu.BjIOQI7IILV75Zd1dL9sk7y.ao4CujGcFfa"], ["session_token", "epn6tokAVOmeHGqVQ0CzSg"], ["created_at", "2021-05-12 13:18:17.584764"], ["updated_at", "2021-05-12 13:18:17.584764"]]
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:47
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "sebastian@artxcode.io"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:47
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "N_t2ba99yQ5lXEdXUQyDpw"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:47
+  [1m[36mUser Update (15.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "N_t2ba99yQ5lXEdXUQyDpw"], ["updated_at", "2021-05-12 13:18:17.602228"], ["id", 13]]
+  ↳ app/models/user.rb:47
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:47
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered api/users/show.json.jbuilder (2.1ms)
+Completed 200 OK in 326ms (Views: 7.6ms | ActiveRecord: 30.9ms)
+
+
+Started DELETE "/api/session" for ::1 at 2021-05-12 09:18:21 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "N_t2ba99yQ5lXEdXUQyDpw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered api/users/show.json.jbuilder (2.1ms)
+Completed 200 OK in 11ms (Views: 7.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2021-05-12 10:14:28 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (26.4ms)
+Completed 200 OK in 165ms (Views: 160.3ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (7.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2470599188621461380)[0m
+  ↳ bin/rails:9
+  [1m[35m (10.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateActiveStorageTables (20210512142141)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (143.8ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "byte_size" bigint NOT NULL, "checksum" character varying NOT NULL, "created_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20210512142141_create_active_storage_tables.active_storage.rb:4
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_blobs_on_key" ON "active_storage_blobs"  ("key")[0m
+  ↳ db/migrate/20210512142141_create_active_storage_tables.active_storage.rb:4
+  [1m[35m (30.4ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  ↳ db/migrate/20210512142141_create_active_storage_tables.active_storage.rb:16
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE  INDEX  "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments"  ("blob_id")[0m
+  ↳ db/migrate/20210512142141_create_active_storage_tables.active_storage.rb:16
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_attachments_uniqueness" ON "active_storage_attachments"  ("record_type", "record_id", "name", "blob_id")[0m
+  ↳ db/migrate/20210512142141_create_active_storage_tables.active_storage.rb:16
+  [1m[36mActiveRecord::SchemaMigration Create (3.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210512142141"]]
+  ↳ bin/rails:9
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (12.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(2470599188621461380)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mArtwork Load (10.3ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtwork Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."title" = $1 AND "artworks"."artist_id" = $2 LIMIT $3[0m  [["title", "Anxious Men"], ["artist_id", 1], ["LIMIT", 1]]
+  [1m[36mArtist Load (6.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (49.8ms)[0m  [1m[32mINSERT INTO "artists" ("name", "birth_year", "death_year", "gallery_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Rashid Johnson"], ["birth_year", "1970"], ["death_year", "alive"], ["gallery_id", 1], ["created_at", "2021-05-12 14:27:40.074067"], ["updated_at", "2021-05-12 14:27:40.074067"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtwork Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."title" = $1 AND "artworks"."artist_id" = $2 LIMIT $3[0m  [["title", "Anxious Men"], ["artist_id", 1], ["LIMIT", 1]]
+  [1m[36mArtist Load (23.7ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtwork Exists (6.3ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."title" = $1 AND "artworks"."artist_id" = $2 LIMIT $3[0m  [["title", "Anxious Men"], ["artist_id", 1], ["LIMIT", 1]]
+  [1m[36mArtist Load (0.5ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArtwork Create (20.8ms)[0m  [1m[32mINSERT INTO "artworks" ("title", "year", "artist_id", "description", "height_dimensions", "width_dimensions", "medium_id", "availability", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["title", "Anxious Men"], ["year", "2020"], ["artist_id", 1], ["description", "red paintings during COVID"], ["height_dimensions", 40.0], ["width_dimensions", 40.0], ["medium_id", 1], ["availability", true], ["price", 400000], ["created_at", "2021-05-12 14:27:56.752691"], ["updated_at", "2021-05-12 14:27:56.752691"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveStorage::Attachment Load (6.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artwork"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mArtwork Load (7.6ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" ORDER BY "artworks"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (7.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artwork"], ["name", "photo"], ["LIMIT", 1]]
+[36m  S3 Storage (1037.6ms) [0m[32mUploaded file to key: baoyKcr4GVNPgYzcUMe831BH (checksum: hdOoXjgbG14ZvD92Cyk8GQ==)[0m
+  [1m[35m (22.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Create (36.5ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "baoyKcr4GVNPgYzcUMe831BH"], ["filename", "rashid-johnson.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 171445], ["checksum", "hdOoXjgbG14ZvD92Cyk8GQ=="], ["created_at", "2021-05-12 15:19:05.519427"]]
+  [1m[35m (48.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Create (14.7ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "photo"], ["record_type", "Artwork"], ["record_id", 1], ["blob_id", 1], ["created_at", "2021-05-12 15:19:05.645649"]]
+  [1m[36mArtwork Update (1.3ms)[0m  [1m[33mUPDATE "artworks" SET "updated_at" = $1 WHERE "artworks"."id" = $2[0m  [["updated_at", "2021-05-12 15:19:05.661601"], ["id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 3d3b856a-1592-4ab4-a25d-8bdb7e4d0188) to Async(default) with arguments: #<GlobalID:0x00007f9864eab740 @uri=#<URI::GID gid://artful/ActiveStorage::Blob/1>>
+  [1m[36mActiveStorage::Blob Load (1.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3d3b856a-1592-4ab4-a25d-8bdb7e4d0188] Performing ActiveStorage::AnalyzeJob (Job ID: 3d3b856a-1592-4ab4-a25d-8bdb7e4d0188) from Async(default) with arguments: #<GlobalID:0x00007f9863c59f60 @uri=#<URI::GID gid://artful/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3d3b856a-1592-4ab4-a25d-8bdb7e4d0188] [36m  S3 Storage (460.8ms) [0m[34mDownloaded file from key: baoyKcr4GVNPgYzcUMe831BH[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3d3b856a-1592-4ab4-a25d-8bdb7e4d0188] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3d3b856a-1592-4ab4-a25d-8bdb7e4d0188]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3d3b856a-1592-4ab4-a25d-8bdb7e4d0188]   [1m[36mActiveStorage::Blob Update (3.3ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3d3b856a-1592-4ab4-a25d-8bdb7e4d0188]   [1m[35m (21.8ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3d3b856a-1592-4ab4-a25d-8bdb7e4d0188] Performed ActiveStorage::AnalyzeJob (Job ID: 3d3b856a-1592-4ab4-a25d-8bdb7e4d0188) from Async(default) in 523.73ms
+  [1m[36mArtwork Load (3.4ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" ORDER BY "artworks"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (11.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artwork"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (5.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/" for ::1 at 2021-05-12 12:05:47 -0400
+  [1m[35m (54.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/sebastiansanchez/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 753ms (Views: 749.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/artworks/1" for ::1 at 2021-05-12 12:06:28 -0400
+Processing by Api::ArtworksController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtwork Load (12.4ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artworks_controller.rb:4
+  Rendering api/artworks/show.json.jbuilder
+  Rendered api/artworks/show.json.jbuilder (1.4ms)
+Completed 500 Internal Server Error in 308ms (ActiveRecord: 115.3ms)
+
+
+
+SyntaxError - syntax error, unexpected '<', expecting keyword_end
+...|=JbuilderTemplate.new(self); <img src="<%="
+...                              ^:
+  app/views/api/artworks/show.json.jbuilder:1:in `'
+  app/controllers/api/artworks_controller.rb:7:in `show'
+
+Started POST "/__better_errors/86b6a77ec0c1b697/variables" for ::1 at 2021-05-12 12:06:29 -0400
+Started GET "/api/artworks/1" for ::1 at 2021-05-12 12:09:02 -0400
+Processing by Api::ArtworksController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtwork Load (1.1ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artworks_controller.rb:4
+Completed 500 Internal Server Error in 71ms (ActiveRecord: 53.1ms)
+
+
+
+ActionView::MissingTemplate - Missing template api/artworks/show with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/sebastiansanchez/Desktop/AppAcademy/Full Stack Project/ARTSEE/app/views":
+  app/controllers/api/artworks_controller.rb:7:in `show'
+
+Started POST "/__better_errors/00d921948fd5de35/variables" for ::1 at 2021-05-12 12:09:02 -0400
+Started GET "/api/artworks/1" for ::1 at 2021-05-12 12:09:04 -0400
+Processing by Api::ArtworksController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtwork Load (0.8ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artworks_controller.rb:4
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.8ms)
+
+
+
+ActionView::MissingTemplate - Missing template api/artworks/show with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/sebastiansanchez/Desktop/AppAcademy/Full Stack Project/ARTSEE/app/views":
+  app/controllers/api/artworks_controller.rb:7:in `show'
+
+Started POST "/__better_errors/80e9572e08414383/variables" for ::1 at 2021-05-12 12:09:04 -0400
+Started GET "/api/artworks/1" for ::1 at 2021-05-12 12:09:17 -0400
+Processing by Api::ArtworksController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtwork Load (0.7ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artworks_controller.rb:4
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 23.7ms)
+
+
+
+ActionView::MissingTemplate - Missing template api/artworks/show, application/show with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/sebastiansanchez/Desktop/AppAcademy/Full Stack Project/ARTSEE/app/views":
+  app/controllers/api/artworks_controller.rb:8:in `show'
+
+Started POST "/__better_errors/8a8f5571dca94eca/variables" for ::1 at 2021-05-12 12:09:17 -0400
+Started GET "/api/artworks/1" for ::1 at 2021-05-12 12:09:18 -0400
+Processing by Api::ArtworksController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtwork Load (1.3ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artworks_controller.rb:4
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 1.3ms)
+
+
+
+ActionView::MissingTemplate - Missing template api/artworks/show, application/show with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/sebastiansanchez/Desktop/AppAcademy/Full Stack Project/ARTSEE/app/views":
+  app/controllers/api/artworks_controller.rb:8:in `show'
+
+Started POST "/__better_errors/02524a750ca9ac87/variables" for ::1 at 2021-05-12 12:09:18 -0400
+Started GET "/api/artworks/1" for ::1 at 2021-05-12 12:09:21 -0400
+Processing by Api::ArtworksController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtwork Load (27.7ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artworks_controller.rb:4
+Completed 500 Internal Server Error in 74ms (ActiveRecord: 27.7ms)
+
+
+
+ActionView::MissingTemplate - Missing template api/artworks/show, application/show with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/sebastiansanchez/Desktop/AppAcademy/Full Stack Project/ARTSEE/app/views":
+  app/controllers/api/artworks_controller.rb:8:in `show'
+
+Started POST "/__better_errors/7c2bca843e7205d5/variables" for ::1 at 2021-05-12 12:09:21 -0400
+Started GET "/api/artworks/1" for ::1 at 2021-05-12 12:09:55 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/artworks/1"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/artworks/1" for ::1 at 2021-05-12 12:10:29 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/artworks/1"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/artworks/1" for ::1 at 2021-05-12 12:10:32 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/artworks/1"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/artworks/1" for ::1 at 2021-05-12 12:10:33 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/artworks/1"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/artworks/1" for ::1 at 2021-05-12 12:10:43 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/artworks/1"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/artworks/1" for ::1 at 2021-05-12 12:10:44 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/artworks/1"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/artworks/1" for ::1 at 2021-05-12 12:11:06 -0400
+
+ActionController::RoutingError - uninitialized constant ArtworksController:
+
+Started POST "/__better_errors/591a86542e631d68/variables" for ::1 at 2021-05-12 12:11:07 -0400
+Started GET "/artworks/1" for ::1 at 2021-05-12 12:19:39 -0400
+
+LoadError - Unable to autoload constant ArtworksController, expected /Users/sebastiansanchez/Desktop/AppAcademy/Full Stack Project/ARTSEE/app/controllers/artworks_controller.rb to define it:
+
+Started POST "/__better_errors/92205729295a736a/variables" for ::1 at 2021-05-12 12:19:40 -0400
+Started GET "/artworks/1" for ::1 at 2021-05-12 12:20:07 -0400
+Processing by ArtworksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtwork Load (8.5ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:4
+Completed 500 Internal Server Error in 106ms (ActiveRecord: 77.6ms)
+
+
+
+ActionView::MissingTemplate - Missing template artworks/show, application/show with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/sebastiansanchez/Desktop/AppAcademy/Full Stack Project/ARTSEE/app/views":
+  app/controllers/artworks_controller.rb:8:in `show'
+
+Started POST "/__better_errors/42b41ee489fa076a/variables" for ::1 at 2021-05-12 12:20:07 -0400
+Started GET "/artworks/1" for ::1 at 2021-05-12 12:20:08 -0400
+Processing by ArtworksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtwork Load (1.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:4
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.0ms)
+
+
+
+ActionView::MissingTemplate - Missing template artworks/show, application/show with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/sebastiansanchez/Desktop/AppAcademy/Full Stack Project/ARTSEE/app/views":
+  app/controllers/artworks_controller.rb:8:in `show'
+
+Started POST "/__better_errors/e5971fac0480a11d/variables" for ::1 at 2021-05-12 12:20:08 -0400
+Started GET "/artworks/1" for ::1 at 2021-05-12 12:20:40 -0400
+Processing by ArtworksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtwork Load (2.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:4
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 2.0ms)
+
+
+
+ActionView::MissingTemplate - Missing template artworks/show, application/show with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/sebastiansanchez/Desktop/AppAcademy/Full Stack Project/ARTSEE/app/views":
+  app/controllers/artworks_controller.rb:8:in `show'
+
+Started POST "/__better_errors/65a7cfd28201cbe7/variables" for ::1 at 2021-05-12 12:20:40 -0400
+Started GET "/artworks/1" for ::1 at 2021-05-12 12:20:42 -0400
+Processing by ArtworksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtwork Load (0.8ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:4
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.8ms)
+
+
+
+ActionView::MissingTemplate - Missing template artworks/show, application/show with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/sebastiansanchez/Desktop/AppAcademy/Full Stack Project/ARTSEE/app/views":
+  app/controllers/artworks_controller.rb:8:in `show'
+
+Started POST "/__better_errors/2fd366f93b582d63/variables" for ::1 at 2021-05-12 12:20:42 -0400
+Started GET "/artworks/1" for ::1 at 2021-05-12 12:20:43 -0400
+Processing by ArtworksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtwork Load (4.6ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:4
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 4.6ms)
+
+
+
+ActionView::MissingTemplate - Missing template artworks/show, application/show with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/sebastiansanchez/Desktop/AppAcademy/Full Stack Project/ARTSEE/app/views":
+  app/controllers/artworks_controller.rb:8:in `show'
+
+Started POST "/__better_errors/3db6734f3cfb99c4/variables" for ::1 at 2021-05-12 12:20:43 -0400
+Started GET "/artworks/1" for ::1 at 2021-05-12 12:21:23 -0400
+Processing by ArtworksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtwork Load (18.6ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:4
+  Rendering artworks/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (4.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artwork"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/artworks/show.html.erb:2
+  [1m[36mActiveStorage::Blob Load (6.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/artworks/show.html.erb:2
+  Rendered artworks/show.html.erb within layouts/application (164.0ms)
+Completed 200 OK in 222ms (Views: 143.0ms | ActiveRecord: 78.1ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4e6077e5fc9708c5b1555182fb015e289da6a6b2/rashid-johnson.jpg" for ::1 at 2021-05-12 12:21:24 -0400
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4e6077e5fc9708c5b1555182fb015e289da6a6b2", "filename"=>"rashid-johnson"}
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/sebastiansanchez/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (8.5ms) [0m[34mGenerated URL for file at key: baoyKcr4GVNPgYzcUMe831BH (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRZbUZ2ZVV0amNqUkhWazVRWjFsNlkxVk5aVGd6TVVKSUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGljbUZ6YUdsa0xXcHZhRzV6YjI0dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR5WVhOb2FXUXRhbTlvYm5OdmJpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMS0wNS0xMlQxNjoyNjoyNC4yNDdaIiwicHVyIjoiYmxvYl9rZXkifX0=--63109d22c4e5151fcb1eaee41a1c39f66857bc58/rashid-johnson.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22rashid-johnson.jpg%22%3B+filename%2A%3DUTF-8%27%27rashid-johnson.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRZbUZ2ZVV0amNqUkhWazVRWjFsNlkxVk5aVGd6TVVKSUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGljbUZ6YUdsa0xXcHZhRzV6YjI0dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR5WVhOb2FXUXRhbTlvYm5OdmJpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMS0wNS0xMlQxNjoyNjoyNC4yNDdaIiwicHVyIjoiYmxvYl9rZXkifX0=--63109d22c4e5151fcb1eaee41a1c39f66857bc58/rashid-johnson.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22rashid-johnson.jpg%22%3B+filename%2A%3DUTF-8%27%27rashid-johnson.jpg
+Completed 302 Found in 14ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRZbUZ2ZVV0amNqUkhWazVRWjFsNlkxVk5aVGd6TVVKSUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGljbUZ6YUdsa0xXcHZhRzV6YjI0dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR5WVhOb2FXUXRhbTlvYm5OdmJpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMS0wNS0xMlQxNjoyNjoyNC4yNDdaIiwicHVyIjoiYmxvYl9rZXkifX0=--63109d22c4e5151fcb1eaee41a1c39f66857bc58/rashid-johnson.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22rashid-johnson.jpg%22%3B+filename%2A%3DUTF-8%27%27rashid-johnson.jpg" for ::1 at 2021-05-12 12:21:24 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"rashid-johnson.jpg\"; filename*=UTF-8''rashid-johnson.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRZbUZ2ZVV0amNqUkhWazVRWjFsNlkxVk5aVGd6TVVKSUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGljbUZ6YUdsa0xXcHZhRzV6YjI0dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR5WVhOb2FXUXRhbTlvYm5OdmJpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMS0wNS0xMlQxNjoyNjoyNC4yNDdaIiwicHVyIjoiYmxvYl9rZXkifX0=--63109d22c4e5151fcb1eaee41a1c39f66857bc58", "filename"=>"rashid-johnson"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+
+Errno::ENOENT - No such file or directory @ rb_file_s_mtime - /Users/sebastiansanchez/Desktop/AppAcademy/Full Stack Project/ARTSEE/storage/ba/oy/baoyKcr4GVNPgYzcUMe831BH:
+
+Started GET "/artworks/1" for ::1 at 2021-05-12 12:23:05 -0400
+Processing by ArtworksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtwork Load (23.1ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:4
+  Rendering artworks/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artwork"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/artworks/show.html.erb:2
+  [1m[36mActiveStorage::Blob Load (9.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/artworks/show.html.erb:2
+  Rendered artworks/show.html.erb within layouts/application (22.9ms)
+Completed 200 OK in 88ms (Views: 50.0ms | ActiveRecord: 33.7ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRZbUZ2ZVV0amNqUkhWazVRWjFsNlkxVk5aVGd6TVVKSUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGljbUZ6YUdsa0xXcHZhRzV6YjI0dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR5WVhOb2FXUXRhbTlvYm5OdmJpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMS0wNS0xMlQxNjoyNjoyNC4yNDdaIiwicHVyIjoiYmxvYl9rZXkifX0=--63109d22c4e5151fcb1eaee41a1c39f66857bc58/rashid-johnson.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22rashid-johnson.jpg%22%3B+filename%2A%3DUTF-8%27%27rashid-johnson.jpg" for ::1 at 2021-05-12 12:23:05 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"rashid-johnson.jpg\"; filename*=UTF-8''rashid-johnson.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRZbUZ2ZVV0amNqUkhWazVRWjFsNlkxVk5aVGd6TVVKSUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGljbUZ6YUdsa0xXcHZhRzV6YjI0dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR5WVhOb2FXUXRhbTlvYm5OdmJpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMS0wNS0xMlQxNjoyNjoyNC4yNDdaIiwicHVyIjoiYmxvYl9rZXkifX0=--63109d22c4e5151fcb1eaee41a1c39f66857bc58", "filename"=>"rashid-johnson"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+
+Errno::ENOENT - No such file or directory @ rb_file_s_mtime - /Users/sebastiansanchez/Desktop/AppAcademy/Full Stack Project/ARTSEE/storage/ba/oy/baoyKcr4GVNPgYzcUMe831BH:
+
+Started GET "/artworks/1" for ::1 at 2021-05-12 12:23:06 -0400
+Processing by ArtworksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtwork Load (0.7ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:4
+  Rendering artworks/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artwork"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/artworks/show.html.erb:2
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/artworks/show.html.erb:2
+  Rendered artworks/show.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 83ms (Views: 77.0ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRZbUZ2ZVV0amNqUkhWazVRWjFsNlkxVk5aVGd6TVVKSUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGljbUZ6YUdsa0xXcHZhRzV6YjI0dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR5WVhOb2FXUXRhbTlvYm5OdmJpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMS0wNS0xMlQxNjoyNjoyNC4yNDdaIiwicHVyIjoiYmxvYl9rZXkifX0=--63109d22c4e5151fcb1eaee41a1c39f66857bc58/rashid-johnson.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22rashid-johnson.jpg%22%3B+filename%2A%3DUTF-8%27%27rashid-johnson.jpg" for ::1 at 2021-05-12 12:23:06 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"rashid-johnson.jpg\"; filename*=UTF-8''rashid-johnson.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRZbUZ2ZVV0amNqUkhWazVRWjFsNlkxVk5aVGd6TVVKSUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGljbUZ6YUdsa0xXcHZhRzV6YjI0dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR5WVhOb2FXUXRhbTlvYm5OdmJpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMS0wNS0xMlQxNjoyNjoyNC4yNDdaIiwicHVyIjoiYmxvYl9rZXkifX0=--63109d22c4e5151fcb1eaee41a1c39f66857bc58", "filename"=>"rashid-johnson"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+
+Errno::ENOENT - No such file or directory @ rb_file_s_mtime - /Users/sebastiansanchez/Desktop/AppAcademy/Full Stack Project/ARTSEE/storage/ba/oy/baoyKcr4GVNPgYzcUMe831BH:
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRZbUZ2ZVV0amNqUkhWazVRWjFsNlkxVk5aVGd6TVVKSUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGljbUZ6YUdsa0xXcHZhRzV6YjI0dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR5WVhOb2FXUXRhbTlvYm5OdmJpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMS0wNS0xMlQxNjoyNjoyNC4yNDdaIiwicHVyIjoiYmxvYl9rZXkifX0=--63109d22c4e5151fcb1eaee41a1c39f66857bc58/rashid-johnson.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22rashid-johnson.jpg%22%3B+filename%2A%3DUTF-8%27%27rashid-johnson.jpg" for ::1 at 2021-05-12 12:23:15 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"rashid-johnson.jpg\"; filename*=UTF-8''rashid-johnson.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRZbUZ2ZVV0amNqUkhWazVRWjFsNlkxVk5aVGd6TVVKSUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGljbUZ6YUdsa0xXcHZhRzV6YjI0dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR5WVhOb2FXUXRhbTlvYm5OdmJpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMS0wNS0xMlQxNjoyNjoyNC4yNDdaIiwicHVyIjoiYmxvYl9rZXkifX0=--63109d22c4e5151fcb1eaee41a1c39f66857bc58", "filename"=>"rashid-johnson"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+
+Errno::ENOENT - No such file or directory @ rb_file_s_mtime - /Users/sebastiansanchez/Desktop/AppAcademy/Full Stack Project/ARTSEE/storage/ba/oy/baoyKcr4GVNPgYzcUMe831BH:
+
+Started POST "/__better_errors/dcfe9c2552044ed4/variables" for ::1 at 2021-05-12 12:23:15 -0400
+Started GET "/artworks/1" for ::1 at 2021-05-12 12:23:59 -0400
+Processing by ArtworksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtwork Load (13.6ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:4
+  Rendering artworks/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artwork"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/artworks/show.html.erb:2
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/artworks/show.html.erb:2
+  Rendered artworks/show.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 45ms (Views: 28.8ms | ActiveRecord: 14.7ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRZbUZ2ZVV0amNqUkhWazVRWjFsNlkxVk5aVGd6TVVKSUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGljbUZ6YUdsa0xXcHZhRzV6YjI0dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR5WVhOb2FXUXRhbTlvYm5OdmJpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMS0wNS0xMlQxNjoyNjoyNC4yNDdaIiwicHVyIjoiYmxvYl9rZXkifX0=--63109d22c4e5151fcb1eaee41a1c39f66857bc58/rashid-johnson.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22rashid-johnson.jpg%22%3B+filename%2A%3DUTF-8%27%27rashid-johnson.jpg" for ::1 at 2021-05-12 12:23:59 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"rashid-johnson.jpg\"; filename*=UTF-8''rashid-johnson.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRZbUZ2ZVV0amNqUkhWazVRWjFsNlkxVk5aVGd6TVVKSUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGljbUZ6YUdsa0xXcHZhRzV6YjI0dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR5WVhOb2FXUXRhbTlvYm5OdmJpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMS0wNS0xMlQxNjoyNjoyNC4yNDdaIiwicHVyIjoiYmxvYl9rZXkifX0=--63109d22c4e5151fcb1eaee41a1c39f66857bc58", "filename"=>"rashid-johnson"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+
+Errno::ENOENT - No such file or directory @ rb_file_s_mtime - /Users/sebastiansanchez/Desktop/AppAcademy/Full Stack Project/ARTSEE/storage/ba/oy/baoyKcr4GVNPgYzcUMe831BH:
+
+Started GET "/artworks/1" for ::1 at 2021-05-12 12:24:10 -0400
+Processing by ArtworksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtwork Load (33.4ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:4
+  Rendering artworks/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (1.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artwork"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/artworks/show.html.erb:2
+  [1m[36mActiveStorage::Blob Load (1.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/artworks/show.html.erb:2
+  Rendered artworks/show.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 333ms (Views: 145.7ms | ActiveRecord: 60.5ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRZbUZ2ZVV0amNqUkhWazVRWjFsNlkxVk5aVGd6TVVKSUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGljbUZ6YUdsa0xXcHZhRzV6YjI0dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR5WVhOb2FXUXRhbTlvYm5OdmJpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMS0wNS0xMlQxNjoyNjoyNC4yNDdaIiwicHVyIjoiYmxvYl9rZXkifX0=--63109d22c4e5151fcb1eaee41a1c39f66857bc58/rashid-johnson.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22rashid-johnson.jpg%22%3B+filename%2A%3DUTF-8%27%27rashid-johnson.jpg" for ::1 at 2021-05-12 12:24:10 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"rashid-johnson.jpg\"; filename*=UTF-8''rashid-johnson.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRZbUZ2ZVV0amNqUkhWazVRWjFsNlkxVk5aVGd6TVVKSUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGljbUZ6YUdsa0xXcHZhRzV6YjI0dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR5WVhOb2FXUXRhbTlvYm5OdmJpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMS0wNS0xMlQxNjoyNjoyNC4yNDdaIiwicHVyIjoiYmxvYl9rZXkifX0=--63109d22c4e5151fcb1eaee41a1c39f66857bc58", "filename"=>"rashid-johnson"}
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+
+Errno::ENOENT - No such file or directory @ rb_file_s_mtime - /Users/sebastiansanchez/Desktop/AppAcademy/Full Stack Project/ARTSEE/storage/ba/oy/baoyKcr4GVNPgYzcUMe831BH:
+
+Started GET "/artworks/1" for ::1 at 2021-05-12 12:24:11 -0400
+Processing by ArtworksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtwork Load (5.9ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:4
+  Rendering artworks/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (10.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artwork"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/artworks/show.html.erb:2
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/artworks/show.html.erb:2
+  Rendered artworks/show.html.erb within layouts/application (22.5ms)
+Completed 200 OK in 208ms (Views: 165.6ms | ActiveRecord: 17.2ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRZbUZ2ZVV0amNqUkhWazVRWjFsNlkxVk5aVGd6TVVKSUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGljbUZ6YUdsa0xXcHZhRzV6YjI0dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR5WVhOb2FXUXRhbTlvYm5OdmJpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMS0wNS0xMlQxNjoyNjoyNC4yNDdaIiwicHVyIjoiYmxvYl9rZXkifX0=--63109d22c4e5151fcb1eaee41a1c39f66857bc58/rashid-johnson.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22rashid-johnson.jpg%22%3B+filename%2A%3DUTF-8%27%27rashid-johnson.jpg" for ::1 at 2021-05-12 12:24:12 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"rashid-johnson.jpg\"; filename*=UTF-8''rashid-johnson.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRZbUZ2ZVV0amNqUkhWazVRWjFsNlkxVk5aVGd6TVVKSUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGljbUZ6YUdsa0xXcHZhRzV6YjI0dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR5WVhOb2FXUXRhbTlvYm5OdmJpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMS0wNS0xMlQxNjoyNjoyNC4yNDdaIiwicHVyIjoiYmxvYl9rZXkifX0=--63109d22c4e5151fcb1eaee41a1c39f66857bc58", "filename"=>"rashid-johnson"}
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+
+Errno::ENOENT - No such file or directory @ rb_file_s_mtime - /Users/sebastiansanchez/Desktop/AppAcademy/Full Stack Project/ARTSEE/storage/ba/oy/baoyKcr4GVNPgYzcUMe831BH:
+
+Started GET "/artworks/1" for ::1 at 2021-05-12 12:24:47 -0400
+Processing by ArtworksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtwork Load (24.8ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:4
+  Rendering artworks/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (10.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artwork"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/artworks/show.html.erb:2
+  [1m[36mActiveStorage::Blob Load (18.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/artworks/show.html.erb:2
+  Rendered artworks/show.html.erb within layouts/application (34.4ms)
+Completed 200 OK in 93ms (Views: 36.8ms | ActiveRecord: 53.1ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRZbUZ2ZVV0amNqUkhWazVRWjFsNlkxVk5aVGd6TVVKSUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGljbUZ6YUdsa0xXcHZhRzV6YjI0dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR5WVhOb2FXUXRhbTlvYm5OdmJpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMS0wNS0xMlQxNjoyNjoyNC4yNDdaIiwicHVyIjoiYmxvYl9rZXkifX0=--63109d22c4e5151fcb1eaee41a1c39f66857bc58/rashid-johnson.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22rashid-johnson.jpg%22%3B+filename%2A%3DUTF-8%27%27rashid-johnson.jpg" for ::1 at 2021-05-12 12:24:48 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"rashid-johnson.jpg\"; filename*=UTF-8''rashid-johnson.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRZbUZ2ZVV0amNqUkhWazVRWjFsNlkxVk5aVGd6TVVKSUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGljbUZ6YUdsa0xXcHZhRzV6YjI0dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR5WVhOb2FXUXRhbTlvYm5OdmJpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMS0wNS0xMlQxNjoyNjoyNC4yNDdaIiwicHVyIjoiYmxvYl9rZXkifX0=--63109d22c4e5151fcb1eaee41a1c39f66857bc58", "filename"=>"rashid-johnson"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+
+Errno::ENOENT - No such file or directory @ rb_file_s_mtime - /Users/sebastiansanchez/Desktop/AppAcademy/Full Stack Project/ARTSEE/storage/ba/oy/baoyKcr4GVNPgYzcUMe831BH:
+
+  [1m[36mArtwork Load (3.4ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" ORDER BY "artworks"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (4.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artwork"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (1.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/artworks/1" for ::1 at 2021-05-12 12:25:26 -0400
+Processing by ArtworksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtwork Load (40.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:4
+  Rendering artworks/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artwork"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/artworks/show.html.erb:2
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/artworks/show.html.erb:2
+  Rendered artworks/show.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 77ms (Views: 34.2ms | ActiveRecord: 41.8ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRZbUZ2ZVV0amNqUkhWazVRWjFsNlkxVk5aVGd6TVVKSUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGljbUZ6YUdsa0xXcHZhRzV6YjI0dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR5WVhOb2FXUXRhbTlvYm5OdmJpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMS0wNS0xMlQxNjoyNjoyNC4yNDdaIiwicHVyIjoiYmxvYl9rZXkifX0=--63109d22c4e5151fcb1eaee41a1c39f66857bc58/rashid-johnson.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22rashid-johnson.jpg%22%3B+filename%2A%3DUTF-8%27%27rashid-johnson.jpg" for ::1 at 2021-05-12 12:25:26 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"rashid-johnson.jpg\"; filename*=UTF-8''rashid-johnson.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRZbUZ2ZVV0amNqUkhWazVRWjFsNlkxVk5aVGd6TVVKSUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGljbUZ6YUdsa0xXcHZhRzV6YjI0dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR5WVhOb2FXUXRhbTlvYm5OdmJpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMS0wNS0xMlQxNjoyNjoyNC4yNDdaIiwicHVyIjoiYmxvYl9rZXkifX0=--63109d22c4e5151fcb1eaee41a1c39f66857bc58", "filename"=>"rashid-johnson"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+
+Errno::ENOENT - No such file or directory @ rb_file_s_mtime - /Users/sebastiansanchez/Desktop/AppAcademy/Full Stack Project/ARTSEE/storage/ba/oy/baoyKcr4GVNPgYzcUMe831BH:
+
+Started GET "/artworks/1" for ::1 at 2021-05-12 12:25:30 -0400
+Processing by ArtworksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtwork Load (1.4ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:4
+  Rendering artworks/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artwork"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/artworks/show.html.erb:2
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/artworks/show.html.erb:2
+  Rendered artworks/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 28ms (Views: 24.7ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRZbUZ2ZVV0amNqUkhWazVRWjFsNlkxVk5aVGd6TVVKSUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGljbUZ6YUdsa0xXcHZhRzV6YjI0dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR5WVhOb2FXUXRhbTlvYm5OdmJpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMS0wNS0xMlQxNjoyNjoyNC4yNDdaIiwicHVyIjoiYmxvYl9rZXkifX0=--63109d22c4e5151fcb1eaee41a1c39f66857bc58/rashid-johnson.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22rashid-johnson.jpg%22%3B+filename%2A%3DUTF-8%27%27rashid-johnson.jpg" for ::1 at 2021-05-12 12:25:30 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"rashid-johnson.jpg\"; filename*=UTF-8''rashid-johnson.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRZbUZ2ZVV0amNqUkhWazVRWjFsNlkxVk5aVGd6TVVKSUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGljbUZ6YUdsa0xXcHZhRzV6YjI0dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR5WVhOb2FXUXRhbTlvYm5OdmJpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMS0wNS0xMlQxNjoyNjoyNC4yNDdaIiwicHVyIjoiYmxvYl9rZXkifX0=--63109d22c4e5151fcb1eaee41a1c39f66857bc58", "filename"=>"rashid-johnson"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+
+Errno::ENOENT - No such file or directory @ rb_file_s_mtime - /Users/sebastiansanchez/Desktop/AppAcademy/Full Stack Project/ARTSEE/storage/ba/oy/baoyKcr4GVNPgYzcUMe831BH:
+
+Started GET "/artworks/1" for ::1 at 2021-05-12 12:25:31 -0400
+Processing by ArtworksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtwork Load (1.8ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:4
+  Rendering artworks/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (8.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artwork"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/artworks/show.html.erb:2
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/artworks/show.html.erb:2
+  Rendered artworks/show.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 45ms (Views: 34.1ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRZbUZ2ZVV0amNqUkhWazVRWjFsNlkxVk5aVGd6TVVKSUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGljbUZ6YUdsa0xXcHZhRzV6YjI0dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR5WVhOb2FXUXRhbTlvYm5OdmJpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMS0wNS0xMlQxNjoyNjoyNC4yNDdaIiwicHVyIjoiYmxvYl9rZXkifX0=--63109d22c4e5151fcb1eaee41a1c39f66857bc58/rashid-johnson.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22rashid-johnson.jpg%22%3B+filename%2A%3DUTF-8%27%27rashid-johnson.jpg" for ::1 at 2021-05-12 12:25:31 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"rashid-johnson.jpg\"; filename*=UTF-8''rashid-johnson.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRZbUZ2ZVV0amNqUkhWazVRWjFsNlkxVk5aVGd6TVVKSUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGljbUZ6YUdsa0xXcHZhRzV6YjI0dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR5WVhOb2FXUXRhbTlvYm5OdmJpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMS0wNS0xMlQxNjoyNjoyNC4yNDdaIiwicHVyIjoiYmxvYl9rZXkifX0=--63109d22c4e5151fcb1eaee41a1c39f66857bc58", "filename"=>"rashid-johnson"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+
+Errno::ENOENT - No such file or directory @ rb_file_s_mtime - /Users/sebastiansanchez/Desktop/AppAcademy/Full Stack Project/ARTSEE/storage/ba/oy/baoyKcr4GVNPgYzcUMe831BH:
+
+Started GET "/artworks/1" for ::1 at 2021-05-12 12:25:32 -0400
+Processing by ArtworksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtwork Load (0.5ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:4
+  Rendering artworks/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artwork"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/artworks/show.html.erb:2
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/artworks/show.html.erb:2
+  Rendered artworks/show.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 31ms (Views: 29.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRZbUZ2ZVV0amNqUkhWazVRWjFsNlkxVk5aVGd6TVVKSUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGljbUZ6YUdsa0xXcHZhRzV6YjI0dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR5WVhOb2FXUXRhbTlvYm5OdmJpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMS0wNS0xMlQxNjoyNjoyNC4yNDdaIiwicHVyIjoiYmxvYl9rZXkifX0=--63109d22c4e5151fcb1eaee41a1c39f66857bc58/rashid-johnson.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22rashid-johnson.jpg%22%3B+filename%2A%3DUTF-8%27%27rashid-johnson.jpg" for ::1 at 2021-05-12 12:25:32 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"rashid-johnson.jpg\"; filename*=UTF-8''rashid-johnson.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRZbUZ2ZVV0amNqUkhWazVRWjFsNlkxVk5aVGd6TVVKSUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGljbUZ6YUdsa0xXcHZhRzV6YjI0dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR5WVhOb2FXUXRhbTlvYm5OdmJpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMS0wNS0xMlQxNjoyNjoyNC4yNDdaIiwicHVyIjoiYmxvYl9rZXkifX0=--63109d22c4e5151fcb1eaee41a1c39f66857bc58", "filename"=>"rashid-johnson"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+
+Errno::ENOENT - No such file or directory @ rb_file_s_mtime - /Users/sebastiansanchez/Desktop/AppAcademy/Full Stack Project/ARTSEE/storage/ba/oy/baoyKcr4GVNPgYzcUMe831BH:
+
+Started GET "/artworks/1" for ::1 at 2021-05-12 12:25:32 -0400
+Processing by ArtworksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtwork Load (2.6ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:4
+  Rendering artworks/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artwork"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/artworks/show.html.erb:2
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/artworks/show.html.erb:2
+  Rendered artworks/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 29ms (Views: 23.7ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRZbUZ2ZVV0amNqUkhWazVRWjFsNlkxVk5aVGd6TVVKSUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGljbUZ6YUdsa0xXcHZhRzV6YjI0dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR5WVhOb2FXUXRhbTlvYm5OdmJpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMS0wNS0xMlQxNjoyNjoyNC4yNDdaIiwicHVyIjoiYmxvYl9rZXkifX0=--63109d22c4e5151fcb1eaee41a1c39f66857bc58/rashid-johnson.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22rashid-johnson.jpg%22%3B+filename%2A%3DUTF-8%27%27rashid-johnson.jpg" for ::1 at 2021-05-12 12:25:32 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"rashid-johnson.jpg\"; filename*=UTF-8''rashid-johnson.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRZbUZ2ZVV0amNqUkhWazVRWjFsNlkxVk5aVGd6TVVKSUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGljbUZ6YUdsa0xXcHZhRzV6YjI0dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR5WVhOb2FXUXRhbTlvYm5OdmJpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMS0wNS0xMlQxNjoyNjoyNC4yNDdaIiwicHVyIjoiYmxvYl9rZXkifX0=--63109d22c4e5151fcb1eaee41a1c39f66857bc58", "filename"=>"rashid-johnson"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+
+Errno::ENOENT - No such file or directory @ rb_file_s_mtime - /Users/sebastiansanchez/Desktop/AppAcademy/Full Stack Project/ARTSEE/storage/ba/oy/baoyKcr4GVNPgYzcUMe831BH:
+
+Started GET "/artworks/1" for ::1 at 2021-05-12 12:25:33 -0400
+Processing by ArtworksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtwork Load (0.7ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:4
+  Rendering artworks/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (3.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artwork"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/artworks/show.html.erb:2
+  [1m[36mActiveStorage::Blob Load (9.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/artworks/show.html.erb:2
+  Rendered artworks/show.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 40ms (Views: 25.3ms | ActiveRecord: 13.3ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRZbUZ2ZVV0amNqUkhWazVRWjFsNlkxVk5aVGd6TVVKSUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGljbUZ6YUdsa0xXcHZhRzV6YjI0dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR5WVhOb2FXUXRhbTlvYm5OdmJpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMS0wNS0xMlQxNjoyNjoyNC4yNDdaIiwicHVyIjoiYmxvYl9rZXkifX0=--63109d22c4e5151fcb1eaee41a1c39f66857bc58/rashid-johnson.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22rashid-johnson.jpg%22%3B+filename%2A%3DUTF-8%27%27rashid-johnson.jpg" for ::1 at 2021-05-12 12:25:33 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"rashid-johnson.jpg\"; filename*=UTF-8''rashid-johnson.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRZbUZ2ZVV0amNqUkhWazVRWjFsNlkxVk5aVGd6TVVKSUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGljbUZ6YUdsa0xXcHZhRzV6YjI0dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR5WVhOb2FXUXRhbTlvYm5OdmJpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMS0wNS0xMlQxNjoyNjoyNC4yNDdaIiwicHVyIjoiYmxvYl9rZXkifX0=--63109d22c4e5151fcb1eaee41a1c39f66857bc58", "filename"=>"rashid-johnson"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+
+Errno::ENOENT - No such file or directory @ rb_file_s_mtime - /Users/sebastiansanchez/Desktop/AppAcademy/Full Stack Project/ARTSEE/storage/ba/oy/baoyKcr4GVNPgYzcUMe831BH:
+
+Started GET "/artworks/1" for ::1 at 2021-05-12 12:25:33 -0400
+Processing by ArtworksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtwork Load (0.3ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:4
+  Rendering artworks/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artwork"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/artworks/show.html.erb:2
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/artworks/show.html.erb:2
+  Rendered artworks/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 23ms (Views: 21.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRZbUZ2ZVV0amNqUkhWazVRWjFsNlkxVk5aVGd6TVVKSUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGljbUZ6YUdsa0xXcHZhRzV6YjI0dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR5WVhOb2FXUXRhbTlvYm5OdmJpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMS0wNS0xMlQxNjoyNjoyNC4yNDdaIiwicHVyIjoiYmxvYl9rZXkifX0=--63109d22c4e5151fcb1eaee41a1c39f66857bc58/rashid-johnson.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22rashid-johnson.jpg%22%3B+filename%2A%3DUTF-8%27%27rashid-johnson.jpg" for ::1 at 2021-05-12 12:25:33 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"rashid-johnson.jpg\"; filename*=UTF-8''rashid-johnson.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRZbUZ2ZVV0amNqUkhWazVRWjFsNlkxVk5aVGd6TVVKSUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGljbUZ6YUdsa0xXcHZhRzV6YjI0dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR5WVhOb2FXUXRhbTlvYm5OdmJpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMS0wNS0xMlQxNjoyNjoyNC4yNDdaIiwicHVyIjoiYmxvYl9rZXkifX0=--63109d22c4e5151fcb1eaee41a1c39f66857bc58", "filename"=>"rashid-johnson"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+
+Errno::ENOENT - No such file or directory @ rb_file_s_mtime - /Users/sebastiansanchez/Desktop/AppAcademy/Full Stack Project/ARTSEE/storage/ba/oy/baoyKcr4GVNPgYzcUMe831BH:
+
+Started GET "/artworks/1" for ::1 at 2021-05-12 12:25:34 -0400
+Processing by ArtworksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtwork Load (0.7ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:4
+  Rendering artworks/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artwork"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/artworks/show.html.erb:2
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/artworks/show.html.erb:2
+  Rendered artworks/show.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 27ms (Views: 23.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRZbUZ2ZVV0amNqUkhWazVRWjFsNlkxVk5aVGd6TVVKSUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGljbUZ6YUdsa0xXcHZhRzV6YjI0dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR5WVhOb2FXUXRhbTlvYm5OdmJpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMS0wNS0xMlQxNjoyNjoyNC4yNDdaIiwicHVyIjoiYmxvYl9rZXkifX0=--63109d22c4e5151fcb1eaee41a1c39f66857bc58/rashid-johnson.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22rashid-johnson.jpg%22%3B+filename%2A%3DUTF-8%27%27rashid-johnson.jpg" for ::1 at 2021-05-12 12:25:34 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"rashid-johnson.jpg\"; filename*=UTF-8''rashid-johnson.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRZbUZ2ZVV0amNqUkhWazVRWjFsNlkxVk5aVGd6TVVKSUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGljbUZ6YUdsa0xXcHZhRzV6YjI0dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR5WVhOb2FXUXRhbTlvYm5OdmJpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMS0wNS0xMlQxNjoyNjoyNC4yNDdaIiwicHVyIjoiYmxvYl9rZXkifX0=--63109d22c4e5151fcb1eaee41a1c39f66857bc58", "filename"=>"rashid-johnson"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+
+Errno::ENOENT - No such file or directory @ rb_file_s_mtime - /Users/sebastiansanchez/Desktop/AppAcademy/Full Stack Project/ARTSEE/storage/ba/oy/baoyKcr4GVNPgYzcUMe831BH:
+
+Started GET "/artworks/1" for ::1 at 2021-05-12 13:03:01 -0400
+Processing by ArtworksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtwork Load (17.7ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:4
+  Rendering artworks/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (1.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artwork"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/artworks/show.html.erb:2
+  [1m[36mActiveStorage::Blob Load (5.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/artworks/show.html.erb:2
+  Rendered artworks/show.html.erb within layouts/application (86.8ms)
+Completed 200 OK in 410ms (Views: 328.0ms | ActiveRecord: 26.0ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4e6077e5fc9708c5b1555182fb015e289da6a6b2/rashid-johnson.jpg" for ::1 at 2021-05-12 13:03:03 -0400
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4e6077e5fc9708c5b1555182fb015e289da6a6b2", "filename"=>"rashid-johnson"}
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/sebastiansanchez/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (16.2ms) [0m[34mGenerated URL for file at key: baoyKcr4GVNPgYzcUMe831BH (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRZbUZ2ZVV0amNqUkhWazVRWjFsNlkxVk5aVGd6TVVKSUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGljbUZ6YUdsa0xXcHZhRzV6YjI0dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR5WVhOb2FXUXRhbTlvYm5OdmJpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMS0wNS0xMlQxNzowODowMy41ODVaIiwicHVyIjoiYmxvYl9rZXkifX0=--7dd5c4ba3f86c5ce8b7fbf83bace59f44dd6e16e/rashid-johnson.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22rashid-johnson.jpg%22%3B+filename%2A%3DUTF-8%27%27rashid-johnson.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRZbUZ2ZVV0amNqUkhWazVRWjFsNlkxVk5aVGd6TVVKSUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGljbUZ6YUdsa0xXcHZhRzV6YjI0dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR5WVhOb2FXUXRhbTlvYm5OdmJpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMS0wNS0xMlQxNzowODowMy41ODVaIiwicHVyIjoiYmxvYl9rZXkifX0=--7dd5c4ba3f86c5ce8b7fbf83bace59f44dd6e16e/rashid-johnson.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22rashid-johnson.jpg%22%3B+filename%2A%3DUTF-8%27%27rashid-johnson.jpg
+Completed 302 Found in 22ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRZbUZ2ZVV0amNqUkhWazVRWjFsNlkxVk5aVGd6TVVKSUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGljbUZ6YUdsa0xXcHZhRzV6YjI0dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR5WVhOb2FXUXRhbTlvYm5OdmJpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMS0wNS0xMlQxNzowODowMy41ODVaIiwicHVyIjoiYmxvYl9rZXkifX0=--7dd5c4ba3f86c5ce8b7fbf83bace59f44dd6e16e/rashid-johnson.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22rashid-johnson.jpg%22%3B+filename%2A%3DUTF-8%27%27rashid-johnson.jpg" for ::1 at 2021-05-12 13:03:03 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"rashid-johnson.jpg\"; filename*=UTF-8''rashid-johnson.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRZbUZ2ZVV0amNqUkhWazVRWjFsNlkxVk5aVGd6TVVKSUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGljbUZ6YUdsa0xXcHZhRzV6YjI0dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR5WVhOb2FXUXRhbTlvYm5OdmJpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMS0wNS0xMlQxNzowODowMy41ODVaIiwicHVyIjoiYmxvYl9rZXkifX0=--7dd5c4ba3f86c5ce8b7fbf83bace59f44dd6e16e", "filename"=>"rashid-johnson"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+
+Errno::ENOENT - No such file or directory @ rb_file_s_mtime - /Users/sebastiansanchez/Desktop/AppAcademy/Full Stack Project/ARTSEE/storage/ba/oy/baoyKcr4GVNPgYzcUMe831BH:
+
+Started GET "/api/artworks" for ::1 at 2021-05-12 13:04:21 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/artworks"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/artworks/1" for ::1 at 2021-05-12 13:04:32 -0400
+Processing by Api::ArtworksController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtwork Load (6.2ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artworks_controller.rb:4
+  Rendering api/artworks/show.json.jbuilder
+  Rendered api/artworks/show.json.jbuilder (1.2ms)
+Completed 200 OK in 149ms (Views: 7.8ms | ActiveRecord: 115.9ms)
+
+
+Started GET "/" for ::1 at 2021-05-12 13:06:49 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 72ms (Views: 68.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2021-05-12 13:07:04 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]", "name"=>""}}
+  [1m[36mUser Load (9.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:27
+  [1m[35m (1.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:47
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "test@gmail.com"], ["id", 11], ["LIMIT", 1]]
+  ↳ app/models/user.rb:47
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "LL6FXzeOsOSf3i9BbqoNNA"], ["id", 11], ["LIMIT", 1]]
+  ↳ app/models/user.rb:47
+  [1m[36mUser Update (40.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "LL6FXzeOsOSf3i9BbqoNNA"], ["updated_at", "2021-05-12 17:07:04.985231"], ["id", 11]]
+  ↳ app/models/user.rb:47
+  [1m[35m (39.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:47
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered api/users/show.json.jbuilder (2.0ms)
+Completed 200 OK in 537ms (Views: 10.9ms | ActiveRecord: 220.0ms)
+
+
+Started DELETE "/api/session" for ::1 at 2021-05-12 13:07:11 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "LL6FXzeOsOSf3i9BbqoNNA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (3.7ms)
+Completed 200 OK in 12ms (Views: 8.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/session" for ::1 at 2021-05-12 13:14:19 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]", "name"=>""}}
+  [1m[36mUser Load (6.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:27
+Completed 401 Unauthorized in 32ms (Views: 0.7ms | ActiveRecord: 7.5ms)
+
+
+Started POST "/api/users" for ::1 at 2021-05-12 13:14:46 -0400
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]", "name"=>""}}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[36mUser Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[36mUser Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "C_nJMNoF6_IQkfZ285WvEg"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[35m (6.7ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:7
+Completed 422 Unprocessable Entity in 305ms (Views: 0.5ms | ActiveRecord: 10.2ms)
+
+
+Started GET "/" for ::1 at 2021-05-12 13:16:02 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 40ms (Views: 37.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2021-05-12 13:16:06 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]", "name"=>""}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:27
+Completed 500 Internal Server Error in 86ms (ActiveRecord: 75.5ms)
+
+
+
+NoMethodError - undefined method `errors' for nil:NilClass:
+  app/controllers/api/sessions_controller.rb:14:in `create'
+
+Started POST "/api/session" for ::1 at 2021-05-12 13:16:08 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]", "name"=>""}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:27
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.6ms)
+
+
+
+NoMethodError - undefined method `errors' for nil:NilClass:
+  app/controllers/api/sessions_controller.rb:14:in `create'
+
+Started POST "/api/session" for ::1 at 2021-05-12 13:16:12 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]", "name"=>""}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:27
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.6ms)
+
+
+
+NoMethodError - undefined method `errors' for nil:NilClass:
+  app/controllers/api/sessions_controller.rb:14:in `create'
+
+Started POST "/api/session" for ::1 at 2021-05-12 13:16:13 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]", "name"=>""}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:27
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.8ms)
+
+
+
+NoMethodError - undefined method `errors' for nil:NilClass:
+  app/controllers/api/sessions_controller.rb:14:in `create'
+
+Started POST "/api/session" for ::1 at 2021-05-12 13:16:13 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]", "name"=>""}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:27
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.7ms)
+
+
+
+NoMethodError - undefined method `errors' for nil:NilClass:
+  app/controllers/api/sessions_controller.rb:14:in `create'
+
+Started POST "/api/session" for ::1 at 2021-05-12 13:16:13 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]", "name"=>""}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:27
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.5ms)
+
+
+
+NoMethodError - undefined method `errors' for nil:NilClass:
+  app/controllers/api/sessions_controller.rb:14:in `create'
+
+Started POST "/api/session" for ::1 at 2021-05-12 13:16:14 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]", "name"=>""}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:27
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.3ms)
+
+
+
+NoMethodError - undefined method `errors' for nil:NilClass:
+  app/controllers/api/sessions_controller.rb:14:in `create'
+
+Started POST "/api/session" for ::1 at 2021-05-12 13:16:14 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]", "name"=>""}}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:27
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 1.6ms)
+
+
+
+NoMethodError - undefined method `errors' for nil:NilClass:
+  app/controllers/api/sessions_controller.rb:14:in `create'
+
+Started GET "/" for ::1 at 2021-05-12 13:16:42 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 28ms (Views: 26.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2021-05-12 13:16:44 -0400
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]", "name"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "xftXlL_xG5TzqU2k0lS6zw"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[35m (2.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:7
+Completed 422 Unprocessable Entity in 391ms (Views: 0.3ms | ActiveRecord: 95.4ms)
+
+
+Started GET "/" for ::1 at 2021-05-12 13:17:12 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 80ms (Views: 76.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2021-05-12 13:17:14 -0400
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]", "name"=>""}}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NL8Q5NW6JhhyetS3EwsL3A"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:7
+Completed 422 Unprocessable Entity in 342ms (Views: 0.3ms | ActiveRecord: 46.4ms)
+
+
+Started GET "/" for ::1 at 2021-05-12 13:17:30 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 26ms (Views: 24.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-12 13:19:25 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (23.3ms)
+Completed 200 OK in 134ms (Views: 115.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-12 13:25:06 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 52ms (Views: 47.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-12 13:29:33 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (21.5ms)
+Completed 200 OK in 93ms (Views: 88.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-12 13:32:11 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 1031ms (Views: 1024.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/artworks" for ::1 at 2021-05-12 13:40:16 -0400
+Processing by Api::ArtworksController#index as JSON
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::MissingTemplate - Missing template api/artworks with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/sebastiansanchez/Desktop/AppAcademy/Full Stack Project/ARTSEE/app/views":
+  app/controllers/api/artworks_controller.rb:5:in `index'
+
+Started POST "/__better_errors/ba229a3e8da0777a/variables" for ::1 at 2021-05-12 13:40:17 -0400
+  [1m[36mArtwork Load (13.1ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/sebastiansanchez/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Started GET "/api/artworks" for ::1 at 2021-05-12 13:40:49 -0400
+Processing by Api::ArtworksController#index as JSON
+  Rendering api/artworks/index.json.jbuilder
+  [1m[36mArtwork Load (7.4ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/views/api/artworks/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (97.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artwork"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mActiveStorage::Blob Load (7.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ (byebug):1
+  Rendered api/artworks/index.json.jbuilder (40501.9ms)
+Completed 200 OK in 40515ms (Views: 39933.4ms | ActiveRecord: 576.6ms)
+
+
+Started GET "/" for ::1 at 2021-05-12 13:42:09 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 216ms (Views: 209.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2021-05-12 13:42:26 -0400
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]", "name"=>""}}
+  [1m[35m (2.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[36mUser Exists (54.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ckU7AExN6z01gTQQYL4rQg"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[35m (21.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:7
+Completed 422 Unprocessable Entity in 487ms (Views: 0.2ms | ActiveRecord: 164.3ms)
+
+

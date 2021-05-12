@@ -1,5 +1,10 @@
 class Api::ArtworksController < ApplicationController 
 
+  def index 
+    @artworks = Artwork.all
+    render :index
+  end 
+
  def show
     @artwork = Artwork.find(params[:id])
 

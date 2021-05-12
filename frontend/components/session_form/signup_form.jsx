@@ -48,7 +48,7 @@ class SignupForm extends React.Component {
                         <img className="modal-logo" src={window.header_logo} />
                         <br />
                         <label>
-                            <input type="text"
+                            <input type="email"
                                 placeholder="Enter your email"
                                 value={this.state.email}
                                 onChange={this.update('email')}

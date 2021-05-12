@@ -10,4 +10,6 @@ class Artwork < ApplicationRecord
     foreign_key: :medium_id,
     class_name: :Medium
 
+    has_one_attached :photo
+
 end 

@@ -6,8 +6,8 @@ Rails.application.routes.draw do
         resources :follows, only: [:index, :create, :destroy]
         resources :likes, only: [:index, :create, :destroy]
     end 
+    resources :artworks, only: [:index, :show]
     resources :artists, only: [:show]
-    resources :artworks, only: [:show]
     resources :galleries, only: [:show]
     resource :session, only: [:create, :destroy]
   end 
