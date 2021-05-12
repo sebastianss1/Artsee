@@ -7,6 +7,7 @@ class LoginForm extends React.Component {
       email: '',
       password: '',
       name: '',
+      errors: {}
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemo = this.handleDemo.bind(this);
@@ -21,13 +22,36 @@ class LoginForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const user = Object.assign({}, this.state);
-    this.props.processForm(user).then(this.props.closeModal)
+
+        if (this.handleValidation()) {
+            const user = Object.assign({}, this.state);
+            this.props.processForm(user).then(this.props.closeModal)
+        } 
   }
 
   handleDemo(e) {
     this.setState({ email: 'test@gmail.com', password: 'test123'})
   }
+
+  handleValidation() {
+    let errors = {};
+    let formIsValid = true;
+
+    if (!this.state["email"]) {
+      formIsValid = false;
+      errors["email"] = "Please enter a valid email.";
+    }
+
+    if (!this.state["password"]) {
+      formIsValid = false;
+      errors["password"] = "Password required.";
+    }
+
+
+    this.setState({ errors: errors });
+    return formIsValid;
+  }
+
 
 
   renderErrors() {
@@ -50,7 +74,6 @@ class LoginForm extends React.Component {
           <span onClick={this.props.closeModal} className="close-x"> X </span>
           <img className="modal-logo" src={window.header_logo} />
           <p className="modal-text">The art world online</p>
-          {this.renderErrors()}
           <div className="login-form">
             <br/>
               <input type="text"
@@ -59,7 +82,10 @@ class LoginForm extends React.Component {
                 onChange={this.update('email')}
                 className="login-input"
               />
-            <br/><br/>
+              
+            <br/>
+            <span style={{ color: "red" }}>{this.state.errors["email"]}</span>
+            <br/>
               <input type="password"
                 placeholder="Enter your password"
                 value={this.state.password}
@@ -67,6 +93,8 @@ class LoginForm extends React.Component {
                 className="login-input"
               />
             <br/>
+            <span style={{ color: "red" }}>{this.state.errors["password"]}</span>
+
             <br/>
             <input className="login-submit" type="submit" value={this.props.formType} /> <br /> <br />
             <button className="login-submit" onClick={this.handleDemo}>Continue as Demo User</button>

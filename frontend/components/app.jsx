@@ -15,8 +15,6 @@ const App = () => (
     </header>
     <Switch>
       <Route exact path="/" component={SplashContainer} />
-      <Route exact path="/login" component={LogInFormContainer} />
-      <Route exact path="/signup" component={SignUpFormContainer} />
       <Redirect to="/" />
     </Switch >
     </div>
