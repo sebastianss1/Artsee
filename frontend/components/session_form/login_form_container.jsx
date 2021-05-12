@@ -9,7 +9,7 @@ import { popUpModal, closeModal } from '../../actions/modal_actions';
 const mapStateToProps = ({ errors }) => {
     return {
         errors: errors.session,
-        formType: 'login',
+        formType: 'Login',
         navLink: <Link to="/signup">sign up</Link>,
     };
 };
@@ -20,7 +20,7 @@ const mapDispatchToProps = dispatch => {
         otherForm: (
             <span><button onClick={(e) => {
                 e.preventDefault();
-                dispatch(popUpModal('signup'))
+                dispatch(popUpModal('Sign up'))
             }
             }>Log in</button></span>
         ),

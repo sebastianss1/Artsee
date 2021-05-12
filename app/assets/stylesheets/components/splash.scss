@@ -1,0 +1,41 @@
+
+.hero {
+  font-family: "ll-unica77", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: center;
+  // position: relative;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  color:black;
+  position: absolute;
+  box-sizing: border-box;
+  height: 100%;
+
+}
+
+.banner-image {
+  display: flex;
+  width: 100vw;
+  // height: auto;
+  background: url(ugo-rondinone.jpeg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  vertical-align: baseline;
+}
+
+.titles {
+  position: relative;
+  align-items: center;
+}
+
+h1 {
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: 450;
+}
+
+h5 {
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: 400;
+}
+

@@ -7,11 +7,13 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script type="text/javascript" className='banner-image'> window.banner_image = "<%= image_url('ugo-rondinone.jpeg') %>"</script>
+    <script type="text/javascript" className='header-logo'> window.header_logo = "<%= image_url('logo/logo.png') %>"</script>
   </head>
 
   <body>
-    <div class="header-logo">
-        <%= image_tag("logo/logo.png", width: '100px') %> 
+
+    <div>
     </div>
     <%= yield %>
   </body>

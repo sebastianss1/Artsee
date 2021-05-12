@@ -45,29 +45,33 @@ class SignupForm extends React.Component {
 
                     {this.renderErrors()}
                     <div className="signup-form">
+                        <img className="modal-logo" src={window.header_logo} />
                         <br />
-                        <label>E-mail:
+                        <label>
                             <input type="text"
+                                placeholder="Enter your email"
                                 value={this.state.email}
                                 onChange={this.update('email')}
                                 className="login-input"
                             />
                         </label>
                         <br />
-                        <label>Password:
+                        <label>
                             <input type="password"
+                                placeholder="Enter your password"
                                 value={this.state.password}
                                 onChange={this.update('password')}
                                 className="login-input"
                             />
                         </label>
-                        <p className="password-detail">Password must be at least 8 characters.</p>
+                        <figcaption className="password-detail">Password must be at least 8 characters.</figcaption>
 
                         <br />
 
-                        <label>Name:
+                        <label>
                             <input type="text"
                                 value={this.state.name}
+                                placeholder="Enter your full name"
                                 onChange={this.update('name')}
                                 className="login-input"
                             />
@@ -76,7 +80,10 @@ class SignupForm extends React.Component {
                         </label>
                         <input type="submit" className="signup-submit" value={this.props.formType} /> <br/><br/>                    
                         </div>
-                </form>       
+                </form>    
+                <figcaption className="password-detail" >Sign up using Apple or Facebook. <br/>
+                Already have an account? Log in. <br /> <br /> <br /> <br /> <br />
+This site is protected by reCAPTCHA and the Google Privacy Policy Terms of Service apply.</figcaption>
                 </div>
         );
     }
