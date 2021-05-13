@@ -7,9 +7,8 @@ import { popUpModal, closeModal } from '../../actions/modal_actions';
 const mapStateToProps = (state) => {
 
     return ({
-        artworks: Object.values(state.entities.artworks),
-        currentUser: state.entities.users[state.session.id]
-    })
+        artworks: Object.values(state.entities.artworks)
+        })
 }
 
 

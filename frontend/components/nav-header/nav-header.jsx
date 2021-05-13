@@ -2,6 +2,7 @@ import React from 'react'
 import SearchContainer from './search/search_container'
 import { Link } from 'react-router-dom'
 import WelcomeContainer from './welcome/welcome_container'
+import Subheader from './subheader/subheader'
 
 class NavHeader extends React.Component {
     constructor(props) {
@@ -16,6 +17,10 @@ class NavHeader extends React.Component {
                     <SearchContainer />
                     <WelcomeContainer />
             </div>
+
+                <div className="subheader">
+                    <Subheader />
+                </div>
             </nav>
 
         )

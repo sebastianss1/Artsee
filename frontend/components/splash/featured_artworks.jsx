@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import FeaturedArtworkItem from './featured_artwork_item'
 
 
 
@@ -17,18 +17,11 @@ class FeaturedArtworks extends React.Component {
         const { artworks } = this.props;
 
         return (
-            <div>
-                <div className="feature-home">
-                    <div className="feature-text">
-                        <h1 className="shop-featured-artwork">VIEW ALL ARTWORKS</h1>
-                    </div>
-
-                </div>
                 <div className="splash-home">
                     <div className="splash-artwork">
                         {artworks.map(artwork => {
                             return (
-                                <FeaturedImageItem
+                                <FeaturedArtworkItem
                                     key={artwork.id}
                                     artwork={artwork}
                                     title={this.props.title}
@@ -37,7 +30,6 @@ class FeaturedArtworks extends React.Component {
                         })}
                     </div>
                 </div>
-            </div>
         );
     }
 }

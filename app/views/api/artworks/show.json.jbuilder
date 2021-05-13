@@ -1,13 +1,5 @@
-json.array! @artworks do 
-  json.extract! @artwork, :id, :title, :year, :artist_id, :description, :height_dimensions, :width-dimensions, :medium_id, :availability, :price
-end
+json.extract! @artwork  :id, :title, :year, :artist_id, :description, :height_dimensions, :width_dimensions, :medium_id, :availability, :price
+# json.photoUrl url_for(@artwork.photo)
 
-
-json.photo do 
-  @artwork.photo do 
-        json.extract! photo
-    end
-  end
-end
 
 

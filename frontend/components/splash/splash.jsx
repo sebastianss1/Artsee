@@ -22,8 +22,42 @@ class Splash extends React.Component {
                 </div>
             </div>
 
+            <div>
+                <h2>Works by Popular Artists</h2>
+                    <ul>
+                        <li>Rashid Johnson</li>
+                        <li>Cindy Sherman</li>
+                        <li>Robert Longo</li>
+                        <li>Lucia Hierro</li>
+                        <li>James Turell</li>
+                        <li>Donald Judd</li>
+                    </ul>
+            </div>
+
+                <div>
+                    <h2>Artists to Follow</h2>
+                    <ul>
+                        <li>Lucia Hierro</li>
+                        <li>Sadie Barnette</li>
+                        <li>Mark Yang</li>
+                        <li>Katie Stout</li>
+                        <li>The Haas Brothers</li>
+                        <li>William Brickel</li>
+                    </ul>
+                </div>
+
             <div className="feat-container">
-                    {/* <FeaturedArtworksContainer /> */}
+                    <FeaturedArtworksContainer />
+            </div>
+
+            <div className="featured-galleries">
+                <h2>Featured Galleries</h2>
+                <ul>
+                    <li>Charlie James Gallery</li>
+                    <li>R and Comapny</li>
+                    <li>Hauser and Wirth</li>
+                    <li>David Zwirner</li>
+                </ul>
             </div>
 
 
