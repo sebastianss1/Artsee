@@ -64,4 +64,74 @@ h5 {
     margin-bottom: 100px;
 }
 
+element.style {
+    position: absolute;
+    left: 0%;
+}
+.abrv-carousel .mgr-cell {
+    min-width: 140px;
+}
+.abrv-context.abrv-fillwidth-row {
+    width: 200px;
+    border-right: 1px solid #e5e5e5;
+    margin: 0 30px 20px 0;
+    padding-right: 30px;
+    height: 270px;
+    white-space: normal;
+}
 
+
+.title-popular-artists {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  // margin-bottom: 10px auto;
+}
+
+.artist-names-ul {
+  font-family: "Helvetica Neue", sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 1rem;
+}
+
+.popular-artist-names {
+  font-family: "Helvetica Neue", sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 1rem;
+}
+
+.title-artists-to-follow {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  // margin-bottom: 10px auto;
+}
+
+.artists-to-follow-names {
+  font-family: "Helvetica Neue", sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 1rem;
+}
+
+.title-featured-galleries {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.featured-galleries-names {
+  font-family: "Helvetica Neue", sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 1rem;
+}

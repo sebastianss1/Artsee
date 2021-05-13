@@ -22,27 +22,32 @@ class Splash extends React.Component {
                 </div>
             </div>
 
-            <div className="featured-artists">
-                <h2 className="title-featured-artists">Works by Popular Artists</h2>
-                    <ul>
-                        <li>Rashid Johnson</li>
-                        <li>Cindy Sherman</li>
-                        <li>Robert Longo</li>
-                        <li>James Turrell</li>
-                        <li>Donald Judd</li>
-                        <li>Judy Chicago</li>
+                <div className="title-popular-artists">
+                <h2>Works by Popular Artists</h2>
+                </div>
+                <div className="popular-artists">
+                    <ul className="popular-artist-names">
+                        Rashid Johnson
+                        <div>Cindy Sherman</div>
+                        <div>Robert Longo</div>
+                        <div>James Turrell</div>
+                        <div>Donald Judd</div>
+                        <div>Judy Chicago</div>
                     </ul>
-            </div>
+                </div>
 
-                <div className="featured-artists-2">
+                <br /><br /><br />
+                <div className="title-artists-to-follow">
                     <h2>Artists to Follow</h2>
-                    <ul>
-                        <li>Lucia Hierro</li>
-                        <li>Sadie Barnette</li>
-                        <li>Mark Yang</li>
-                        <li>Katie Stout</li>
-                        <li>The Haas Brothers</li>
-                        <li>William Brickel</li>
+                </div>
+                <div>
+                    <ul className="artists-to-follow-names">
+                        <div>Lucia Hierro</div>
+                        <div>Sadie Barnette</div>
+                        <div>Mark Yang</div>
+                        <div>Katie Stout</div>
+                        <div>The Haas Brothers</div>
+                        <div>Willam Brickel</div>
                     </ul>
                 </div>
 
@@ -50,13 +55,15 @@ class Splash extends React.Component {
                     <FeaturedArtworksContainer />
             </div>
 
-            <div className="featured-galleries">
-                <h2 className="title-featured-galleries">Featured Galleries</h2>
-                <ul>
-                    <li>Charlie James Gallery</li>
-                    <li>R and Comapny</li>
-                    <li>Hauser and Wirth</li>
-                    <li>David Zwirner</li>
+            <div className="title-featured-galleries">
+                <h2> Featured Galleries</h2>
+            </div>
+            <div >
+                 <ul className="featured-galleries-names">
+                    <div>Charlie James Gallery</div>
+                    <div>R and Comapny</div>
+                    <div>Hauser and Wirth</div>
+                    <div>David Zwirner</div>
                 </ul>
             </div>
 

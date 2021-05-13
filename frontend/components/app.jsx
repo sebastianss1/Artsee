@@ -4,7 +4,7 @@ import WelcomeContainer from './nav-header/welcome/welcome_container'
 import ModalContainer from './modal/modal-container'
 import NavHeader from './nav-header/nav-header'
 import SplashContainer from './splash/splash_container';
-import ArtworksContainer from './artworks/artwork_show_container'
+// import ArtworksContainer from './artworks/artwork_show_container'
 import ArtworkShowContainer from './artworks/artwork_show_container'
 
 const App = () => (
@@ -13,8 +13,12 @@ const App = () => (
      <header>
       <NavHeader />
     </header>
+    {/* <body>
+      <ArtworkShowContainer />
+    </body> */}
     <Switch>
-      <Route exact path="/artworks/:id" component={ArtworkShowContainer} />
+      <Route exact path="/artworks" component={ArtworkShowContainer} />
+      {/* <Route exact path="/artists" component={ArtistsContainer} /> */}
       <Route exact path="/" component={SplashContainer} />
       <Redirect to="/" />
     </Switch >

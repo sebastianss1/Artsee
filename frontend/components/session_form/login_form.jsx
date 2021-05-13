@@ -70,13 +70,14 @@ class LoginForm extends React.Component {
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-modal">
-          <br/>
+
           <span onClick={this.props.closeModal} className="close-x"> X </span>
           <img className="modal-logo" src={window.header_logo} />
           <p className="modal-text">The art world online</p>
           <div className="login-form">
-            <br/>
-              <input type="text"
+
+              <input 
+                type="email"
                 value={this.state.email}
                 placeholder="Enter your email"
                 onChange={this.update('email')}
@@ -84,20 +85,19 @@ class LoginForm extends React.Component {
               />
               
             <br/>
-            <span style={{ color: "red" }}>{this.state.errors["email"]}</span>
-            <br/>
+            <span className="error-style" style={{ color: "red" }}>{this.state.errors["email"]}</span>
+
               <input type="password"
                 placeholder="Enter your password"
                 value={this.state.password}
                 onChange={this.update('password')}
                 className="login-input"
               />
-            <br/>
-            <span style={{ color: "red" }}>{this.state.errors["password"]}</span>
-
-            <br/>
-            <input className="login-submit" type="submit" value={this.props.formType} /> <br /> <br />
-            <button className="login-submit" onClick={this.handleDemo}>Continue as Demo User</button>
+            <br />
+            <span className="error-style" style={{ color: "red" }}>{this.state.errors["password"]}</span>
+            <br /><br />
+            <input className="login-submit-form" type="submit" value={this.props.formType} /> 
+            <button className="login-submit-form" onClick={this.handleDemo}>Continue as Demo User</button>
           </div>
         </form>
         <br/>

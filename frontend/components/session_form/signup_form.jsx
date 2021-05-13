@@ -1,5 +1,5 @@
 import React from 'react';
-// import { popUpModal } from '../../actions/modal_actions'
+import { popUpModal } from '../../actions/modal_actions'
 
 
 
@@ -72,10 +72,9 @@ class SignupForm extends React.Component {
         return (
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit} className="login-form-modal">
-          <br />
                 <span onClick={this.props.closeModal} className="close-x"> X </span>
-
                     <img className="modal-logo" src={window.header_logo} />
+                    <div className="modal-text">The art world online</div>
                     <div className="signup-form">
                         <br />
                         <label>
@@ -85,10 +84,9 @@ class SignupForm extends React.Component {
                                 onChange={this.update('email')}
                                 className="login-input"
                                 />
-                                <br/>
-                            <span style={{ color: "red" }}>{this.state.errors["email"]}</span>
+                            <br />
+                            <span className="error-style" style={{ color: "red" }}>{this.state.errors["email"]}</span>
                         </label>
-                        <br />
                         <label>
                             <input type="password"
                                 placeholder="Enter your password"
@@ -96,11 +94,11 @@ class SignupForm extends React.Component {
                                 onChange={this.update('password')}
                                 className="login-input"
                                 />
-                            <span style={{ color: "red" }}>{this.state.errors["password"]}</span>
+                            <br />
+                            <span className="error-style"  style={{ color: "red" }}>{this.state.errors["password"]}</span>
                         </label>
+                        
                         <figcaption className="password-detail">Password must be at least 8 characters.</figcaption>
-
-                        <br />
 
                         <label>
                             <input type="text"
@@ -110,20 +108,16 @@ class SignupForm extends React.Component {
                                 className="login-input"
                                 />
                             <br />
-                            <span style={{ color: "red" }}>{this.state.errors["name"]}</span>
-
-                            <br />
-                            <br/>
+                            <span className="error-style"  style={{ color: "red" }}>{this.state.errors["name"]}</span>
                         </label>
+                        <br /><br />
                         {/* {this.renderErrors()} */}
-                        <input type="submit" className="signup-submit" value={this.props.formType} /> <br/><br/>                    
+                        <input type="submit" className="signup-submit-form" value={this.props.formType} /> <br/><br/>                    
                         </div>
                 </form>    
-                <figcaption className="password-detail" >Sign up using Apple or Facebook. <br/>
-                Already have an account? 
-                <a className="password-detail" href="#" onClick={() => this.props.popUpModal('Login')}>Login</a>
-                <br /> <br /> 
-                </figcaption>
+    
+                <div className="already-account-detail">Already have an account?
+                <a href="#" onClick={() => this.props.popUpModal('Login')}> Login</a> </div>
                 </div>
         );
     }
