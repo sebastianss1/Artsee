@@ -10,6 +10,6 @@ class SplashContainer extends Component {
             </div>
         )
     }
-}
+};
 
 export default SplashContainer;

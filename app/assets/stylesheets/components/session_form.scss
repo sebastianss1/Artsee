@@ -1,14 +1,13 @@
 .login-form-modal {
-    display: inline-block;
+    // display: block;
     padding: 10px 40px 40px;
     align-items: center;
 }
 .signup-form-modal {
-    display: inline-block;
+    // display: block;
     padding: 10px 40px 40px;
     align-items: center;
     position: relative;
-
 }
 
 
@@ -38,10 +37,10 @@
 
 .modal-logo {
     display: flex;
-    margin-top: 10px;
+    margin-top: 0px;
     left: 50%;
     width: 59px;
-    align-items: center;
+    // align-items: center;
 
 }
 

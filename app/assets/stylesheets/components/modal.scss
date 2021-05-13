@@ -6,7 +6,7 @@
   right: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.7);
-  z-index: 10;
+  z-index: 50;
 }
 
 .modal-child {
@@ -24,9 +24,10 @@
 }
 
  .close-x {
+   font-family: Arial, Helvetica, sans-serif;
    position: absolute;
-   top: 5px;
-   left: 5px;
+   top: 10px;
+   right: 10px;
    cursor: pointer;
  }
 
@@ -36,6 +37,8 @@
 
 
 .modal-text {
-    font-family: "ll-unica77", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Times New Roman", serif;
+    font-weight: bold;
+    font-size: 20px;
 }
  
