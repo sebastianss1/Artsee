@@ -6,7 +6,7 @@ class Artwork < ApplicationRecord
     foreign_key: :artist_id,
     class_name: :Artist
 
-    has_one :medium,
+    belongs_to :medium,
     foreign_key: :medium_id,
     class_name: :Medium
 

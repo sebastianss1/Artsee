@@ -53,6 +53,7 @@ transition: height 0.3s;
 
 .buy-button {
     margin-right: 30px;
+    margin-left: 30px;
     font-family: "Helvetica Neue", sans-serif;
 }
 
@@ -135,9 +136,9 @@ transition: height 0.3s;
     width: 75%;
     height: 40px;
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-content: normal;
+    // flex-direction: row;
+    // flex-wrap: nowrap;
+    align-content: left;
     justify-content: normal;
     align-items: center;
     // margin-bottom: 10px;
