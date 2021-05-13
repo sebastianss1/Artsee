@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Welcome = ({ currentUser, logout, popUpModal }) => {
     const sessionLinks = () => (
         <nav className="login-signup">
-            <button className="login-submit" onClick={() => popUpModal('login')}>Login</button> &nbsp; &nbsp;
+            <button className="login-submit-header" onClick={() => popUpModal('login')}>Login</button> &nbsp; &nbsp;
             <button className="signup-submit" onClick={() => popUpModal('signup')}>Sign Up</button>
         </nav>
     );

@@ -15,6 +15,11 @@ class NavHeader extends React.Component {
                 <div className="top-header">
                     <Link to="/"><img className="header-logo" src={window.header_logo} /></Link>
                     <SearchContainer />
+                    <div className="header-text">
+                        <p className="buy-button">Buy</p>
+                        <p className="sell-button">Sell</p>
+                    </div>
+
                     <WelcomeContainer />
             </div>
 

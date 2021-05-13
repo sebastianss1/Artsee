@@ -22,19 +22,19 @@ class Splash extends React.Component {
                 </div>
             </div>
 
-            <div>
-                <h2>Works by Popular Artists</h2>
+            <div className="featured-artists">
+                <h2 className="title-featured-artists">Works by Popular Artists</h2>
                     <ul>
                         <li>Rashid Johnson</li>
                         <li>Cindy Sherman</li>
                         <li>Robert Longo</li>
-                        <li>Lucia Hierro</li>
-                        <li>James Turell</li>
+                        <li>James Turrell</li>
                         <li>Donald Judd</li>
+                        <li>Judy Chicago</li>
                     </ul>
             </div>
 
-                <div>
+                <div className="featured-artists-2">
                     <h2>Artists to Follow</h2>
                     <ul>
                         <li>Lucia Hierro</li>
@@ -51,7 +51,7 @@ class Splash extends React.Component {
             </div>
 
             <div className="featured-galleries">
-                <h2>Featured Galleries</h2>
+                <h2 className="title-featured-galleries">Featured Galleries</h2>
                 <ul>
                     <li>Charlie James Gallery</li>
                     <li>R and Comapny</li>

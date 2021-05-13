@@ -1,5 +1,5 @@
 class Artist < ApplicationRecord 
-    validates :name, :birth_year, :death_year, :gallery_id, presence: true 
+    validates :name, :birth_year, :gallery_id, presence: true 
 
     has_many :artworks,
     foreign_key: :artist_id,

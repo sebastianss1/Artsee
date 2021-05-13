@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_12_142141) do
+ActiveRecord::Schema.define(version: 2021_05_13_155921) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,13 +39,12 @@ ActiveRecord::Schema.define(version: 2021_05_12_142141) do
   create_table "artists", force: :cascade do |t|
     t.string "name", null: false
     t.string "birth_year", null: false
-    t.string "death_year", null: false
     t.integer "gallery_id", null: false
     t.text "bio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "death_year"
     t.index ["birth_year"], name: "index_artists_on_birth_year"
-    t.index ["death_year"], name: "index_artists_on_death_year"
     t.index ["gallery_id"], name: "index_artists_on_gallery_id"
     t.index ["name"], name: "index_artists_on_name"
   end
@@ -59,19 +58,18 @@ ActiveRecord::Schema.define(version: 2021_05_12_142141) do
     t.float "width_dimensions", null: false
     t.integer "medium_id", null: false
     t.boolean "availability", null: false
-    t.integer "price", null: false
     t.text "about"
     t.string "condition"
     t.string "signature"
     t.boolean "certificate_of_authenticity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "price"
     t.index ["artist_id"], name: "index_artworks_on_artist_id"
     t.index ["availability"], name: "index_artworks_on_availability"
     t.index ["description"], name: "index_artworks_on_description"
     t.index ["height_dimensions"], name: "index_artworks_on_height_dimensions"
     t.index ["medium_id"], name: "index_artworks_on_medium_id"
-    t.index ["price"], name: "index_artworks_on_price"
     t.index ["title", "artist_id"], name: "index_artworks_on_title_and_artist_id", unique: true
     t.index ["title"], name: "index_artworks_on_title"
     t.index ["width_dimensions"], name: "index_artworks_on_width_dimensions"
