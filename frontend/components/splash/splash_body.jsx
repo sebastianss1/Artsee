@@ -42,7 +42,7 @@ class SplashBody extends React.Component {
                 </div>
 
             <div className="feat-container">
-                    <FeaturedArtworksContainer />
+                    {/* <FeaturedArtworksContainer /> */}
             </div>
 
             <div className="title-featured-galleries">

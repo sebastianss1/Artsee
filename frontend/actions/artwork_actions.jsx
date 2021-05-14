@@ -13,7 +13,7 @@ export const receiveArtwork = artwork => ({
     artwork
 })
 
-debugger
+
 export const fetchArtworks = (artworks) => dispatch => 
     APIUtil.fetchArtworks(artworks)
         .then(artworks => dispatch(receiveArtworks(artworks)))

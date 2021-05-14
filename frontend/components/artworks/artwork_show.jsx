@@ -5,9 +5,7 @@ class ArtworkShow extends React.Component {
 
 
     componentDidMount() {
-        this.props.fetchArtwork(this.props.match.params.artworkId)
-        window.scrollTo(0, 0);
-
+        this.props.fetchArtworks()
     }
 
 
@@ -15,19 +13,34 @@ class ArtworkShow extends React.Component {
         const { artwork } = this.props;
             return (
                 <div className="artwork-show">
-                        <h1> artwork goes here </h1>
+                        <h1> Featured Artworks </h1>
                     <div className="artwork-show-image">
                         {/* { image goes here /> */}
                     </div>
-                    <div className="artwork-show-text">
-                        <div> 
-                            <div className="artwork-show-title">{this.props.title}</div>
-                            <div className="artwork-show-description">{this.props.description}</div>
-                            <br />
-                            <br />
+                    <div className="artist-show">
+                        <div>
+                            {this.props.artworks.map(artwork => {
+                                return (
+                                    <div className="artist-index-container">
+                                        <h1>{artwork.title}</h1>
+                                        <li>Year: {artwork.year}</li>
+                                        <li>Artist
+                                    {artwork.artist_id}</li>
+                                        <li>Description
+                                    {artwork.description}</li>
+                                        <li>Dimensions: {artwork.height_dimensions} x {artwork.width_dimensions}</li>
+                                        <li>Medium: {artwork.medium_id}</li>
+                                        <li>Availability: {artwork.availability}</li>
+                                        <li>Price: {artwork.price}</li>
+                                    </div>
+
+                                )
+
+
+                            })}
                         </div>
                     </div>
-                    </div>
+                </div>
 
 
             );

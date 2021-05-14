@@ -1,9 +1,26 @@
+.artwork-show-container {
+    margin-left: 100px;
+    margin-top: 120px;
+    margin-right: 100px;
+}
+
 .artwork-show {
     color: black;
-    position: fixed;
-    margin: 100px;
+    position: relative;
+    margin-top: 100px;
     font-family: "Helvetica Neue", sans-serif;
     max-width: 1200px;
     display: grid;
     grid-gap: 1rem;
+}
+
+.artist-show-subheader {
+    color: black;
+    position: relative;
+    margin-top: 50px;
+    font-family: "Helvetica Neue", sans-serif;
+    max-width: 1200px;
+    display: grid;
+    grid-gap: 1rem;
+
 }

@@ -1,9 +1,9 @@
-export const fetchArtworks = () =>  { return (
+export const fetchArtworks = () =>  (
     $.ajax({
         method: 'GET',
         url: 'api/artworks'
     })
-)}
+)
 
 export const fetchArtwork = artworkId => (
     $.ajax({

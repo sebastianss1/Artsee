@@ -26,7 +26,6 @@ class LoginForm extends React.Component {
     e.preventDefault();
 
         if (this.handleValidation()) {
-          debugger
             const user = Object.assign({}, this.state);
             this.props.processForm(user).then(this.props.closeModal)
         } 
