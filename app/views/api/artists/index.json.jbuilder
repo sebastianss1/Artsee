@@ -1,3 +1,9 @@
 json.array! @artists do |artist|
-    json.extract! artist , :id, :name, :birth_year, :death_year, :bio
+    json.name artist.name 
+    json.birth_year artist.birth_year 
+    json.death_year artist.death_year 
+    json.bio artist.bio
+    json.gallery do 
+        json.name artist.gallery.name 
+    end 
 end

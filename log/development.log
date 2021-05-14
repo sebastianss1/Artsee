@@ -38949,3 +38949,735 @@ Processing by Api::ArtistsController#index as JSON
 Completed 200 OK in 36ms (Views: 11.6ms | ActiveRecord: 23.7ms)
 
 
+  [1m[36mArtwork Load (0.9ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" ORDER BY "artworks"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mArtist Load (6.5ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArtwork Load (4.3ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" ORDER BY "artworks"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mArtist Load (26.8ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE DATABASE "artsee_mod3_development" ENCODING = 'utf8'[0m
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE DATABASE "artsee_mod3_test" ENCODING = 'utf8'[0m
+  ↳ bin/rails:9
+  [1m[35m (5.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (7.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35mSQL (9.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (101.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (360.8ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (16.1ms)[0m  [1m[35mCREATE  INDEX  "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments"  ("blob_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_attachments_uniqueness" ON "active_storage_attachments"  ("record_type", "record_id", "name", "blob_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (27.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs" CASCADE[0m
+  ↳ db/schema.rb:28
+  [1m[35m (95.4ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "byte_size" bigint NOT NULL, "checksum" character varying NOT NULL, "created_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:28
+  [1m[35m (49.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_blobs_on_key" ON "active_storage_blobs"  ("key")[0m
+  ↳ db/schema.rb:28
+  [1m[35m (210.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "artists" CASCADE[0m
+  ↳ db/schema.rb:39
+  [1m[35m (32.1ms)[0m  [1m[35mCREATE TABLE "artists" ("id" bigserial primary key, "name" character varying NOT NULL, "birth_year" character varying NOT NULL, "gallery_id" integer NOT NULL, "bio" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "death_year" character varying)[0m
+  ↳ db/schema.rb:39
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE  INDEX  "index_artists_on_birth_year" ON "artists"  ("birth_year")[0m
+  ↳ db/schema.rb:39
+  [1m[35m (24.0ms)[0m  [1m[35mCREATE  INDEX  "index_artists_on_gallery_id" ON "artists"  ("gallery_id")[0m
+  ↳ db/schema.rb:39
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE  INDEX  "index_artists_on_name" ON "artists"  ("name")[0m
+  ↳ db/schema.rb:39
+  [1m[35m (80.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "artworks" CASCADE[0m
+  ↳ db/schema.rb:52
+  [1m[35m (17.1ms)[0m  [1m[35mCREATE TABLE "artworks" ("id" bigserial primary key, "title" character varying NOT NULL, "year" character varying NOT NULL, "artist_id" integer NOT NULL, "description" character varying NOT NULL, "height_dimensions" float NOT NULL, "width_dimensions" float NOT NULL, "medium_id" integer NOT NULL, "availability" boolean NOT NULL, "about" text, "condition" character varying, "signature" character varying, "certificate_of_authenticity" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "price" character varying)[0m
+  ↳ db/schema.rb:52
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE  INDEX  "index_artworks_on_artist_id" ON "artworks"  ("artist_id")[0m
+  ↳ db/schema.rb:52
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE  INDEX  "index_artworks_on_availability" ON "artworks"  ("availability")[0m
+  ↳ db/schema.rb:52
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_artworks_on_description" ON "artworks"  ("description")[0m
+  ↳ db/schema.rb:52
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX  "index_artworks_on_height_dimensions" ON "artworks"  ("height_dimensions")[0m
+  ↳ db/schema.rb:52
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE  INDEX  "index_artworks_on_medium_id" ON "artworks"  ("medium_id")[0m
+  ↳ db/schema.rb:52
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_artworks_on_title_and_artist_id" ON "artworks"  ("title", "artist_id")[0m
+  ↳ db/schema.rb:52
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE  INDEX  "index_artworks_on_title" ON "artworks"  ("title")[0m
+  ↳ db/schema.rb:52
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX  "index_artworks_on_width_dimensions" ON "artworks"  ("width_dimensions")[0m
+  ↳ db/schema.rb:52
+  [1m[35m (17.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "follows" CASCADE[0m
+  ↳ db/schema.rb:78
+  [1m[35m (30.6ms)[0m  [1m[35mCREATE TABLE "follows" ("id" bigserial primary key, "follower_id" integer NOT NULL, "followable_type" character varying, "followable_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:78
+  [1m[35m (9.3ms)[0m  [1m[35mCREATE  INDEX  "index_follows_on_followable_type_and_followable_id" ON "follows"  ("followable_type", "followable_id")[0m
+  ↳ db/schema.rb:78
+  [1m[35m (15.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "galleries" CASCADE[0m
+  ↳ db/schema.rb:87
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE TABLE "galleries" ("id" bigserial primary key, "name" character varying NOT NULL, "location" character varying NOT NULL, "about" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:87
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE  INDEX  "index_galleries_on_location" ON "galleries"  ("location")[0m
+  ↳ db/schema.rb:87
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_galleries_on_name" ON "galleries"  ("name")[0m
+  ↳ db/schema.rb:87
+  [1m[35m (26.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "likes" CASCADE[0m
+  ↳ db/schema.rb:97
+  [1m[35m (28.7ms)[0m  [1m[35mCREATE TABLE "likes" ("id" bigserial primary key, "liker_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:97
+  [1m[35m (18.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_likes_on_liker_id" ON "likes"  ("liker_id")[0m
+  ↳ db/schema.rb:97
+  [1m[35m (4.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "mediums" CASCADE[0m
+  ↳ db/schema.rb:104
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE TABLE "mediums" ("id" bigserial primary key, "name" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:104
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE  INDEX  "index_mediums_on_name" ON "mediums"  ("name")[0m
+  ↳ db/schema.rb:104
+  [1m[35m (11.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:111
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "name" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "reason_for_using" character varying)[0m
+  ↳ db/schema.rb:111
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/schema.rb:111
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_name" ON "users"  ("name")[0m
+  ↳ db/schema.rb:111
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/schema.rb:111
+  [1m[35m (11.9ms)[0m  [1m[35mALTER TABLE "active_storage_attachments" ADD CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  ↳ db/schema.rb:124
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (1.7ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (33.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (449.7ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE  INDEX  "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments"  ("blob_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (13.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_attachments_uniqueness" ON "active_storage_attachments"  ("record_type", "record_id", "name", "blob_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (144.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs" CASCADE[0m
+  ↳ db/schema.rb:28
+  [1m[35m (13.7ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "byte_size" bigint NOT NULL, "checksum" character varying NOT NULL, "created_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:28
+  [1m[35m (24.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_blobs_on_key" ON "active_storage_blobs"  ("key")[0m
+  ↳ db/schema.rb:28
+  [1m[35m (7.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "artists" CASCADE[0m
+  ↳ db/schema.rb:39
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "artists" ("id" bigserial primary key, "name" character varying NOT NULL, "birth_year" character varying NOT NULL, "gallery_id" integer NOT NULL, "bio" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "death_year" character varying)[0m
+  ↳ db/schema.rb:39
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE  INDEX  "index_artists_on_birth_year" ON "artists"  ("birth_year")[0m
+  ↳ db/schema.rb:39
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE  INDEX  "index_artists_on_gallery_id" ON "artists"  ("gallery_id")[0m
+  ↳ db/schema.rb:39
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX  "index_artists_on_name" ON "artists"  ("name")[0m
+  ↳ db/schema.rb:39
+  [1m[35m (25.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "artworks" CASCADE[0m
+  ↳ db/schema.rb:52
+  [1m[35m (9.6ms)[0m  [1m[35mCREATE TABLE "artworks" ("id" bigserial primary key, "title" character varying NOT NULL, "year" character varying NOT NULL, "artist_id" integer NOT NULL, "description" character varying NOT NULL, "height_dimensions" float NOT NULL, "width_dimensions" float NOT NULL, "medium_id" integer NOT NULL, "availability" boolean NOT NULL, "about" text, "condition" character varying, "signature" character varying, "certificate_of_authenticity" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "price" character varying)[0m
+  ↳ db/schema.rb:52
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_artworks_on_artist_id" ON "artworks"  ("artist_id")[0m
+  ↳ db/schema.rb:52
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX  "index_artworks_on_availability" ON "artworks"  ("availability")[0m
+  ↳ db/schema.rb:52
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE  INDEX  "index_artworks_on_description" ON "artworks"  ("description")[0m
+  ↳ db/schema.rb:52
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE  INDEX  "index_artworks_on_height_dimensions" ON "artworks"  ("height_dimensions")[0m
+  ↳ db/schema.rb:52
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX  "index_artworks_on_medium_id" ON "artworks"  ("medium_id")[0m
+  ↳ db/schema.rb:52
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_artworks_on_title_and_artist_id" ON "artworks"  ("title", "artist_id")[0m
+  ↳ db/schema.rb:52
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE  INDEX  "index_artworks_on_title" ON "artworks"  ("title")[0m
+  ↳ db/schema.rb:52
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX  "index_artworks_on_width_dimensions" ON "artworks"  ("width_dimensions")[0m
+  ↳ db/schema.rb:52
+  [1m[35m (1.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "follows" CASCADE[0m
+  ↳ db/schema.rb:78
+  [1m[35m (61.7ms)[0m  [1m[35mCREATE TABLE "follows" ("id" bigserial primary key, "follower_id" integer NOT NULL, "followable_type" character varying, "followable_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:78
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE  INDEX  "index_follows_on_followable_type_and_followable_id" ON "follows"  ("followable_type", "followable_id")[0m
+  ↳ db/schema.rb:78
+  [1m[35m (17.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "galleries" CASCADE[0m
+  ↳ db/schema.rb:87
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "galleries" ("id" bigserial primary key, "name" character varying NOT NULL, "location" character varying NOT NULL, "about" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:87
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE  INDEX  "index_galleries_on_location" ON "galleries"  ("location")[0m
+  ↳ db/schema.rb:87
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_galleries_on_name" ON "galleries"  ("name")[0m
+  ↳ db/schema.rb:87
+  [1m[35m (27.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "likes" CASCADE[0m
+  ↳ db/schema.rb:97
+  [1m[35m (74.8ms)[0m  [1m[35mCREATE TABLE "likes" ("id" bigserial primary key, "liker_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:97
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_likes_on_liker_id" ON "likes"  ("liker_id")[0m
+  ↳ db/schema.rb:97
+  [1m[35m (6.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "mediums" CASCADE[0m
+  ↳ db/schema.rb:104
+  [1m[35m (57.5ms)[0m  [1m[35mCREATE TABLE "mediums" ("id" bigserial primary key, "name" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:104
+  [1m[35m (29.0ms)[0m  [1m[35mCREATE  INDEX  "index_mediums_on_name" ON "mediums"  ("name")[0m
+  ↳ db/schema.rb:104
+  [1m[35m (6.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:111
+  [1m[35m (58.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "name" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "reason_for_using" character varying)[0m
+  ↳ db/schema.rb:111
+  [1m[35m (57.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/schema.rb:111
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_name" ON "users"  ("name")[0m
+  ↳ db/schema.rb:111
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/schema.rb:111
+  [1m[35m (55.3ms)[0m  [1m[35mALTER TABLE "active_storage_attachments" ADD CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  ↳ db/schema.rb:124
+  [1m[35m (26.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Update (167.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "development"], ["updated_at", "2021-05-14 20:56:44.127562"], ["key", "environment"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2021-05-14 20:56:44.302156"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:10
+  [1m[36mArtist Load (17.6ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ db/seeds.rb:11
+  [1m[36mArtwork Load (47.5ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ db/seeds.rb:12
+  [1m[36mGallery Load (1.4ms)[0m  [1m[34mSELECT "galleries".* FROM "galleries"[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "7ph-kC-hTljzb3F1D1xXOA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mUser Create (114.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "name", "password_digest", "session_token", "created_at", "updated_at", "reason_for_using") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "test@gmail.com"], ["name", "Demo User"], ["password_digest", "$2a$12$Q2YPZ6oHUxcQ6kJcPUGyjuzgEl8HdkZ8GR6iFAxoUYYHchUkT93wO"], ["session_token", "7ph-kC-hTljzb3F1D1xXOA"], ["created_at", "2021-05-14 20:56:44.949458"], ["updated_at", "2021-05-14 20:56:44.949458"], ["reason_for_using", "learn about art"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mGallery Create (70.5ms)[0m  [1m[32mINSERT INTO "galleries" ("name", "location", "about", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Hauser & Wirth"], ["location", "New York, Los Angeles, London"], ["about", "The gallery represents over 80 artists and estates who have been instrumental in shaping its identity over the past quarter century, and who are the inspiration for Hauser & Wirth’s diverse range of activities that engage with art, education, conservation and sustainability."], ["created_at", "2021-05-14 20:56:45.076829"], ["updated_at", "2021-05-14 20:56:45.076829"]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mGallery Create (0.7ms)[0m  [1m[32mINSERT INTO "galleries" ("name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Metro Pictures"], ["location", "New York"], ["created_at", "2021-05-14 20:56:45.148800"], ["updated_at", "2021-05-14 20:56:45.148800"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mGallery Create (0.4ms)[0m  [1m[32mINSERT INTO "galleries" ("name", "location", "about", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Pace Gallery"], ["location", "New York, London, Hong Kong"], ["about", "Pace is a leading international art gallery representing some of the most influential contemporary artists and estates from the past century, holding decades-long relationships with Alexander Calder, Jean Dubuffet, Barbara Hepworth, Agnes Martin, Louise Nevelson, and Mark Rothko."], ["created_at", "2021-05-14 20:56:45.150664"], ["updated_at", "2021-05-14 20:56:45.150664"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mGallery Create (0.3ms)[0m  [1m[32mINSERT INTO "galleries" ("name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "David Zwirner"], ["location", "New York, London, Paris, Hong Kong"], ["created_at", "2021-05-14 20:56:45.152273"], ["updated_at", "2021-05-14 20:56:45.152273"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:23
+  [1m[36mGallery Create (0.3ms)[0m  [1m[32mINSERT INTO "galleries" ("name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Salon 94"], ["location", "New York"], ["created_at", "2021-05-14 20:56:45.153496"], ["updated_at", "2021-05-14 20:56:45.153496"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:24
+  [1m[36mGallery Create (0.6ms)[0m  [1m[32mINSERT INTO "galleries" ("name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Charlie James Gallery"], ["location", "Los Angeles"], ["created_at", "2021-05-14 20:56:45.155005"], ["updated_at", "2021-05-14 20:56:45.155005"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:25
+  [1m[36mGallery Create (0.8ms)[0m  [1m[32mINSERT INTO "galleries" ("name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "R & Company"], ["location", "New York"], ["created_at", "2021-05-14 20:56:45.156634"], ["updated_at", "2021-05-14 20:56:45.156634"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mGallery Create (0.5ms)[0m  [1m[32mINSERT INTO "galleries" ("name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Steve Turner Gallery"], ["location", "Los Angeles"], ["created_at", "2021-05-14 20:56:45.158365"], ["updated_at", "2021-05-14 20:56:45.158365"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mGallery Create (0.4ms)[0m  [1m[32mINSERT INTO "galleries" ("name", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Kohn Gallery"], ["location", "Los Angeles"], ["created_at", "2021-05-14 20:56:45.160061"], ["updated_at", "2021-05-14 20:56:45.160061"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (33.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mGallery Load (24.3ms)[0m  [1m[34mSELECT  "galleries".* FROM "galleries" WHERE "galleries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:30
+  [1m[36mArtist Create (1.1ms)[0m  [1m[32mINSERT INTO "artists" ("name", "birth_year", "gallery_id", "bio", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Rashid Johnson"], ["birth_year", "1977"], ["gallery_id", 1], ["bio", "Rashid Johnson (born 1977) is an American artist who produces conceptual post-black art."], ["created_at", "2021-05-14 20:56:45.253979"], ["updated_at", "2021-05-14 20:56:45.253979"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (32.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mGallery Load (0.4ms)[0m  [1m[34mSELECT  "galleries".* FROM "galleries" WHERE "galleries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mArtist Create (18.1ms)[0m  [1m[32mINSERT INTO "artists" ("name", "birth_year", "gallery_id", "bio", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Cindy Sherman"], ["birth_year", "1954"], ["gallery_id", 2], ["bio", "Cindy (born January 19, 1954) is an American artist whose work consists primarily of photographic self-portraits, depicting herself in many different contexts and as various imagined characters."], ["created_at", "2021-05-14 20:56:45.290097"], ["updated_at", "2021-05-14 20:56:45.290097"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:32
+  [1m[36mGallery Load (0.5ms)[0m  [1m[34mSELECT  "galleries".* FROM "galleries" WHERE "galleries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:32
+  [1m[36mArtist Create (22.2ms)[0m  [1m[32mINSERT INTO "artists" ("name", "birth_year", "gallery_id", "bio", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Robert Longo"], ["birth_year", "1953"], ["gallery_id", 2], ["bio", "Robert Longo is a Pictures Generation American artist, filmmaker, photographer and musician. Longo became first well known in the 1980s for his Men in the Cities drawing and print series, which depict sharply dressed men and women writhing in contorted emotion"], ["created_at", "2021-05-14 20:56:45.310686"], ["updated_at", "2021-05-14 20:56:45.310686"]]
+  ↳ db/seeds.rb:32
+  [1m[35m (7.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:32
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:33
+  [1m[36mGallery Load (0.4ms)[0m  [1m[34mSELECT  "galleries".* FROM "galleries" WHERE "galleries"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:33
+  [1m[36mArtist Create (0.5ms)[0m  [1m[32mINSERT INTO "artists" ("name", "birth_year", "gallery_id", "bio", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "James Turrell"], ["birth_year", "1943"], ["gallery_id", 3], ["bio", "James Turrell (born May 6, 1943) is an American artist known for his work within the Light and Space movement."], ["created_at", "2021-05-14 20:56:45.342658"], ["updated_at", "2021-05-14 20:56:45.342658"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:34
+  [1m[36mGallery Load (0.4ms)[0m  [1m[34mSELECT  "galleries".* FROM "galleries" WHERE "galleries"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:34
+  [1m[36mArtist Create (0.4ms)[0m  [1m[32mINSERT INTO "artists" ("name", "birth_year", "gallery_id", "bio", "created_at", "updated_at", "death_year") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Donald Judd"], ["birth_year", "1928"], ["gallery_id", 4], ["bio", "Donald Clarence Judd was an American artist associated with minimalism. In his work, Judd sought autonomy and clarity for the constructed object and the space created by it, ultimately achieving a rigorously democratic presentation without compositional hierarchy."], ["created_at", "2021-05-14 20:56:45.345026"], ["updated_at", "2021-05-14 20:56:45.345026"], ["death_year", "1994"]]
+  ↳ db/seeds.rb:34
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:34
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mGallery Load (0.3ms)[0m  [1m[34mSELECT  "galleries".* FROM "galleries" WHERE "galleries"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mArtist Create (2.1ms)[0m  [1m[32mINSERT INTO "artists" ("name", "birth_year", "gallery_id", "bio", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Judy Chicago"], ["birth_year", "1939"], ["gallery_id", 5], ["bio", "Judy Chicago is an American feminist artist, art educator, and writer known for her large collaborative art installation pieces about birth and creation images, which examine the role of women in history and culture."], ["created_at", "2021-05-14 20:56:45.347203"], ["updated_at", "2021-05-14 20:56:45.347203"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:36
+  [1m[36mGallery Load (0.2ms)[0m  [1m[34mSELECT  "galleries".* FROM "galleries" WHERE "galleries"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:36
+  [1m[36mArtist Create (0.7ms)[0m  [1m[32mINSERT INTO "artists" ("name", "birth_year", "gallery_id", "bio", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Lucia Hierro"], ["birth_year", "1987"], ["gallery_id", 6], ["bio", "Lucia Hierro (b. 1987) is a Dominican American conceptual artist born and raised in New York City, Washington Heights/Inwood, and currently based in the South Bronx. Lucia’s practice, which includes sculpture, digital media and installation, confronts twenty-first century capitalism through an intersectional lens."], ["created_at", "2021-05-14 20:56:45.354860"], ["updated_at", "2021-05-14 20:56:45.354860"]]
+  ↳ db/seeds.rb:36
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:36
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:37
+  [1m[36mGallery Load (0.2ms)[0m  [1m[34mSELECT  "galleries".* FROM "galleries" WHERE "galleries"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mArtist Create (0.5ms)[0m  [1m[32mINSERT INTO "artists" ("name", "birth_year", "gallery_id", "bio", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Sadie Barnette"], ["birth_year", "1984"], ["gallery_id", 6], ["bio", "Sadie Barnette is an American artist who works primarily with drawing, photography, and large-scale installation. Her work explores black life, personal histories, and the political through material explorations. She currently lives and works in Oakland, California."], ["created_at", "2021-05-14 20:56:45.357591"], ["updated_at", "2021-05-14 20:56:45.357591"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:38
+  [1m[36mGallery Load (0.3ms)[0m  [1m[34mSELECT  "galleries".* FROM "galleries" WHERE "galleries"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:38
+  [1m[36mArtist Create (0.5ms)[0m  [1m[32mINSERT INTO "artists" ("name", "birth_year", "gallery_id", "bio", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Katie Stout"], ["birth_year", "1989"], ["gallery_id", 7], ["bio", "Brooklyn based designer Katie Stout (b. 1989) describes her work as “naïve pop,” a caricaturization of furniture as it is traditionally understood and of the motifs of suburban domestic life.  She utilizes a diverse range of media and often unexpected techniques. Her expansive body of work includes lighting, seating, shelving, mirrors, carpets and curtains."], ["created_at", "2021-05-14 20:56:45.360729"], ["updated_at", "2021-05-14 20:56:45.360729"]]
+  ↳ db/seeds.rb:38
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:39
+  [1m[36mGallery Load (0.2ms)[0m  [1m[34mSELECT  "galleries".* FROM "galleries" WHERE "galleries"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:39
+  [1m[36mArtist Create (0.4ms)[0m  [1m[32mINSERT INTO "artists" ("name", "birth_year", "gallery_id", "bio", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "The Haas Brothers"], ["birth_year", "1984"], ["gallery_id", 7], ["bio", "The Haas Brothers are American artists, noted for their sculptural works that blur the line between art and design. They currently work in Los Angeles, California"], ["created_at", "2021-05-14 20:56:45.363195"], ["updated_at", "2021-05-14 20:56:45.363195"]]
+  ↳ db/seeds.rb:39
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:40
+  [1m[36mGallery Load (0.2ms)[0m  [1m[34mSELECT  "galleries".* FROM "galleries" WHERE "galleries"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:40
+  [1m[36mArtist Create (1.0ms)[0m  [1m[32mINSERT INTO "artists" ("name", "birth_year", "gallery_id", "bio", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Mark Yang"], ["birth_year", "1994"], ["gallery_id", 8], ["bio", "Mark Yang creates paintings that incorporate formal concerns relating to color, line and composition while addressing his identity as an immigrant, a Korean-American and a man. In general, his works depict nude Asian men wrestling. In depicting nude male bodies in close proximity–wrestling, grappling and contorting–Yang aims to convey an aspect of male intimacy that is more common in Korean culture than in American culture."], ["created_at", "2021-05-14 20:56:45.365499"], ["updated_at", "2021-05-14 20:56:45.365499"]]
+  ↳ db/seeds.rb:40
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:40
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:41
+  [1m[36mGallery Load (0.6ms)[0m  [1m[34mSELECT  "galleries".* FROM "galleries" WHERE "galleries"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:41
+  [1m[36mArtist Create (0.8ms)[0m  [1m[32mINSERT INTO "artists" ("name", "birth_year", "gallery_id", "bio", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "William Brickel"], ["birth_year", "1994"], ["gallery_id", 9], ["bio", "William Brickel’s paintings explore how memories of past experiences become embellished through the act of recollection. His domestic compositions depict figures folded and intertwined, as if obeying a harmonic ideal. The characters, however, seem curiously detached, distracted eyes indicating they are enveloped not by each other but by their own thoughts."], ["created_at", "2021-05-14 20:56:45.370769"], ["updated_at", "2021-05-14 20:56:45.370769"]]
+  ↳ db/seeds.rb:41
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:41
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:50
+  [1m[36mMedium Create (26.7ms)[0m  [1m[32mINSERT INTO "mediums" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Painting"], ["created_at", "2021-05-14 20:56:45.391146"], ["updated_at", "2021-05-14 20:56:45.391146"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:50
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:51
+  [1m[36mMedium Create (0.5ms)[0m  [1m[32mINSERT INTO "mediums" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Mixed"], ["created_at", "2021-05-14 20:56:45.419283"], ["updated_at", "2021-05-14 20:56:45.419283"]]
+  ↳ db/seeds.rb:51
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:52
+  [1m[36mMedium Create (0.2ms)[0m  [1m[32mINSERT INTO "mediums" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Drawing"], ["created_at", "2021-05-14 20:56:45.420595"], ["updated_at", "2021-05-14 20:56:45.420595"]]
+  ↳ db/seeds.rb:52
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:52
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:53
+  [1m[36mMedium Create (0.7ms)[0m  [1m[32mINSERT INTO "mediums" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Print"], ["created_at", "2021-05-14 20:56:45.422376"], ["updated_at", "2021-05-14 20:56:45.422376"]]
+  ↳ db/seeds.rb:53
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:53
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:54
+  [1m[36mMedium Create (0.5ms)[0m  [1m[32mINSERT INTO "mediums" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Ceramic"], ["created_at", "2021-05-14 20:56:45.424520"], ["updated_at", "2021-05-14 20:56:45.424520"]]
+  ↳ db/seeds.rb:54
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:54
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:55
+  [1m[36mMedium Create (0.3ms)[0m  [1m[32mINSERT INTO "mediums" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Photograph"], ["created_at", "2021-05-14 20:56:45.425832"], ["updated_at", "2021-05-14 20:56:45.425832"]]
+  ↳ db/seeds.rb:55
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:55
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:56
+  [1m[36mMedium Create (0.4ms)[0m  [1m[32mINSERT INTO "mediums" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Installation"], ["created_at", "2021-05-14 20:56:45.426893"], ["updated_at", "2021-05-14 20:56:45.426893"]]
+  ↳ db/seeds.rb:56
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:56
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:57
+  [1m[36mMedium Create (0.5ms)[0m  [1m[32mINSERT INTO "mediums" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sculpture"], ["created_at", "2021-05-14 20:56:45.428434"], ["updated_at", "2021-05-14 20:56:45.428434"]]
+  ↳ db/seeds.rb:57
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:57
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:61
+  [1m[36mArtwork Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."title" = $1 AND "artworks"."artist_id" = $2 LIMIT $3[0m  [["title", "Untitled Anxious Red Drawing"], ["artist_id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:61
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:61
+  [1m[36mMedium Load (0.4ms)[0m  [1m[34mSELECT  "mediums".* FROM "mediums" WHERE "mediums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:61
+  [1m[36mArtwork Create (26.7ms)[0m  [1m[32mINSERT INTO "artworks" ("title", "year", "artist_id", "description", "height_dimensions", "width_dimensions", "medium_id", "availability", "condition", "signature", "certificate_of_authenticity", "created_at", "updated_at", "price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["title", "Untitled Anxious Red Drawing"], ["year", "2020"], ["artist_id", 1], ["description", "oil on cotton rag"], ["height_dimensions", 38.25], ["width_dimensions", 50.0], ["medium_id", 1], ["availability", true], ["condition", "New"], ["signature", "Signed on the reverse"], ["certificate_of_authenticity", true], ["created_at", "2021-05-14 20:56:45.451288"], ["updated_at", "2021-05-14 20:56:45.451288"], ["price", "$200,000"]]
+  ↳ db/seeds.rb:61
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:62
+  [1m[36mArtwork Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."title" = $1 AND "artworks"."artist_id" = $2 LIMIT $3[0m  [["title", "Untitled Anxious Audience"], ["artist_id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:62
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:62
+  [1m[36mMedium Load (0.2ms)[0m  [1m[34mSELECT  "mediums".* FROM "mediums" WHERE "mediums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:62
+  [1m[36mArtwork Create (0.6ms)[0m  [1m[32mINSERT INTO "artworks" ("title", "year", "artist_id", "description", "height_dimensions", "width_dimensions", "medium_id", "availability", "condition", "signature", "certificate_of_authenticity", "created_at", "updated_at", "price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["title", "Untitled Anxious Audience"], ["year", "2017"], ["artist_id", 1], ["description", "White ceramic tiles, black soap and wax"], ["height_dimensions", 73.0], ["width_dimensions", 94.6], ["medium_id", 2], ["availability", true], ["condition", "New"], ["signature", "N/A"], ["certificate_of_authenticity", true], ["created_at", "2021-05-14 20:56:45.482272"], ["updated_at", "2021-05-14 20:56:45.482272"], ["price", "Sold"]]
+  ↳ db/seeds.rb:62
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:62
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:63
+  [1m[36mArtwork Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."title" = $1 AND "artworks"."artist_id" = $2 LIMIT $3[0m  [["title", "Untitled Film Still #21"], ["artist_id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:63
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:63
+  [1m[36mMedium Load (0.3ms)[0m  [1m[34mSELECT  "mediums".* FROM "mediums" WHERE "mediums"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:63
+  [1m[36mArtwork Create (0.7ms)[0m  [1m[32mINSERT INTO "artworks" ("title", "year", "artist_id", "description", "height_dimensions", "width_dimensions", "medium_id", "availability", "condition", "signature", "certificate_of_authenticity", "created_at", "updated_at", "price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["title", "Untitled Film Still #21"], ["year", "1977"], ["artist_id", 2], ["description", "Gelatin Silver Print"], ["height_dimensions", 8.0], ["width_dimensions", 10.0], ["medium_id", 6], ["availability", true], ["condition", "New"], ["signature", "N/A"], ["certificate_of_authenticity", true], ["created_at", "2021-05-14 20:56:45.486084"], ["updated_at", "2021-05-14 20:56:45.486084"], ["price", "Sold"]]
+  ↳ db/seeds.rb:63
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:63
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:64
+  [1m[36mArtwork Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."title" = $1 AND "artworks"."artist_id" = $2 LIMIT $3[0m  [["title", "Untitled Marilyn"], ["artist_id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:64
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:64
+  [1m[36mMedium Load (0.2ms)[0m  [1m[34mSELECT  "mediums".* FROM "mediums" WHERE "mediums"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:64
+  [1m[36mArtwork Create (0.5ms)[0m  [1m[32mINSERT INTO "artworks" ("title", "year", "artist_id", "description", "height_dimensions", "width_dimensions", "medium_id", "availability", "condition", "signature", "certificate_of_authenticity", "created_at", "updated_at", "price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["title", "Untitled Marilyn"], ["year", "1982"], ["artist_id", 2], ["description", "Chromogenic color print"], ["height_dimensions", 15.5], ["width_dimensions", 9.0], ["medium_id", 6], ["availability", true], ["condition", "New"], ["signature", "N/A"], ["certificate_of_authenticity", true], ["created_at", "2021-05-14 20:56:45.489785"], ["updated_at", "2021-05-14 20:56:45.489785"], ["price", "Sold"]]
+  ↳ db/seeds.rb:64
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:64
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:65
+  [1m[36mArtwork Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."title" = $1 AND "artworks"."artist_id" = $2 LIMIT $3[0m  [["title", "Untitled, from the Series 'Men in the Cities'"], ["artist_id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:65
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:65
+  [1m[36mMedium Load (0.2ms)[0m  [1m[34mSELECT  "mediums".* FROM "mediums" WHERE "mediums"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:65
+  [1m[36mArtwork Create (0.5ms)[0m  [1m[32mINSERT INTO "artworks" ("title", "year", "artist_id", "description", "height_dimensions", "width_dimensions", "medium_id", "availability", "condition", "signature", "certificate_of_authenticity", "created_at", "updated_at", "price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["title", "Untitled, from the Series 'Men in the Cities'"], ["year", "1980"], ["artist_id", 3], ["description", "Charcoal and Graphite on Paper"], ["height_dimensions", 96.0], ["width_dimensions", 60.0], ["medium_id", 3], ["availability", true], ["condition", "New"], ["signature", "N/A"], ["certificate_of_authenticity", true], ["created_at", "2021-05-14 20:56:45.493004"], ["updated_at", "2021-05-14 20:56:45.493004"], ["price", "$300,000"]]
+  ↳ db/seeds.rb:65
+  [1m[35m (23.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:65
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:66
+  [1m[36mArtwork Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."title" = $1 AND "artworks"."artist_id" = $2 LIMIT $3[0m  [["title", "Untitled (Cindy), from the Series 'Men in the Cities'"], ["artist_id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:66
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:66
+  [1m[36mMedium Load (0.2ms)[0m  [1m[34mSELECT  "mediums".* FROM "mediums" WHERE "mediums"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:66
+  [1m[36mArtwork Create (0.7ms)[0m  [1m[32mINSERT INTO "artworks" ("title", "year", "artist_id", "description", "height_dimensions", "width_dimensions", "medium_id", "availability", "condition", "signature", "certificate_of_authenticity", "created_at", "updated_at", "price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["title", "Untitled (Cindy), from the Series 'Men in the Cities'"], ["year", "1981"], ["artist_id", 3], ["description", "Charcoal and Graphite on Paper"], ["height_dimensions", 96.0], ["width_dimensions", 48.0], ["medium_id", 3], ["availability", true], ["condition", "Excellent"], ["signature", "N/A"], ["certificate_of_authenticity", true], ["created_at", "2021-05-14 20:56:45.520702"], ["updated_at", "2021-05-14 20:56:45.520702"], ["price", "Sold"]]
+  ↳ db/seeds.rb:66
+  [1m[35m (18.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:66
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:67
+  [1m[36mArtwork Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."title" = $1 AND "artworks"."artist_id" = $2 LIMIT $3[0m  [["title", "Medium Glass Circle"], ["artist_id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mMedium Load (0.2ms)[0m  [1m[34mSELECT  "mediums".* FROM "mediums" WHERE "mediums"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mArtwork Create (0.7ms)[0m  [1m[32mINSERT INTO "artworks" ("title", "year", "artist_id", "description", "height_dimensions", "width_dimensions", "medium_id", "availability", "condition", "signature", "certificate_of_authenticity", "created_at", "updated_at", "price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["title", "Medium Glass Circle"], ["year", "2017"], ["artist_id", 4], ["description", "L.E.D. light, etched glass and shallow space"], ["height_dimensions", 56.0], ["width_dimensions", 56.0], ["medium_id", 7], ["availability", true], ["condition", "New"], ["signature", "N/A"], ["certificate_of_authenticity", true], ["created_at", "2021-05-14 20:56:45.545110"], ["updated_at", "2021-05-14 20:56:45.545110"], ["price", "Sold"]]
+  ↳ db/seeds.rb:67
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:67
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:68
+  [1m[36mArtwork Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."title" = $1 AND "artworks"."artist_id" = $2 LIMIT $3[0m  [["title", "Raethro Green"], ["artist_id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[36mMedium Load (0.2ms)[0m  [1m[34mSELECT  "mediums".* FROM "mediums" WHERE "mediums"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[36mArtwork Create (0.7ms)[0m  [1m[32mINSERT INTO "artworks" ("title", "year", "artist_id", "description", "height_dimensions", "width_dimensions", "medium_id", "availability", "condition", "signature", "certificate_of_authenticity", "created_at", "updated_at", "price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["title", "Raethro Green"], ["year", "1968"], ["artist_id", 4], ["description", "MRI wire projector; room size- variable"], ["height_dimensions", 40.0], ["width_dimensions", 40.0], ["medium_id", 7], ["availability", true], ["condition", "Good"], ["signature", "N/A"], ["certificate_of_authenticity", true], ["created_at", "2021-05-14 20:56:45.551404"], ["updated_at", "2021-05-14 20:56:45.551404"], ["price", "Sold"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:69
+  [1m[36mArtwork Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."title" = $1 AND "artworks"."artist_id" = $2 LIMIT $3[0m  [["title", "Untitled, 1967"], ["artist_id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:69
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:69
+  [1m[36mMedium Load (0.2ms)[0m  [1m[34mSELECT  "mediums".* FROM "mediums" WHERE "mediums"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:69
+  [1m[36mArtwork Create (1.1ms)[0m  [1m[32mINSERT INTO "artworks" ("title", "year", "artist_id", "description", "height_dimensions", "width_dimensions", "medium_id", "availability", "condition", "signature", "certificate_of_authenticity", "created_at", "updated_at", "price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["title", "Untitled, 1967"], ["year", "1967"], ["artist_id", 5], ["description", "Lacquer on galvanized iron"], ["height_dimensions", 81.0], ["width_dimensions", 40.0], ["medium_id", 8], ["availability", true], ["condition", "Good"], ["signature", "N/A"], ["certificate_of_authenticity", true], ["created_at", "2021-05-14 20:56:45.556759"], ["updated_at", "2021-05-14 20:56:45.556759"], ["price", "Not For Sale"]]
+  ↳ db/seeds.rb:69
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:69
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:70
+  [1m[36mArtwork Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."title" = $1 AND "artworks"."artist_id" = $2 LIMIT $3[0m  [["title", "Untitled, 1973"], ["artist_id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:70
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:70
+  [1m[36mMedium Load (0.2ms)[0m  [1m[34mSELECT  "mediums".* FROM "mediums" WHERE "mediums"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:70
+  [1m[36mArtwork Create (1.2ms)[0m  [1m[32mINSERT INTO "artworks" ("title", "year", "artist_id", "description", "height_dimensions", "width_dimensions", "medium_id", "availability", "condition", "signature", "certificate_of_authenticity", "created_at", "updated_at", "price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["title", "Untitled, 1973"], ["year", "1973"], ["artist_id", 5], ["description", "Brass and Blue Plexiglas"], ["height_dimensions", 33.0], ["width_dimensions", 68.0], ["medium_id", 8], ["availability", true], ["condition", "Excellent"], ["signature", "N/A"], ["certificate_of_authenticity", true], ["created_at", "2021-05-14 20:56:45.563540"], ["updated_at", "2021-05-14 20:56:45.563540"], ["price", "Not For Sale"]]
+  ↳ db/seeds.rb:70
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:70
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:71
+  [1m[36mArtwork Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."title" = $1 AND "artworks"."artist_id" = $2 LIMIT $3[0m  [["title", "Purple Atmosphere, 1969, Santa Barbara, CA"], ["artist_id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:71
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:71
+  [1m[36mMedium Load (0.2ms)[0m  [1m[34mSELECT  "mediums".* FROM "mediums" WHERE "mediums"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:71
+  [1m[36mArtwork Create (0.8ms)[0m  [1m[32mINSERT INTO "artworks" ("title", "year", "artist_id", "description", "height_dimensions", "width_dimensions", "medium_id", "availability", "condition", "signature", "certificate_of_authenticity", "created_at", "updated_at", "price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["title", "Purple Atmosphere, 1969, Santa Barbara, CA"], ["year", "2018"], ["artist_id", 6], ["description", "Archival pigment print on paper"], ["height_dimensions", 30.0], ["width_dimensions", 40.0], ["medium_id", 4], ["availability", true], ["condition", "New"], ["signature", "N/A"], ["certificate_of_authenticity", true], ["created_at", "2021-05-14 20:56:45.570842"], ["updated_at", "2021-05-14 20:56:45.570842"], ["price", "$40,000"]]
+  ↳ db/seeds.rb:71
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:71
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:72
+  [1m[36mArtwork Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."title" = $1 AND "artworks"."artist_id" = $2 LIMIT $3[0m  [["title", "The Dinner Party"], ["artist_id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:72
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:72
+  [1m[36mMedium Load (0.1ms)[0m  [1m[34mSELECT  "mediums".* FROM "mediums" WHERE "mediums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:72
+  [1m[36mArtwork Create (0.8ms)[0m  [1m[32mINSERT INTO "artworks" ("title", "year", "artist_id", "description", "height_dimensions", "width_dimensions", "medium_id", "availability", "condition", "signature", "certificate_of_authenticity", "created_at", "updated_at", "price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["title", "The Dinner Party"], ["year", "1974"], ["artist_id", 6], ["description", "Ceramic, porcelain, textile"], ["height_dimensions", 576.0], ["width_dimensions", 576.0], ["medium_id", 2], ["availability", true], ["condition", "New"], ["signature", "N/A"], ["certificate_of_authenticity", true], ["created_at", "2021-05-14 20:56:45.576732"], ["updated_at", "2021-05-14 20:56:45.576732"], ["price", "Not for Sale"]]
+  ↳ db/seeds.rb:72
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:72
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:73
+  [1m[36mArtwork Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."title" = $1 AND "artworks"."artist_id" = $2 LIMIT $3[0m  [["title", "Portrait of Casey as a Young Man"], ["artist_id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:73
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:73
+  [1m[36mMedium Load (0.2ms)[0m  [1m[34mSELECT  "mediums".* FROM "mediums" WHERE "mediums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:73
+  [1m[36mArtwork Create (0.8ms)[0m  [1m[32mINSERT INTO "artworks" ("title", "year", "artist_id", "description", "height_dimensions", "width_dimensions", "medium_id", "availability", "condition", "signature", "certificate_of_authenticity", "created_at", "updated_at", "price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["title", "Portrait of Casey as a Young Man"], ["year", "2020"], ["artist_id", 7], ["description", "felt, foam,  Digital print on brushed suede"], ["height_dimensions", 22.0], ["width_dimensions", 22.0], ["medium_id", 2], ["availability", true], ["condition", "New"], ["signature", "N/A"], ["certificate_of_authenticity", true], ["created_at", "2021-05-14 20:56:45.581598"], ["updated_at", "2021-05-14 20:56:45.581598"], ["price", "Not for Sale"]]
+  ↳ db/seeds.rb:73
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:73
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:74
+  [1m[36mArtwork Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."title" = $1 AND "artworks"."artist_id" = $2 LIMIT $3[0m  [["title", "De Todo Un Poco"], ["artist_id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:74
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:74
+  [1m[36mMedium Load (0.1ms)[0m  [1m[34mSELECT  "mediums".* FROM "mediums" WHERE "mediums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:74
+  [1m[36mArtwork Create (0.7ms)[0m  [1m[32mINSERT INTO "artworks" ("title", "year", "artist_id", "description", "height_dimensions", "width_dimensions", "medium_id", "availability", "condition", "signature", "certificate_of_authenticity", "created_at", "updated_at", "price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["title", "De Todo Un Poco"], ["year", "2017"], ["artist_id", 7], ["description", "PolyOrganza, felt, digital print on brushed nylon"], ["height_dimensions", 67.0], ["width_dimensions", 60.0], ["medium_id", 2], ["availability", true], ["condition", "New"], ["signature", "N/A"], ["certificate_of_authenticity", true], ["created_at", "2021-05-14 20:56:45.586663"], ["updated_at", "2021-05-14 20:56:45.586663"], ["price", "Not for Sale"]]
+  ↳ db/seeds.rb:74
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:74
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:75
+  [1m[36mArtwork Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."title" = $1 AND "artworks"."artist_id" = $2 LIMIT $3[0m  [["title", "Observation"], ["artist_id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:75
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:75
+  [1m[36mMedium Load (0.1ms)[0m  [1m[34mSELECT  "mediums".* FROM "mediums" WHERE "mediums"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:75
+  [1m[36mArtwork Create (0.8ms)[0m  [1m[32mINSERT INTO "artworks" ("title", "year", "artist_id", "description", "height_dimensions", "width_dimensions", "medium_id", "availability", "condition", "signature", "certificate_of_authenticity", "created_at", "updated_at", "price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["title", "Observation"], ["year", "2017"], ["artist_id", 8], ["description", "Archival pigment print"], ["height_dimensions", 24.0], ["width_dimensions", 18.0], ["medium_id", 4], ["availability", true], ["condition", "New"], ["signature", "N/A"], ["certificate_of_authenticity", true], ["created_at", "2021-05-14 20:56:45.590800"], ["updated_at", "2021-05-14 20:56:45.590800"], ["price", "Not for Sale"]]
+  ↳ db/seeds.rb:75
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:75
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:76
+  [1m[36mArtwork Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."title" = $1 AND "artworks"."artist_id" = $2 LIMIT $3[0m  [["title", "Untitled (Black 1968)"], ["artist_id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:76
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:76
+  [1m[36mMedium Load (0.1ms)[0m  [1m[34mSELECT  "mediums".* FROM "mediums" WHERE "mediums"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:76
+  [1m[36mArtwork Create (0.7ms)[0m  [1m[32mINSERT INTO "artworks" ("title", "year", "artist_id", "description", "height_dimensions", "width_dimensions", "medium_id", "availability", "condition", "signature", "certificate_of_authenticity", "created_at", "updated_at", "price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["title", "Untitled (Black 1968)"], ["year", "2017"], ["artist_id", 8], ["description", "Pencil on Paper"], ["height_dimensions", 38.0], ["width_dimensions", 50.0], ["medium_id", 3], ["availability", true], ["condition", "New"], ["signature", "N/A"], ["certificate_of_authenticity", true], ["created_at", "2021-05-14 20:56:45.595943"], ["updated_at", "2021-05-14 20:56:45.595943"], ["price", "$25,000"]]
+  ↳ db/seeds.rb:76
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:76
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:77
+  [1m[36mArtwork Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."title" = $1 AND "artworks"."artist_id" = $2 LIMIT $3[0m  [["title", "USA"], ["artist_id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:77
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:77
+  [1m[36mMedium Load (0.2ms)[0m  [1m[34mSELECT  "mediums".* FROM "mediums" WHERE "mediums"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:77
+  [1m[36mArtwork Create (2.5ms)[0m  [1m[32mINSERT INTO "artworks" ("title", "year", "artist_id", "description", "height_dimensions", "width_dimensions", "medium_id", "availability", "condition", "signature", "certificate_of_authenticity", "created_at", "updated_at", "price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["title", "USA"], ["year", "2019"], ["artist_id", 9], ["description", "Unique vase in hand-painted and glazed Augarten porcelain with gold leaf details"], ["height_dimensions", 24.0], ["width_dimensions", 12.0], ["medium_id", 5], ["availability", true], ["condition", "New"], ["signature", "N/A"], ["certificate_of_authenticity", true], ["created_at", "2021-05-14 20:56:45.602169"], ["updated_at", "2021-05-14 20:56:45.602169"], ["price", "Not for Sale"]]
+  ↳ db/seeds.rb:77
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:77
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:78
+  [1m[36mArtwork Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."title" = $1 AND "artworks"."artist_id" = $2 LIMIT $3[0m  [["title", "Horse Lady Lamp"], ["artist_id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[36mMedium Load (0.1ms)[0m  [1m[34mSELECT  "mediums".* FROM "mediums" WHERE "mediums"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[36mArtwork Create (0.6ms)[0m  [1m[32mINSERT INTO "artworks" ("title", "year", "artist_id", "description", "height_dimensions", "width_dimensions", "medium_id", "availability", "condition", "signature", "certificate_of_authenticity", "created_at", "updated_at", "price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["title", "Horse Lady Lamp"], ["year", "2020"], ["artist_id", 9], ["description", "Ceramic, paint, glaze, and gold luster"], ["height_dimensions", 24.0], ["width_dimensions", 12.0], ["medium_id", 5], ["availability", true], ["condition", "New"], ["signature", "N/A"], ["certificate_of_authenticity", true], ["created_at", "2021-05-14 20:56:45.609193"], ["updated_at", "2021-05-14 20:56:45.609193"], ["price", "$20,000"]]
+  ↳ db/seeds.rb:78
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:79
+  [1m[36mArtwork Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."title" = $1 AND "artworks"."artist_id" = $2 LIMIT $3[0m  [["title", "Jorge Bowl"], ["artist_id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:79
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:79
+  [1m[36mMedium Load (0.2ms)[0m  [1m[34mSELECT  "mediums".* FROM "mediums" WHERE "mediums"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:79
+  [1m[36mArtwork Create (0.5ms)[0m  [1m[32mINSERT INTO "artworks" ("title", "year", "artist_id", "description", "height_dimensions", "width_dimensions", "medium_id", "availability", "condition", "signature", "certificate_of_authenticity", "created_at", "updated_at", "price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["title", "Jorge Bowl"], ["year", "2020"], ["artist_id", 9], ["description", "Unique 'Jorge' bowl in cast bronze"], ["height_dimensions", 1.25], ["width_dimensions", 4.75], ["medium_id", 8], ["availability", true], ["condition", "New"], ["signature", "N/A"], ["certificate_of_authenticity", true], ["created_at", "2021-05-14 20:56:45.612878"], ["updated_at", "2021-05-14 20:56:45.612878"], ["price", "Not for Sale"]]
+  ↳ db/seeds.rb:79
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:79
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:80
+  [1m[36mArtwork Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."title" = $1 AND "artworks"."artist_id" = $2 LIMIT $3[0m  [["title", "Wet Willy"], ["artist_id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:80
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:80
+  [1m[36mMedium Load (0.1ms)[0m  [1m[34mSELECT  "mediums".* FROM "mediums" WHERE "mediums"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:80
+  [1m[36mArtwork Create (0.5ms)[0m  [1m[32mINSERT INTO "artworks" ("title", "year", "artist_id", "description", "height_dimensions", "width_dimensions", "medium_id", "availability", "condition", "signature", "certificate_of_authenticity", "created_at", "updated_at", "price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["title", "Wet Willy"], ["year", "2019"], ["artist_id", 9], ["description", "Sheepskin, cast bronze, hand-carved ebony"], ["height_dimensions", 10.5], ["width_dimensions", 10.0], ["medium_id", 8], ["availability", true], ["condition", "New"], ["signature", "N/A"], ["certificate_of_authenticity", true], ["created_at", "2021-05-14 20:56:45.616470"], ["updated_at", "2021-05-14 20:56:45.616470"], ["price", "Not for Sale"]]
+  ↳ db/seeds.rb:80
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:80
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:81
+  [1m[36mArtwork Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."title" = $1 AND "artworks"."artist_id" = $2 LIMIT $3[0m  [["title", "Waist Roll"], ["artist_id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:81
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:81
+  [1m[36mMedium Load (0.1ms)[0m  [1m[34mSELECT  "mediums".* FROM "mediums" WHERE "mediums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:81
+  [1m[36mArtwork Create (24.6ms)[0m  [1m[32mINSERT INTO "artworks" ("title", "year", "artist_id", "description", "height_dimensions", "width_dimensions", "medium_id", "availability", "condition", "signature", "certificate_of_authenticity", "created_at", "updated_at", "price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["title", "Waist Roll"], ["year", "2020"], ["artist_id", 10], ["description", "Oil on Canvas"], ["height_dimensions", 20.25], ["width_dimensions", 18.5], ["medium_id", 1], ["availability", true], ["condition", "New"], ["signature", "N/A"], ["certificate_of_authenticity", true], ["created_at", "2021-05-14 20:56:45.619764"], ["updated_at", "2021-05-14 20:56:45.619764"], ["price", "Not for Sale"]]
+  ↳ db/seeds.rb:81
+  [1m[35m (16.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:81
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:82
+  [1m[36mArtwork Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."title" = $1 AND "artworks"."artist_id" = $2 LIMIT $3[0m  [["title", "Untitled, 2021"], ["artist_id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:82
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:82
+  [1m[36mMedium Load (0.2ms)[0m  [1m[34mSELECT  "mediums".* FROM "mediums" WHERE "mediums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:82
+  [1m[36mArtwork Create (2.0ms)[0m  [1m[32mINSERT INTO "artworks" ("title", "year", "artist_id", "description", "height_dimensions", "width_dimensions", "medium_id", "availability", "condition", "signature", "certificate_of_authenticity", "created_at", "updated_at", "price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["title", "Untitled, 2021"], ["year", "2021"], ["artist_id", 10], ["description", "Oil on canvas"], ["height_dimensions", 62.5], ["width_dimensions", 77.5], ["medium_id", 1], ["availability", true], ["condition", "New"], ["signature", "N/A"], ["certificate_of_authenticity", true], ["created_at", "2021-05-14 20:56:45.666779"], ["updated_at", "2021-05-14 20:56:45.666779"], ["price", "10,000"]]
+  ↳ db/seeds.rb:82
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:82
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:83
+  [1m[36mArtwork Exists (2.2ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."title" = $1 AND "artworks"."artist_id" = $2 LIMIT $3[0m  [["title", "Can We Stop Now"], ["artist_id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:83
+  [1m[36mArtist Load (0.7ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:83
+  [1m[36mMedium Load (0.2ms)[0m  [1m[34mSELECT  "mediums".* FROM "mediums" WHERE "mediums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:83
+  [1m[36mArtwork Create (0.7ms)[0m  [1m[32mINSERT INTO "artworks" ("title", "year", "artist_id", "description", "height_dimensions", "width_dimensions", "medium_id", "availability", "condition", "signature", "certificate_of_authenticity", "created_at", "updated_at", "price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["title", "Can We Stop Now"], ["year", "2020"], ["artist_id", 11], ["description", "Watercolour on cotton paper"], ["height_dimensions", 61.0], ["width_dimensions", 48.0], ["medium_id", 1], ["availability", true], ["condition", "New"], ["signature", "N/A"], ["certificate_of_authenticity", true], ["created_at", "2021-05-14 20:56:45.675502"], ["updated_at", "2021-05-14 20:56:45.675502"], ["price", "12,000"]]
+  ↳ db/seeds.rb:83
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:83
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:84
+  [1m[36mArtwork Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."title" = $1 AND "artworks"."artist_id" = $2 LIMIT $3[0m  [["title", "Man Lying Down"], ["artist_id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:84
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:84
+  [1m[36mMedium Load (0.1ms)[0m  [1m[34mSELECT  "mediums".* FROM "mediums" WHERE "mediums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:84
+  [1m[36mArtwork Create (0.7ms)[0m  [1m[32mINSERT INTO "artworks" ("title", "year", "artist_id", "description", "height_dimensions", "width_dimensions", "medium_id", "availability", "condition", "signature", "certificate_of_authenticity", "created_at", "updated_at", "price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["title", "Man Lying Down"], ["year", "2019"], ["artist_id", 11], ["description", "Watercolour on paper"], ["height_dimensions", 55.0], ["width_dimensions", 60.0], ["medium_id", 1], ["availability", true], ["condition", "New"], ["signature", "N/A"], ["certificate_of_authenticity", true], ["created_at", "2021-05-14 20:56:45.679938"], ["updated_at", "2021-05-14 20:56:45.679938"], ["price", "Not for Sale"]]
+  ↳ db/seeds.rb:84
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:84

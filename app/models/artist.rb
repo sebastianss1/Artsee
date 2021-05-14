@@ -6,7 +6,7 @@ class Artist < ApplicationRecord
     class_name: :Artwork, 
     dependent: :destroy
 
-    has_many :galleries,
+    belongs_to :gallery,
     foreign_key: :gallery_id,
     class_name: :Gallery
 

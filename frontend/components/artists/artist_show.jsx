@@ -21,10 +21,14 @@ class ArtistShow extends React.Component {
                             <div>
                                 <h2 className="artist-show-subheader">{artist.name}</h2>
                                     <ul>
-                                    Birth Year:<br /> {artist.birth_year}<br /><br />
-                                    Death Year: <br />{artist.death_year}<br /><br />
-                                    Bio: <br /> {artist.bio}
+                                        Birth Year:<br /> {artist.birth_year}<br /><br />
+                                    Death Year: {artist.death_year}<br /><br />
+                                    Bio: 
+                                    <br /> {artist.bio}
+                                        <br /><br />
+                                    Gallery: <br /> {artist.gallery.name}
                                     </ul>
+
                             </div>
                                 
                             )
