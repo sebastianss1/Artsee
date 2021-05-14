@@ -5,7 +5,6 @@ const artworksReducer = (state = {}, action) => {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_ARTWORKS:
-            debugger
             return Object.assign({}, action.artworks);
         case RECEIVE_ARTWORK:
             const artwork = { [action.artwork.id]: action.artwork };
