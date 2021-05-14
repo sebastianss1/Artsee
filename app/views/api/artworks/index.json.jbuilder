@@ -15,12 +15,7 @@ json.array! @artworks do |artwork|
     json.medium do 
         json.name artwork.medium.name 
     end 
-    if artwork.availability  === true 
-        return "Available"
-    else 
-        return "Not Available"
-    end 
-
+    json.availability artwork.availability
     json.price artwork.price 
 
 end 
