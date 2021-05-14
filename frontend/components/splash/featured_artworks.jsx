@@ -10,7 +10,7 @@ class FeaturedArtworks extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchArtworks(this.props.title)
+        // this.props.fetchArtworks(this.props.title)
     }
 
     render() {

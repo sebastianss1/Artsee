@@ -1,10 +1,9 @@
-export const fetchArtworks = (title) => (
+export const fetchArtworks = () =>  { return (
     $.ajax({
         method: 'GET',
-        url: 'api/artworks',
-        data: { title }
+        url: 'api/artworks'
     })
-)
+)}
 
 export const fetchArtwork = artworkId => (
     $.ajax({

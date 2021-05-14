@@ -1,8 +1,7 @@
-import React from 'react';
-import { popUpModal } from '../../actions/modal_actions'
+import React from 'react'
 import FeaturedArtworksContainer from './featured_artworks_container'
 
-class Splash extends React.Component {
+class SplashBody extends React.Component {
     constructor(props) {
         super(props);
 
@@ -12,22 +11,13 @@ class Splash extends React.Component {
     render() {
 
         return (
-            <div className="hero-container">
-                <img className="banner-image" src={window.banner_image} />
-                <div className='hero'>
-                <div className='titles'>
-                    <h1 className='hero-text'>Learn about and collect art from leading galleries, fairs, and museums</h1>
-                        <h5 className='hero-text-subhead'>Sign up to get updates on your favorite artists</h5> <br /><br /><br /><br />
-                        <button className="banner-signup" onClick={() => popUpModal('signup')}>Sign Up</button>
-                </div>
-            </div>
-
-                <div className="title-popular-artists">
+        <div className="splash-body-container">
+         <div className="title-popular-artists">
                 <h2>Works by Popular Artists</h2>
                 </div>
                 <div className="popular-artists">
                     <ul className="popular-artist-names">
-                        Rashid Johnson
+            Rashid Johnson
                         <div>Cindy Sherman</div>
                         <div>Robert Longo</div>
                         <div>James Turrell</div>
@@ -66,24 +56,9 @@ class Splash extends React.Component {
                     <div>David Zwirner</div>
                 </ul>
             </div>
-
-
-
-
-
             </div>
-
-);
-
-}
+        )
+    }
 }
 
-export default Splash;
-
-{/* <button className="signup-submit" onClick={() => popUpModal('signup')}>Sign Up</button> */}
-
-{/* <div className="">
-        <h3>Trending Emerging Artists</h3>
-        <p>This week, Artsy’s Curatorial team has kept our fingers on the pulse, taking note of the most popular artists currently on the scene. 
-            <br />From innovative sculptors to experimental photographers, here’s a chance to explore the trailblazing artists turning heads in the art world.</p>
-</div> */}
+export default SplashBody;

@@ -13,10 +13,11 @@ export const receiveArtwork = artwork => ({
     artwork
 })
 
-export const fetchArtworks = (name) => dispatch => (
-    APIUtil.fetchArtworks(name)
-        .then(artworks => dispatch(receiveArtwork(artworks)))
-)
+debugger
+export const fetchArtworks = (artworks) => dispatch => 
+    APIUtil.fetchArtworks(artworks)
+        .then(artworks => dispatch(receiveArtworks(artworks)))
+
 
 export const fetchArtwork = (artworkId) => dispatch => (
     APIUtil.fetchArtwork(artworkId)

@@ -1,4 +1,9 @@
 .artwork-show {
     color: black;
-    position: relative;
+    position: fixed;
+    margin: 100px;
+    font-family: "Helvetica Neue", sans-serif;
+    max-width: 1200px;
+    display: grid;
+    grid-gap: 1rem;
 }

@@ -9,8 +9,8 @@ import { popUpModal, closeModal } from '../../actions/modal_actions';
 const mapStateToProps = ({ errors }) => {
     return {
         errors: errors.session,
-        formType: 'Log in',
-        navLink: <Link to="/signup">sign up</Link>,
+        formType: 'Login',
+        // navLink: <Link to="/signup">sign up</Link>,
     };
 };
 

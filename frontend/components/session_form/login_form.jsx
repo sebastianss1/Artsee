@@ -7,12 +7,14 @@ class LoginForm extends React.Component {
       email: '',
       password: '',
       name: '',
-      errors: {}
+      errors: {},
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemo = this.handleDemo.bind(this);
 
   }
+
+
 
   update(type) {
     return e => this.setState({
@@ -24,13 +26,14 @@ class LoginForm extends React.Component {
     e.preventDefault();
 
         if (this.handleValidation()) {
+          debugger
             const user = Object.assign({}, this.state);
             this.props.processForm(user).then(this.props.closeModal)
         } 
   }
 
   handleDemo(e) {
-    this.setState({ email: 'test@gmail.com', password: 'test123'})
+    this.setState({ email: 'test@gmail.com', password: 'test1234'})
   }
 
   handleValidation() {

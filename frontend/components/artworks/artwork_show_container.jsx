@@ -4,7 +4,10 @@ import ArtworkShow from './artwork_show';
 
 
 const mapStateToProps = (state, ownProps) => {
+    debugger
     return {
+        
+        artworks: Object.values(state.entities.artworks) ,
         artwork: state.entities.artworks[ownProps.match.params.artworkId]
     }
 }

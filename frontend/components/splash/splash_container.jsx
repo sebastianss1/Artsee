@@ -1,12 +1,13 @@
-import React, { Component } from 'react'
-import Splash from './splash'
-// import { Link } from 'react-router-dom'
+import React from 'react'
+import SplashHeader from './splash_header'
+import SplashBody from './splash_body'
 
-class SplashContainer extends Component {
+class SplashContainer extends React.Component {
     render() {
         return (
             <div>
-                <Splash className='splash' />
+                <SplashHeader className='splash' />
+                <SplashBody className='splash-body' />
             </div>
         )
     }
