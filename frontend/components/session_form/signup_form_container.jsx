@@ -21,12 +21,12 @@ const mapDispatchToProps = dispatch => {
             <span>
                 <button onClick={(e) => {
                     e.preventDefault();
-                    dispatch(popUpModal('Login'))
+                    dispatch(popUpModal('login'))
                 }
                 }>Login</button></span>
         ),
         closeModal: () => dispatch(closeModal()),
-        popUpModal: () => dispatch(popUpModal())
+        popUpModal: (modal) => dispatch(popUpModal(modal))
     };
 };
 

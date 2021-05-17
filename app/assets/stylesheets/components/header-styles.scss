@@ -74,9 +74,14 @@ transition: height 0.3s;
     padding-right: 20px;
     background-color: rgb(0, 0, 0);
     color: rgb(255, 255, 255);
-    margin-right: 50px;
+    // margin-right: 50px;
     position: fixed;
-    right: 60px;
+    right: 21px;
+}
+
+.signup-submit:hover {
+     background-color: rgb(110, 30, 255);
+     border: 2px solid rgb(110, 30, 255);
 }
 
 .login-submit-header {
@@ -88,12 +93,16 @@ transition: height 0.3s;
     padding-left: 20px;
     padding-right: 20px;
     background-color: white;
+    margin-right: 50px;
     color: black;
     position: fixed;
-    right: 21px;
-
+    right: 72px;
+    
 }
 
+.login-submit-header:hover {
+     border: 2px solid black;
+}
 
 
 .login-submit {

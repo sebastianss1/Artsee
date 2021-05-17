@@ -9,6 +9,7 @@ class ArtworkIndex extends React.Component {
 
     componentDidMount() {
         this.props.fetchArtworks()
+        window.scroll(0,0)
         // this.props.fetchArtwork(this.props.match.params.artworkId)
     }
 
@@ -18,13 +19,13 @@ class ArtworkIndex extends React.Component {
             return (
                 <div className="featured-artworks-title">
                     <h1> Featured Artworks </h1>
-                    <div>
+                    <div className="artwork-index-container">
                             {this.props.artworks.map(artwork => {
                                 return (
-                                    <div className="artwork-index-container">
+                                    <div className="individual-artwork-box">
                                         <img className="artwork-index-item" src={artwork.photoUrl} /> <br/>
                                         <ul className="artwork-index-text">
-                                        <Link to={`/artworks/${artwork.id}`}>{artwork.artist.name} </Link><br/>
+                                            <Link to={`/artworks/${artwork.id}`} style={{ textDecoration: 'none' }}>{artwork.artist.name} </Link><br/>
                                         {artwork.title}, {artwork.year}<br/>
                                         {artwork.artist.gallery.name}<br />
                                         {artwork.price}<br />

@@ -102,6 +102,9 @@ class LoginForm extends React.Component {
             <button className="login-submit-form" onClick={this.handleDemo}>Continue as Demo User</button>
           </div>
         </form>
+        <br />
+        <div className="already-account-detail">Don't have an account?
+                <a href="#" onClick={() => this.props.popUpModal('signup')}> Sign up</a> </div>
         <br/>
         <br/>
         <br/>

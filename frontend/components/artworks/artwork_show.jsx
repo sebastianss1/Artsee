@@ -7,9 +7,9 @@ class ArtworkShow extends React.Component {
 
 
 
-    // componentDidMount() {
-    //     this.props.fetchArtwork(this.props.match.params.artworkId)
-    // }
+    componentDidMount() {
+        window.scroll(0,0)
+    }
 
 
     render() {
@@ -40,8 +40,8 @@ class ArtworkShow extends React.Component {
                 </div>
                 <div className="box-under-artwork-show">
 
-                    Category: {artwork.medium.name}<br />
-                    Condition: {artwork.condition}
+                    <div className="category-artwork-show">Category: {artwork.medium.name}</div><br /> <br />
+                    <div className="condition-artwork-show">Condition: {artwork.condition} </div>
 
 
                 </div>

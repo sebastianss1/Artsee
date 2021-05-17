@@ -117,7 +117,7 @@ class SignupForm extends React.Component {
                 </form>    
     
                 <div className="already-account-detail">Already have an account?
-                <a href="#" onClick={() => this.props.popUpModal('Login')}> Login</a> </div>
+                <a href="#" onClick={() => this.props.popUpModal('login')}> Login</a> </div>
                 </div>
         );
     }
