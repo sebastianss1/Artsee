@@ -1,4 +1,5 @@
 json.extract! @artwork 
+    json.id @artwork.id
     json.title @artwork.title
     json.year @artwork.year 
     json.artist do 
@@ -13,8 +14,7 @@ json.extract! @artwork
     json.availability @artwork.availability
     json.price @artwork.price 
 
-
-# json.photoUrl url_for(@artwork.photo)
+json.photoUrl url_for(@artwork.photo)
 
 
 

@@ -3,6 +3,7 @@ import { fetchArtwork, fetchArtworks } from '../../actions/artwork_actions';
 import ArtworkIndex from './artwork_index';
 
 const mapStateToProps = (state, ownProps) => {
+    debugger
     return { 
         artworks: Object.values(state.entities.artworks),
         artwork: state.entities.artworks[ownProps.match.params.artworkId]

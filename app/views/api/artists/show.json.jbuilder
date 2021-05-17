@@ -1,4 +1,5 @@
 json.extract! @artist
+    json.id @artist.id
     json.name @artist.name 
     json.birth_year @artist.birth_year 
     json.death_year @artist.death_year 

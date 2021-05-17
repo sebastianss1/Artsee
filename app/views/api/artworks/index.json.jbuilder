@@ -4,10 +4,14 @@
 # end
 
 json.array! @artworks do |artwork|
+    json.id artwork.id
     json.title artwork.title
     json.year artwork.year 
     json.artist do 
         json.name artwork.artist.name 
+        json.gallery do 
+            json.name artwork.artist.gallery.name
+        end
     end 
     json.description artwork.description 
     json.height_dimensions artwork.height_dimensions
@@ -17,5 +21,9 @@ json.array! @artworks do |artwork|
     end 
     json.availability artwork.availability
     json.price artwork.price 
+    
+    json.photoUrl url_for(artwork.photo)
+
+
 
 end 

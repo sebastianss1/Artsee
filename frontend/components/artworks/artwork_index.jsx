@@ -9,29 +9,26 @@ class ArtworkIndex extends React.Component {
 
     componentDidMount() {
         this.props.fetchArtworks()
+        // this.props.fetchArtwork(this.props.match.params.artworkId)
     }
 
 
     render() {
         const { artwork } = this.props;
             return (
-                <div className="artwork-show-container">
+                <div className="featured-artworks-title">
                     <h1> Featured Artworks </h1>
                     <div>
                             {this.props.artworks.map(artwork => {
                                 return (
-                                    <div className="artist-index-container">
-                                        <ArtworkShow key={artwork.id} artwork={artwork} /> 
-                                        {/* <h2 className="artist-show-subheader" >{artwork.title} </h2>
-                                        <ul> */}
-                                        {/* Artist Name: {artwork.artist.name}<br /> */}
-                                        {/* Year: {artwork.year}<br/>
-                                        Description: {artwork.description}<br />
-                                        Dimensions: {artwork.height_dimensions} x {artwork.width_dimensions}<br />
-                                        Medium: {artwork.medium.name}<br />
-                                        Availability: {artwork.availability}<br />
-                                        Price: {artwork.price}<br /> */}
-                                        {/* </ul> */}
+                                    <div className="artwork-index-container">
+                                        <img className="artwork-index-item" src={artwork.photoUrl} /> <br/>
+                                        <ul className="artwork-index-text">
+                                        <Link to={`/artworks/${artwork.id}`}>{artwork.artist.name} </Link><br/>
+                                        {artwork.title}, {artwork.year}<br/>
+                                        {artwork.artist.gallery.name}<br />
+                                        {artwork.price}<br />
+                                        </ul>
                                     </div>
 
                                 )

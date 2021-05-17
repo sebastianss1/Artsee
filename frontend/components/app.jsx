@@ -17,7 +17,7 @@ const App = () => (
     </header>
     <Switch>
       <Route exact path="/artworks/:artworkId" component={ArtworkShowContainer} />
-      <Route exact path="/artworks/:artistId" component={ArtistShowContainer} />
+      <Route exact path="/artists/:artistId" component={ArtistShowContainer} />
       <Route exact path="/artworks" component={ArtworkIndexContainer} />
       <Route exact path="/artists" component={ArtistIndexContainer} />
       <Route exact path="/galleries" component={GalleryContainer} />

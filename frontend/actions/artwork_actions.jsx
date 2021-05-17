@@ -30,3 +30,4 @@ export const fetchSearch = searchTerm => dispatch => (
     APIUtil.fetchSearch(searchTerm)
         .then(artwork => dispatch(receiveArtwork(artwork)))
 )
+
