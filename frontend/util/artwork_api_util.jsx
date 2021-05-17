@@ -18,3 +18,5 @@ export const fetchSearch = searchTerm => (
         url: `/api/artworks/search/${searchTerm}`
     })
 )
+
+window.fetchArtwork = fetchArtwork;

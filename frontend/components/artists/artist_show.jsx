@@ -1,40 +1,39 @@
 import React from 'react';
 
 class ArtistShow extends React.Component {
-    constructor(props) {
-        super(props)
-    }
+    // constructor(props) {
+    //     super(props)
+    // }
 
 
     componentDidMount() {
-        this.props.fetchArtists();
+        this.props.fetchArtist(this.props.match.params.artistId);
     }
 
 
     render() {
+        const { artist } = this.props
         return (
             <div className="artwork-show-container">
                 <h1> Featured Artists </h1>
-                    <div>
-                        {this.props.artists.map(artist => {
-                            return (
+                <div>
+                    {/* {this.props.artist.map(artist => { */}
+                        {/* return ( */}
                             <div>
                                 <h2 className="artist-show-subheader">{artist.name}</h2>
-                                    <ul>
-                                        Birth Year:<br /> {artist.birth_year}<br /><br />
+                                <ul>
+                                    Birth Year: <br /> {artist.birth_year}<br /><br />
                                     Death Year: {artist.death_year}<br /><br />
-                                    Bio: 
+                                    Bio:
                                     <br /> {artist.bio}
-                                        <br /><br />
+                                    <br /><br />
                                     Gallery: <br /> {artist.gallery.name}
-                                    </ul>
+                                </ul>
 
                             </div>
-                                
-                            )
 
-                        })}
-            </div>
+                        )
+                </div>
             </div>
 
 

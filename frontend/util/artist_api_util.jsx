@@ -14,6 +14,21 @@ export const fetchArtist = artistId => (
     })
 )
 
+export const followArtist = artistId => (
+    $.ajax({
+        method: 'POST',
+        url: `/api/artists/${artistId}/follow`
+    })
+)
+
+export const unfollowArtist = artistId => (
+    $.ajax({
+        method: 'DELETE',
+        url: `/api/artists/${artistId}/unfollow`
+    })
+)
+
+
 export const fetchSearch = searchTerm => (
     $.ajax({
         method: 'GET',
