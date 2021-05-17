@@ -8,8 +8,8 @@
     margin-top: 120px;
     margin-right: 100px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
   grid-auto-rows: minmax(100px, auto);
 
 }
@@ -57,4 +57,25 @@
 .artwork-show-item {
     width: 500px;
     margin-left: 300px;
+}
+
+.box-under-artwork-show {
+    display: flex;
+    margin-top: 80px;
+    margin-left: 400px;
+    width: 300px;
+    height: 200px;
+    border: 1px solid lightgray;
+    font-family: "Helvetica-Neue", sans-serif
+
+}
+
+.title-above-artwork-show-box {
+    font-weight: bold;
+    font-family: "Helvetica-Neue", sans-serif;
+    border-bottom: 1px solid lightgray;
+    align-items: center;
+    margin-top: 60px;
+    margin-left: 400px;
+    margin-right: 200px;
 }

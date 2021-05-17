@@ -3,6 +3,7 @@ json.extract! @artwork
     json.title @artwork.title
     json.year @artwork.year 
     json.artist do 
+        json.id @artwork.artist.id
         json.name @artwork.artist.name 
     end 
     json.description @artwork.description 

@@ -2,7 +2,7 @@ class Api::ArtworksController < ApplicationController
 
   def index 
     @artworks = Artwork.all
-    render :index
+    render 'api/artworks/index'
   end 
 
  def show
