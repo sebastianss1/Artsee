@@ -6,11 +6,13 @@ class ArtworkShow extends React.Component {
     }
 
 
+    
+
+
 
     componentDidMount() {
         window.scroll(0,0)
     }
-
 
     render() {
         const { artwork } = this.props; 
@@ -26,7 +28,7 @@ class ArtworkShow extends React.Component {
                         <h2 className="artwork-show-subheader">{artwork.artist.name}</h2>
                         <button className="follow-button" onClick={() => this.props.followArtist(artwork.artist.id)}>
                             Follow</button><br/> <br />
-                                            {artwork.title}, {artwork.year}<br />
+                                        {artwork.title}, {artwork.year}<br />
                                         {artwork.description}<br />
                                         {artwork.height_dimensions} x {artwork.width_dimensions}<br />
                                         {artwork.price}<br /><br /><br /><br />

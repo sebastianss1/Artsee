@@ -1,13 +1,10 @@
 class Follow < ApplicationRecord 
     validates :follower_id, presence: true 
-    validates :follower, uniqueness: { scope: :followee }
+    validates :follower_id, uniqueness: { scope: :followable_id }
  
-    belongs_to :follower,
+    belongs_to :user,
     foreign_key: :follower_id,
     class_name: :User
-    
-    belongs_to :artist,
-    class_name: :Artist
 
     belongs_to :followable, polymorphic: true 
 

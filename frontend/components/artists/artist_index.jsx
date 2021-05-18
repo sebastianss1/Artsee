@@ -13,27 +13,26 @@ class ArtistIndex extends React.Component {
 
     render() {
         return (
-            <div className="artwork-show-container">
+            <div className="featured-artists-title">
                 <h1> Featured Artists </h1>
-                    <div>
+                    <div className="artist-index-container">
+                        <div className="artist-index-scroll">
                         {this.props.artists.map(artist => {
                             return (
                             <div>
-                                <h2 className="artist-show-subheader">{artist.name}</h2>
-                                    <ul>
-                                    Birth Year: <br /> {artist.birth_year}<br /><br />
-                                    Death Year: {artist.death_year}<br /><br />
-                                    Bio: 
-                                    <br /> {artist.bio}
-                                        <br /><br />
-                                    Gallery: <br /> {artist.gallery.name}
-                                    </ul>
+                                <ul className="ul-artist-scroll">
+                                    <li className="li-artist-scroll">
+                                        <img className="artist-index-item" src={artist.photoUrl} /> <br/>
+                                        <h2 className="artist-show-subheader">{artist.name}</h2>
+                                    </li>
+                                </ul>
 
                             </div>
                                 
                             )
 
                         })}
+            </div>
             </div>
             </div>
 

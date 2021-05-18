@@ -55,6 +55,12 @@ transition: height 0.3s;
     margin-right: 30px;
     margin-left: 30px;
     font-family: "Helvetica Neue", sans-serif;
+    text-decoration: none;
+    color: black;
+}
+
+.buy-button:hover {
+    color:rgb(110, 30, 255)
 }
 
 .sell-button {
@@ -200,4 +206,10 @@ transition: height 0.3s;
     text-decoration: none;
     color: black;
 
+}
+
+.artists-subheader:hover,
+.artworks-subheader:hover,
+.galleries-subheader:hover {
+    color:rgb(110, 30, 255);
 }

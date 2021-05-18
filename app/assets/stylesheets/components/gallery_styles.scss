@@ -1,0 +1,40 @@
+@media screen and (min-width: 768px) {
+
+.featured-galleries-title {
+    margin-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 40px;
+    padding-right: 40px;
+    max-width: 1192px;
+    width: 100%;
+}
+
+.gallery-index-container {
+
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(4, 300px);
+    gap: 5px;
+    align-items: left;
+    justify-items: center;
+
+}
+
+
+.artist-show-container {
+    margin-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 40px;
+    padding-right: 40px;
+    max-width: 1192px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    grid-auto-rows: minmax(100px, auto);
+    flex: 0 0 33.33%;
+}
+
+}

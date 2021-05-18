@@ -112,3 +112,15 @@
     margin: 0px;
 }
 }
+
+.artwork-link-to-show {
+    color: black;
+    text-decoration: none;
+}
+
+.follow-button::before {
+    // content: 'Follow'
+}
+// .follow-button::after {
+//     content: 'Unfollow'
+// }

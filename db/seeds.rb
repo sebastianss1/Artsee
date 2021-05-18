@@ -30,17 +30,56 @@ kohnGallery = Gallery.create!(name: "Kohn Gallery", location: "Los Angeles" )
 
 #Artists
 rashidJohnson = Artist.create!(name: "Rashid Johnson", birth_year:"1977", gallery_id: hauserWirth.id, bio: "Rashid Johnson (born 1977) is an American artist who produces conceptual post-black art.")
+
+rashidJohnson.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/1.jpeg"), filename: "1.jpeg")
+
 cindySherman = Artist.create!(name: "Cindy Sherman", birth_year:"1954", gallery_id: metroPictures.id, bio: "Cindy (born January 19, 1954) is an American artist whose work consists primarily of photographic self-portraits, depicting herself in many different contexts and as various imagined characters.")
+
+cindySherman.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/3.jpeg"), filename: "3.jpeg")
+
 robertLongo = Artist.create!(name: "Robert Longo", birth_year:"1953", gallery_id: metroPictures.id, bio: "Robert Longo is a Pictures Generation American artist, filmmaker, photographer and musician. Longo became first well known in the 1980s for his Men in the Cities drawing and print series, which depict sharply dressed men and women writhing in contorted emotion")
+
+robertLongo.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/5.jpeg"), filename: "5.jpeg")
+
 jamesTurrell = Artist.create!(name: "James Turrell", birth_year:"1943", gallery_id: paceGallery.id, bio: "James Turrell (born May 6, 1943) is an American artist known for his work within the Light and Space movement.")
+
+jamesTurrell.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/7.jpeg"), filename: "7.jpeg")
+
 donaldJudd = Artist.create!(name: "Donald Judd", birth_year:"1928", death_year: "1994", gallery_id: davidZwirner.id, bio: "Donald Clarence Judd was an American artist associated with minimalism. In his work, Judd sought autonomy and clarity for the constructed object and the space created by it, ultimately achieving a rigorously democratic presentation without compositional hierarchy.")
+
+donaldJudd.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/10.jpeg"), filename: "10.jpeg")
+
+
 judyChicago = Artist.create!(name: "Judy Chicago", birth_year:"1939", gallery_id: salon94.id, bio: "Judy Chicago is an American feminist artist, art educator, and writer known for her large collaborative art installation pieces about birth and creation images, which examine the role of women in history and culture.")
+
+judyChicago.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/11.jpeg"), filename: "11.jpeg")
+
+
 luciaHierro = Artist.create!(name: "Lucia Hierro", birth_year:"1987", gallery_id: charlieJamesGallery.id, bio: "Lucia Hierro (b. 1987) is a Dominican American conceptual artist born and raised in New York City, Washington Heights/Inwood, and currently based in the South Bronx. Lucia’s practice, which includes sculpture, digital media and installation, confronts twenty-first century capitalism through an intersectional lens.")
+
+luciaHierro.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/13.jpeg"), filename: "13.jpeg")
+
 sadieBarnette = Artist.create!(name: "Sadie Barnette", birth_year:"1984", gallery_id: charlieJamesGallery.id, bio: "Sadie Barnette is an American artist who works primarily with drawing, photography, and large-scale installation. Her work explores black life, personal histories, and the political through material explorations. She currently lives and works in Oakland, California.")
+
+sadieBarnette.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/16.jpg"), filename: "16.jpg")
+
+
 katieStout = Artist.create!(name: "Katie Stout", birth_year:"1989", gallery_id: rAndCompany.id, bio: "Brooklyn based designer Katie Stout (b. 1989) describes her work as “naïve pop,” a caricaturization of furniture as it is traditionally understood and of the motifs of suburban domestic life.  She utilizes a diverse range of media and often unexpected techniques. Her expansive body of work includes lighting, seating, shelving, mirrors, carpets and curtains.")
+
+katieStout.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/17.jpeg"), filename: "17.jpeg")
+
 theHaasBrothers = Artist.create!(name: "The Haas Brothers", birth_year:"1984", gallery_id: rAndCompany.id, bio: "The Haas Brothers are American artists, noted for their sculptural works that blur the line between art and design. They currently work in Los Angeles, California")
+
+theHaasBrothers.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/20.jpeg"), filename: "20.jpeg")
+
 markYang = Artist.create!(name: "Mark Yang", birth_year:"1994", gallery_id: steveTurner.id, bio: "Mark Yang creates paintings that incorporate formal concerns relating to color, line and composition while addressing his identity as an immigrant, a Korean-American and a man. In general, his works depict nude Asian men wrestling. In depicting nude male bodies in close proximity–wrestling, grappling and contorting–Yang aims to convey an aspect of male intimacy that is more common in Korean culture than in American culture.")
+
+markYang.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/21.jpeg"), filename: "21.jpeg")
+
+
 williamBrickel = Artist.create!(name: "William Brickel", birth_year:"1994", gallery_id: kohnGallery.id, bio: "William Brickel’s paintings explore how memories of past experiences become embellished through the act of recollection. His domestic compositions depict fig`ures folded and intertwined, as if obeying a harmonic ideal. The characters, however, seem curiously detached, distracted eyes indicating they are enveloped not by each other but by their own thoughts.")
+
+williamBrickel.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/24.jpeg"), filename: "24.jpeg")
 
 
 #Mediums

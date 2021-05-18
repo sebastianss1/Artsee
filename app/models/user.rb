@@ -10,14 +10,22 @@ class User < ApplicationRecord
   class_name: :Like,
   dependent: :destroy
 
+
+  has_many :followed_entities,
+    foreign_key: :follower_id,
+    class_name: :Follow,
+    dependent: :destroy
+
   has_many :followed_artists,
-  foreign_key: :follower_id,
-  class_name: :Follow,
-  dependent: :destroy 
+    through: :followed_entities,
+    source: :followable,
+    source_type: 'Artist',
+    dependent: :destroy 
 
   has_many :followed_galleries,
-  foreign_key: :follower_id,
-  class_name: :Follow,
+  through: :followed_entities,
+  source: :followable,
+  source_type: 'Gallery',
   dependent: :destroy
 
 
