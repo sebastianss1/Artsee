@@ -5,7 +5,6 @@ import { popUpModal } from '../../actions/modal_actions'
 class SplashHeader extends React.Component {
     constructor(props) {
         super(props);
-
     }
 
 

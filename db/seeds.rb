@@ -57,54 +57,54 @@ sculpture = Medium.create!(name: "Sculpture")
 #Artworks
 anxiousMenRed = Artwork.create!(title: "Untitled Anxious Red Drawing", year: "2020", artist_id: rashidJohnson.id,  description: "oil on cotton rag", height_dimensions: 38.25, width_dimensions: 50, medium_id: painting.id, availability: true, price: "$200,000", condition: "New", signature: "Signed on the reverse", certificate_of_authenticity: true)
 
-anxiousMenRed.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/1.jpeg"), filename: "1.jpg")
+anxiousMenRed.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/1.jpeg"), filename: "1.jpeg")
 
 
 anxiousAudience = Artwork.create!(title: "Untitled Anxious Audience", year: "2017", artist_id: rashidJohnson.id,  description: "White ceramic tiles, black soap and wax", height_dimensions: 73, width_dimensions: 94.6 , medium_id: mixed.id, availability: true, price: "Sold", condition: "New", signature: "N/A", certificate_of_authenticity: true)
 
-anxiousAudience.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/2.jpeg"), filename: "2.jpg")
+anxiousAudience.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/2.jpeg"), filename: "2.jpeg")
 
 untitledFilmStill = Artwork.create!(title: "Untitled Film Still #21", year: "1977", artist_id: cindySherman.id,  description: "Gelatin Silver Print", height_dimensions: 8, width_dimensions: 10 , medium_id: photograph.id, availability: true, price: "Sold", condition: "New", signature: "N/A", certificate_of_authenticity: true)
 
-untitledFilmStill.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/3.jpeg"), filename: "3.jpg")
+untitledFilmStill.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/3.jpeg"), filename: "3.jpeg")
 
 untitledMarilyn = Artwork.create!(title: "Untitled Marilyn", year: "1982", artist_id: cindySherman.id,  description: "Chromogenic color print", height_dimensions: 15.5, width_dimensions: 9 , medium_id: photograph.id, availability: true, price: "Sold", condition: "New", signature: "N/A", certificate_of_authenticity: true)
 
-untitledMarilyn.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/4.jpeg"), filename: "4.jpg")
+untitledMarilyn.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/4.jpeg"), filename: "4.jpeg")
 
 menInTheCities = Artwork.create!(title: "Untitled, from the Series 'Men in the Cities'", year: "1980", artist_id: robertLongo.id,  description: "Charcoal and Graphite on Paper", height_dimensions: 96, width_dimensions: 60 , medium_id: drawing.id, availability: true, price: "$300,000", condition: "New", signature: "N/A", certificate_of_authenticity: true)
 
-menInTheCities.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/5.jpeg"), filename: "5.jpg")
+menInTheCities.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/5.jpeg"), filename: "5.jpeg")
 
 
 untitledCindyMenInTheCities = Artwork.create!(title: "Untitled (Cindy), from the Series 'Men in the Cities'", year: "1981", artist_id: robertLongo.id,  description: "Charcoal and Graphite on Paper", height_dimensions: 96, width_dimensions: 48 , medium_id: drawing.id, availability: true, price: "Sold", condition: "Excellent", signature: "N/A", certificate_of_authenticity: true)
 
-untitledCindyMenInTheCities.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/6.jpeg"), filename: "6.jpg")
+untitledCindyMenInTheCities.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/6.jpeg"), filename: "6.jpeg")
 
 
 mediumGlassCircle = Artwork.create!(title: "Medium Glass Circle", year: "2017", artist_id: jamesTurrell.id,  description: "L.E.D. light, etched glass and shallow space", height_dimensions: 56, width_dimensions: 56 , medium_id: installation.id, availability: true, price: "Sold", condition: "New", signature: "N/A", certificate_of_authenticity: true)
 
-mediumGlassCircle.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/7.jpeg"), filename: "7.jpg")
+mediumGlassCircle.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/7.jpeg"), filename: "7.jpeg")
 
 
 raethroGreen = Artwork.create!(title: "Raethro Green", year: "1968", artist_id: jamesTurrell.id,  description: "MRI wire projector; room size- variable", height_dimensions: 40, width_dimensions: 40 , medium_id: installation.id, availability: true, price: "Sold", condition: "Good", signature: "N/A", certificate_of_authenticity: true)
 
-raethroGreen.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/8.jpeg"), filename: "8.jpg")
+raethroGreen.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/8.jpeg"), filename: "8.jpeg")
 
 
 juddUntitled = Artwork.create!(title: "Untitled, 1967", year: "1967", artist_id: donaldJudd.id,  description: "Lacquer on galvanized iron", height_dimensions: 81, width_dimensions: 40 , medium_id: sculpture.id, availability: true, price: "Not For Sale", condition: "Good", signature: "N/A", certificate_of_authenticity: true)
 
-juddUntitled.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/9.jpeg"), filename: "9.jpg")
+juddUntitled.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/9.jpeg"), filename: "9.jpeg")
 
 
 juddUntitled73 = Artwork.create!(title: "Untitled, 1973", year: "1973", artist_id: donaldJudd.id,  description: "Brass and Blue Plexiglas", height_dimensions: 33, width_dimensions: 68 , medium_id: sculpture.id, availability: true, price: "Not For Sale", condition: "Excellent", signature: "N/A", certificate_of_authenticity: true)
 
-juddUntitled73.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/10.jpeg"), filename: "10.jpg")
+juddUntitled73.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/10.jpeg"), filename: "10.jpeg")
 
 
 judyAtmosphere = Artwork.create!(title: "Purple Atmosphere, 1969, Santa Barbara, CA", year: "2018", artist_id: judyChicago.id,  description: "Archival pigment print on paper", height_dimensions: 30, width_dimensions: 40 , medium_id: printEdition.id, availability: true, price: "$40,000", condition: "New", signature: "N/A", certificate_of_authenticity: true)
 
-judyAtmosphere.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/11.jpeg"), filename: "11.jpg")
+judyAtmosphere.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/11.jpeg"), filename: "11.jpeg")
 
 
 theDinnerParty = Artwork.create!(title: "The Dinner Party", year: "1974", artist_id: judyChicago.id,  description: "Ceramic, porcelain, textile", height_dimensions: 576, width_dimensions: 576 , medium_id: mixed.id, availability: true, price: "Not for Sale", condition: "New", signature: "N/A", certificate_of_authenticity: true)
@@ -114,17 +114,17 @@ theDinnerParty.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAc
 
 portraitOfCasey = Artwork.create!(title: "Portrait of Casey as a Young Man", year: "2020", artist_id: luciaHierro.id,  description: "felt, foam,  Digital print on brushed suede", height_dimensions: 22, width_dimensions: 22 , medium_id: mixed.id, availability: true, price: "Not for Sale", condition: "New", signature: "N/A", certificate_of_authenticity: true)
 
-portraitOfCasey.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/13.jpeg"), filename: "13.jpg")
+portraitOfCasey.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/13.jpeg"), filename: "13.jpeg")
 
 
 deTodoUnPoco = Artwork.create!(title: "De Todo Un Poco", year: "2017", artist_id: luciaHierro.id,  description: "PolyOrganza, felt, digital print on brushed nylon", height_dimensions: 67, width_dimensions: 60 , medium_id: mixed.id, availability: true, price: "Not for Sale", condition: "New", signature: "N/A", certificate_of_authenticity: true)
 
-deTodoUnPoco.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/14.jpeg"), filename: "14.jpg")
+deTodoUnPoco.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/14.jpeg"), filename: "14.jpeg")
 
 
 observation = Artwork.create!(title: "Observation", year: "2017", artist_id: sadieBarnette.id,  description: "Archival pigment print", height_dimensions: 24, width_dimensions: 18 , medium_id: printEdition.id, availability: true, price: "Not for Sale", condition: "New", signature: "N/A", certificate_of_authenticity: true)
 
-observation.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/15.jpeg"), filename: "15.jpg")
+observation.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/15.jpeg"), filename: "15.jpeg")
 
 
 dear1968 = Artwork.create!(title: "Untitled (Black 1968)", year: "2017", artist_id: sadieBarnette.id,  description: "Pencil on Paper", height_dimensions: 38, width_dimensions: 50 , medium_id: drawing.id, availability: true, price: "$25,000", condition: "New", signature: "N/A", certificate_of_authenticity: true)
@@ -134,41 +134,41 @@ dear1968.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/
 
 usa = Artwork.create!(title: "USA", year: "2019", artist_id: katieStout.id,  description: "Unique vase in hand-painted and glazed Augarten porcelain with gold leaf details", height_dimensions: 24, width_dimensions: 12 , medium_id: ceramic.id, availability: true, price: "Not for Sale", condition: "New", signature: "N/A", certificate_of_authenticity: true)
 
-usa.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/17.jpeg"), filename: "17.jpg")
+usa.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/17.jpeg"), filename: "17.jpeg")
 
 
 horseLadyLamp = Artwork.create!(title: "Horse Lady Lamp", year: "2020", artist_id: katieStout.id,  description: "Ceramic, paint, glaze, and gold luster", height_dimensions: 24, width_dimensions: 12 , medium_id: ceramic.id, availability: true, price: "$20,000", condition: "New", signature: "N/A", certificate_of_authenticity: true)
 
-horseLadyLamp.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/18.jpeg"), filename: "18.jpg")
+horseLadyLamp.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/18.jpeg"), filename: "18.jpeg")
 
 
 jorgeBowl = Artwork.create!(title: "Jorge Bowl", year: "2020", artist_id: theHaasBrothers.id,  description: "Unique 'Jorge' bowl in cast bronze", height_dimensions: 1.25, width_dimensions: 4.75 , medium_id: sculpture.id, availability: true, price: "Not for Sale", condition: "New", signature: "N/A", certificate_of_authenticity: true)
 
-jorgeBowl.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/19.jpeg"), filename: "19.jpg")
+jorgeBowl.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/19.jpeg"), filename: "19.jpeg")
 
 
 wetWilly = Artwork.create!(title: "Wet Willy", year: "2019", artist_id: theHaasBrothers.id,  description: "Sheepskin, cast bronze, hand-carved ebony", height_dimensions: 10.5, width_dimensions: 10 , medium_id: sculpture.id, availability: true, price: "Not for Sale", condition: "New", signature: "N/A", certificate_of_authenticity: true)
 
-wetWilly.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/20.jpeg"), filename: "20.jpg")
+wetWilly.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/20.jpeg"), filename: "20.jpeg")
 
 waistRoll = Artwork.create!(title: "Waist Roll", year: "2020", artist_id: markYang.id,  description: "Oil on Canvas", height_dimensions: 20.25, width_dimensions: 18.5 , medium_id: painting.id, availability: true, price: "Not for Sale", condition: "New", signature: "N/A", certificate_of_authenticity: true)
 
-waistRoll.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/21.jpeg"), filename: "21.jpg")
+waistRoll.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/21.jpeg"), filename: "21.jpeg")
 
 
 untitledMark = Artwork.create!(title: "Untitled, 2021", year: "2021", artist_id: markYang.id,  description: "Oil on canvas", height_dimensions: 62.5, width_dimensions: 77.5 , medium_id: painting.id, availability: true, price: "10,000", condition: "New", signature: "N/A", certificate_of_authenticity: true)
 
-untitledMark.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/22.jpeg"), filename: "22.jpg")
+untitledMark.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/22.jpeg"), filename: "22.jpeg")
 
 
 canWeStopNow = Artwork.create!(title: "Can We Stop Now", year: "2020", artist_id: williamBrickel.id,  description: "Watercolour on cotton paper", height_dimensions: 61, width_dimensions: 48 , medium_id: painting.id, availability: true, price: "12,000", condition: "New", signature: "N/A", certificate_of_authenticity: true)
 
-canWeStopNow.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/23.jpeg"), filename: "23.jpg")
+canWeStopNow.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/23.jpeg"), filename: "23.jpeg")
 
 
 manLyingDown = Artwork.create!(title: "Man Lying Down", year: "2019", artist_id: williamBrickel.id,  description: "Watercolour on paper", height_dimensions: 55, width_dimensions: 60 , medium_id: painting.id, availability: true, price: "Not for Sale", condition: "New", signature: "N/A", certificate_of_authenticity: true)
 
-manLyingDown.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/24.jpeg"), filename: "24.jpg")
+manLyingDown.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/24.jpeg"), filename: "24.jpeg")
 
 
 

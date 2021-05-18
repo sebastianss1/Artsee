@@ -1,8 +1,14 @@
 import React from 'react'
 import SplashHeader from './splash_header'
 import SplashBody from './splash_body'
+import { connect } from 'react-redux';
+
 
 class SplashContainer extends React.Component {
+    constructor(props) {
+        super(props)
+    }
+    
     render() {
         return (
             <div>
@@ -13,4 +19,20 @@ class SplashContainer extends React.Component {
     }
 };
 
-export default SplashContainer;
+const mapDispatchToProps = dispatch => {
+    return {
+        processForm: (user) => dispatch(login(user)),
+        otherForm: (
+            <span><button onClick={(e) => {
+                e.preventDefault();
+                dispatch(popUpModal('Sign up'))
+            }
+            }>Log in</button></span>
+        ),
+        closeModal: () => dispatch(closeModal()),
+        popUpModal: (modal) => dispatch(popUpModal(modal))
+    }
+};
+
+
+export default connect(mapDispatchToProps)(SplashContainer);
