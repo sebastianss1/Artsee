@@ -1,4 +1,5 @@
 class Api::ArtistsController < ApplicationController 
+  before_action :require_logged_in!, only: [:follow, :unfollow]
 
   def index 
     @artists = Artist.all

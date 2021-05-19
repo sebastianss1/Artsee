@@ -22,19 +22,19 @@
 }
 
 
-.artist-show-container {
-    margin-top: 150px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 40px;
-    padding-right: 40px;
-    max-width: 1192px;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    grid-auto-rows: minmax(100px, auto);
-    flex: 0 0 33.33%;
-}
+// .artist-show-container {
+//     margin-top: 150px;
+//     margin-left: auto;
+//     margin-right: auto;
+//     padding-left: 40px;
+//     padding-right: 40px;
+//     max-width: 1192px;
+//     width: 100%;
+//     display: grid;
+//     grid-template-columns: repeat(3, 1fr);
+//     gap: 20px;
+//     grid-auto-rows: minmax(100px, auto);
+//     flex: 0 0 33.33%;
+// }
 
 }

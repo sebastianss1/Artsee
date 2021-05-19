@@ -118,9 +118,22 @@
     text-decoration: none;
 }
 
-.follow-button::before {
-    // content: 'Follow'
+.follow-button {
+    text-decoration: none;
+    font-size: 16px;
+    font-family: "Helvetica Neue", sans-serif;
+    background: none;
+    border: none;
 }
-// .follow-button::after {
-//     content: 'Unfollow'
-// }
+
+.follow-button:hover {
+    color: rgb(110, 30, 255);
+}
+
+
+.artwork-show-subheader {
+    font-size: 24px;
+    font-family: "Helvetica Neue", sans-serif; 
+    text-decoration: underline;
+}
+

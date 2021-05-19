@@ -12,12 +12,15 @@ class SplashBody extends React.Component {
 
         return (
         <div className="splash-body-container">
-         <div className="title-popular-artists">
-                <h2>Works by Popular Artists</h2>
+            <div className="main-splash-body">
+                <div className="popular-artists">
+                    <div className="popular-inner">
+                        <div className="popular-header">
+                        <div><h2>Works by Popular Artists</h2></div>
                 </div>
                 <div className="popular-artists">
                     <ul className="popular-artist-names">
-            Rashid Johnson
+                        <div>Rashid Johnson</div>
                         <div>Cindy Sherman</div>
                         <div>Robert Longo</div>
                         <div>James Turrell</div>
@@ -55,6 +58,9 @@ class SplashBody extends React.Component {
                     <div>Hauser and Wirth</div>
                     <div>David Zwirner</div>
                 </ul>
+            </div>
+            </div>
+            </div>
             </div>
             </div>
         )

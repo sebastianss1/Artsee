@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class ArtistIndex extends React.Component {
     constructor(props) {
@@ -12,6 +13,7 @@ class ArtistIndex extends React.Component {
 
 
     render() {
+        const { artist } = this.props;
         return (
             <div className="featured-artists-title">
                 <h1> Featured Artists </h1>
@@ -23,7 +25,7 @@ class ArtistIndex extends React.Component {
                                 <ul className="ul-artist-scroll">
                                     <li className="li-artist-scroll">
                                         <img className="artist-index-item" src={artist.photoUrl} /> <br/>
-                                        <h2 className="artist-show-subheader">{artist.name}</h2>
+                                        <Link to={`/artists/${artist.id}`} className="artwork-link-to-show" style={{ textDecoration: 'none' }}>{artist.name} </Link>
                                     </li>
                                 </ul>
 

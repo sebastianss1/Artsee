@@ -1,18 +1,18 @@
 class Api::LikesController < ApplicationController 
-    before_action :require_logged_in!
+    # before_action :require_logged_in!
 
-    def index 
+    # def index 
 
 
-    end 
+    # end 
 
-    def create
-        @follow = current_user.follows
+    # def create
+    #     @follow = current_user.follows
 
-    end 
+    # end 
 
-    def destroy
+    # def destroy
 
-    end 
+    # end 
 
 end 

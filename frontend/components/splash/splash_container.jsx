@@ -11,7 +11,7 @@ class SplashContainer extends React.Component {
     
     render() {
         return (
-            <div>
+            <div className="splash-main-container">
                 <SplashHeader className='splash' />
                 <SplashBody className='splash-body' />
             </div>

@@ -7,4 +7,12 @@ json.extract! @artist
     json.gallery do 
         json.name @artist.gallery.name 
     end 
-end
+
+    json.artworks @artist.artworks.each do |artwork|
+        json.extract! artwork
+            json.id artwork.id
+            json.title artwork.title
+            json.year artwork.year
+            json.photoUrl url_for(artwork.photo)
+    end
+

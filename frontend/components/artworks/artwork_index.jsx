@@ -10,7 +10,6 @@ class ArtworkIndex extends React.Component {
     componentDidMount() {
         this.props.fetchArtworks()
         window.scroll(0,0)
-        // this.props.fetchArtwork(this.props.match.params.artworkId)
     }
 
 

@@ -5,7 +5,7 @@ import ArtistShow from './artist_show';
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        artwork: state.entities.artworks[ownProps.match.params.artworkId],
+        artist: state.entities.artists[ownProps.match.params.artistId]
     }
 }
 

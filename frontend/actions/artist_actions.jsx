@@ -30,6 +30,7 @@ export const fetchArtists = (artists) => dispatch =>
 export const fetchArtist = (artistId) => dispatch => (
     APIUtil.fetchArtist(artistId)
         .then(artist => {
+            debugger
             dispatch(receiveArtist(artist))
         })
 )

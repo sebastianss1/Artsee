@@ -5,6 +5,9 @@ json.extract! @artwork
     json.artist do 
         json.id @artwork.artist.id
         json.name @artwork.artist.name 
+        json.gallery do
+            json.name @artwork.artist.gallery.name 
+        end
     end 
     json.description @artwork.description 
     json.height_dimensions @artwork.height_dimensions

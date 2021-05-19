@@ -9,7 +9,7 @@ class Api::ArtworksController < ApplicationController
     @artwork = Artwork.find(params[:id])
 
     if @artwork 
-      render :show
+      render 'api/artworks/show'
     else
       render json: @artwork.errors.full_messages 
     end 

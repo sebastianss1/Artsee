@@ -5,35 +5,36 @@ class ArtworkShow extends React.Component {
         super(props)
     }
 
-
-    
-
-
-
     componentDidMount() {
+        debugger
+        this.props.fetchArtwork(this.props.match.params.artworkId);
         window.scroll(0,0)
     }
 
+
     render() {
-        const { artwork } = this.props; 
-        debugger 
         if (!this.props.artwork) {
             return null
         } else { 
-        return (
+            debugger
+            const { artwork } = this.props; 
+            return (
             <div>
                 <div className="artwork-show-container">
                         <img className="artwork-show-item" src={artwork.photoUrl} />
                             <ul className="artwork-show-text">
-                        <h2 className="artwork-show-subheader">{artwork.artist.name}</h2>
-                        <button className="follow-button" onClick={() => this.props.followArtist(artwork.artist.id)}>
-                            Follow</button><br/> <br />
+                        <div className="artwork-show-subheader">{artwork.artist.name}</div>
+                            {window.current_user && this.props.currentUser.followedArtists.includes(artwork.artist) ?
+                                <button className="follow-button" onClick={() => this.props.unfollowArtist(artwork.artist.id)} content="Unfollow">- Unfollow</button> :
+                                <button className="follow-button" onClick={() => this.props.followArtist(artwork.artist.id)} content="Follow">+ Follow</button> 
+                            }
+                        <br/> <br />
                                         {artwork.title}, {artwork.year}<br />
                                         {artwork.description}<br />
                                         {artwork.height_dimensions} x {artwork.width_dimensions}<br />
                                         {artwork.price}<br /><br /><br /><br />
+                                        <button className="signup-submit-form">Contact Gallery</button><br/> <br/>
                                         {artwork.artist.gallery.name}<br />
-                                        <button>Contact Gallery</button>
                                 </ul>
                             </div>
 

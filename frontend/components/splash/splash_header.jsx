@@ -11,23 +11,30 @@ class SplashHeader extends React.Component {
     render() {
 
         return (
-            <div className="hero-container">
-                <img className="banner-image" src={window.banner_image} />
-                <div className='hero'>
-                <div className='titles'>
-                    <h1 className='hero-text'>Learn about and collect art from leading galleries, fairs, and museums</h1>
-                        <h5 className='hero-text-subhead'>Sign up to get updates on your favorite artists</h5> <br /><br /><br /><br />
-                        <button className="banner-signup" onClick={() => popUpModal('signup')}>Sign Up</button>
+            <div className="home-hero">
+            <div className="banner-image"><img src={window.banner_image} />
+                <div className='hero-main-container'>
+                    <div className="hero-layout-container">
+                        <div className="hero-outer">
+                            <div className="hero-inner">
+                                <div className='hero-titles-inner'>
+                                    <h1 className='hero-text'>Learn about and collect art from leading galleries, fairs, and museums</h1>
+                                    <h5 className='hero-text-subhead'>Sign up to get updates on your favorite artists</h5>
+                                    <button className="banner-signup" onClick={() => popUpModal('signup')}>Sign Up</button>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                </div>
                 </div>
             </div>
-            </div>
 
-);
+        );
 
-}
-}
+    };
+};
+
 
 export default SplashHeader;
 
-{/* <button className="signup-submit" onClick={() => popUpModal('signup')}>Sign Up</button> */}
 
