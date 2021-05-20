@@ -1,3 +1,3 @@
-json.extract! user, :id, :email, :name, :followed_artists
+json.extract! user, :id, :email, :name
  
 

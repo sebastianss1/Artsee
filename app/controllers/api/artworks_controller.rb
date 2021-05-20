@@ -16,21 +16,15 @@ class Api::ArtworksController < ApplicationController
   end
 
     def like
-      like = Like.new(liker_id: params[:liker_id])
-      if like.save
-          # render /api/likes/show?
-      else
-        render json: like.errors.full_messages
-      end
+      @artwork = Artwork.find(params[:id])
+      current_user.liked_artworks << @artwork
+      render 'api/artworks/show'
   end
 
     def unlike
-      like = Like.find_by(liker_id: params[:liker_id])
-
-      if like.destroy
-        # render like?
-      else
-        render json: like.errors.full_messages
-      end
+      @artwork = Artwork.find(params[:id])
+      like = Like.find_by(liker_id: current_user.id)
+      like.destroy
+      render 'api/artworks/show'
   end
 end 

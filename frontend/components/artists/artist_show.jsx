@@ -14,58 +14,59 @@ class ArtistShow extends React.Component {
 
 
     render() {
-
         if (!this.props.artist) {
+            debugger
             return null
         } else {
+            debugger
             const { artist } = this.props;
             return (
                 <div className="artist-show-container">
                 <div className="artist-show-box">
                         <div className="title-artist-box">
                             <div className="inner-artist-box"> 
-                                <h2 className="artist-box-subheader">{artist.name}</h2> <br />
+                                <h2 className="artist-box-subheader">{this.props.artist.name}</h2> <br />
                                 <div className="artist-description-box">
                                 <dl className="artist-div-list">
-                                    <div className="artist-birth-year">b.{artist.birth_year}
+                                    <div className="artist-birth-year">b.{this.props.artist.birth_year}
                                     d.{artist.death_year}</div>
                                     <div className="artist-bio-show">
-                                    {artist.bio} </div>
-                                    <div className="artist-gallery-show">Gallery Representation: <br /> {artist.gallery.name} </div>
+                                    {this.props.artist.bio} </div>
+                                    <div className="artist-gallery-show">Gallery Representation: <br /> {this.props.gallery.name} </div>
+                                {
+                                window.currentUser && this.props.theBoolean ?
+                                <button 
+                                    className="follow-button" 
+                                    value="Unfollow" 
+                                    onClick={() => this.props.unfollowArtist(this.props.artist.id)}>
+                                    - Unfollow</button> :
+                                <button 
+                                    className="follow-button" 
+                                    value="Follow" 
+                                    onClick={() => this.props.followArtist(this.props.artist.id)}>
+                                    + Follow</button> 
+                                }
                                 </dl>
                                 </div>
                             </div>
                         </div>
                 </div>
 
-
-                <div className="artist-lower-box">
+                {/* <div className="artist-lower-box">
                   <div className="artist-artwork-container">
                     <div className="artist-column-box">
                     <div className="artist-lower-title">
                         <h2 className="artist-notable-works">Notable Works</h2><br />
                     <div className="artist-artwork-carousel-box">
                     <div className="artist-artwork-box">
-                        {this.props.artist.artworks.map(artwork => {
-                            return(
-                                <div>
-                                <ul className="ul-artist-page-scroll">
-                                    <li className="li-artist-page-scroll">
-                                        <img className="artist-show-artwork" src={artwork.photoUrl} /> <br/>
-                                        <Link to={`/artworks/${artwork.id}`} className="artwork-link-to-show" style={{ textDecoration: 'none' }}> {artwork.title} </Link>
-                                    </li>
-                                </ul>
 
-                            </div>
-                            )
-                        })}
 
                     </div>
                     </div>
                     </div>
                     </div>
                     </div>
-                </div>
+                </div> */}
 
 
                 </div>

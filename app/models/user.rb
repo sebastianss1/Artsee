@@ -5,10 +5,14 @@ class User < ApplicationRecord
   validates :session_token, uniqueness: true 
   validates :password, length: { minimum: 8, allow_nil: true }
 
-  has_many :liked_artworks,
+  has_many :likes,
   foreign_key: :liker_id,
   class_name: :Like,
   dependent: :destroy
+
+  has_many :liked_artworks,
+  through: :likes,
+  source: :artwork
 
 
   has_many :followed_entities,

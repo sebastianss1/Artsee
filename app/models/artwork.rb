@@ -12,4 +12,8 @@ class Artwork < ApplicationRecord
 
     has_one_attached :photo
 
+    has_many :likes,
+    foreign_key: :artwork_id,
+    class_name: :Like
+
 end 

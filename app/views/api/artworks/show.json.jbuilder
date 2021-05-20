@@ -1,24 +1,18 @@
-json.extract! @artwork 
-    json.id @artwork.id
-    json.title @artwork.title
-    json.year @artwork.year 
-    json.artist do 
-        json.id @artwork.artist.id
-        json.name @artwork.artist.name 
-        json.gallery do
-            json.name @artwork.artist.gallery.name 
-        end
-    end 
-    json.description @artwork.description 
-    json.height_dimensions @artwork.height_dimensions
-    json.width_dimensions @artwork.width_dimensions
-    json.medium do 
-        json.name @artwork.medium.name 
-    end 
-    json.availability @artwork.availability
-    json.price @artwork.price 
+json.artwork do 
+    json.extract! @artwork, :id, :title, :year, :description, :height_dimensions, :width_dimensions, :medium_id, :artist_id, :price, :availability
+    json.photoUrl url_for(@artwork.photo)
+end 
 
-json.photoUrl url_for(@artwork.photo)
+json.artist do 
+    json.extract! @artwork.artist, :id, :name, :birth_year, :gallery_id, :bio, :death_year
+end 
+
+json.gallery do
+    json.extract! @artwork.artist.gallery, :name, :location, :about
+end 
+
+
+
 
 
 

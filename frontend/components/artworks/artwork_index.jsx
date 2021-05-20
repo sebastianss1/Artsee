@@ -14,6 +14,9 @@ class ArtworkIndex extends React.Component {
 
 
     render() {
+        if (!this.props.artworks) {
+            return null
+        } else { 
         const { artwork } = this.props;
             return (
                 <div className="featured-artworks-title">
@@ -24,9 +27,9 @@ class ArtworkIndex extends React.Component {
                                     <div className="individual-artwork-box">
                                         <img className="artwork-index-item" src={artwork.photoUrl} /> <br/>
                                         <ul className="artwork-index-text">
-                                            <Link to={`/artworks/${artwork.id}`} className="artwork-link-to-show" style={{ textDecoration: 'none' }}>{artwork.artist.name} </Link><br/>
+                                            <Link to={`/artworks/${artwork.id}`} className="artwork-link-to-show" style={{ textDecoration: 'none' }}>{this.props.artist.name} </Link><br/>
                                         {artwork.title}, {artwork.year}<br/>
-                                        {artwork.artist.gallery.name}<br />
+                                        {this.props.gallery.name}<br />
                                         {artwork.price}<br />
                                         </ul>
                                     </div>
@@ -40,9 +43,9 @@ class ArtworkIndex extends React.Component {
 
 
             );
-        
-            }
-        };
+        }
+    }
+};
 
 
 export default ArtworkIndex;

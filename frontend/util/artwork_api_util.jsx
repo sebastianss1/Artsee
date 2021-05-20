@@ -12,6 +12,20 @@ export const fetchArtwork = artworkId => (
     })
 )
 
+export const likeArtwork = artworkId => (
+    $.ajax({
+        method: 'POST',
+        url: `/api/artworks/${artworkId}/like`
+    })
+)
+
+export const unlikeArtwork = artworkId => (
+    $.ajax({
+        method: 'DELETE',
+        url: `/api/artworks/${artworkId}/unlike`
+    })
+)
+
 export const fetchSearch = searchTerm => (
     $.ajax({
         method: 'GET',

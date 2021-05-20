@@ -19,7 +19,8 @@ class Api::ArtistsController < ApplicationController
 
   def follow
     @artist = Artist.find(params[:id])
-    current_user.followed_artists << @artist
+    @follow = Follow.create!(followable: @artist, user: current_user)
+    render 'api/follows/follow'
   end
 
   def unfollow 
@@ -31,6 +32,6 @@ class Api::ArtistsController < ApplicationController
     )
 
     follow.destroy
-    render :show
+    render 'api/follows/unfollow'
   end
 end 

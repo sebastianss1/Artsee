@@ -9,13 +9,14 @@ export const receiveArtists = artists => ({
     artists
 })
 
-export const receiveArtist = artist => ({
+export const receiveArtist = (artist, gallery, artworks) => ({
     type: RECEIVE_ARTIST,
-    artist
+    artist, gallery, artworks
 })
 
 
 const toggleFollow = value => {
+    debugger
     return ({
         type: TOGGLE_FOLLOW,
         value
@@ -29,9 +30,8 @@ export const fetchArtists = (artists) => dispatch =>
 
 export const fetchArtist = (artistId) => dispatch => (
     APIUtil.fetchArtist(artistId)
-        .then(artist => {
-            debugger
-            dispatch(receiveArtist(artist))
+        .then(({artist, gallery, artworks }) => {
+            dispatch(receiveArtist(artist, gallery, artworks))
         })
 )
 
@@ -42,6 +42,7 @@ export const fetchSearch = searchTerm => dispatch => (
 
 
 export const followArtist = artistId => dispatch => {
+    debugger
     return (
         APIUtil.followArtist(artistId).then(artist => (
             dispatch(toggleFollow(artist))
