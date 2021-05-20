@@ -24,11 +24,6 @@ class FeaturedArtworkItem extends React.Component {
                         </div>
                     </div>
 
-                    {/* <button className="artwork-index-price" onClick={() => this.handleCart()}>
-                        {/* <div>Add to Bag</div> */}
-                        {/* <div>${artwork.price}</div> */}
-                    {/* </button>  */}
-
                 </div>
 
             </div>

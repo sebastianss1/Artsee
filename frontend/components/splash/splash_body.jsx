@@ -1,5 +1,7 @@
 import React from 'react'
-import FeaturedArtworksContainer from './featured_artworks_container'
+import { fetchArtworks } from '../../util/artwork_api_util';
+// import FeaturedArtworks from './featured_artworks'
+// import FeaturedArtworksContainer from './featured_artworks_container'
 
 class SplashBody extends React.Component {
     constructor(props) {
@@ -9,7 +11,7 @@ class SplashBody extends React.Component {
 
 
     render() {
-
+    debugger
         return (
         <div className="splash-body-container">
             <div className="main-splash-body">
@@ -20,45 +22,25 @@ class SplashBody extends React.Component {
                 </div>
                 <div className="popular-artists">
                     <ul className="popular-artist-names">
-                        <div>Rashid Johnson</div>
-                        <div>Cindy Sherman</div>
-                        <div>Robert Longo</div>
-                        <div>James Turrell</div>
-                        <div>Donald Judd</div>
-                        <div>Judy Chicago</div>
+                        <div> <img className="splash-artist-images" src={window.rashidJohnson} /> </div>
+                            <div>Rashid Johnson </div>
+
+                        <div><img className="splash-artist-images" src={window.cindySherman} /> </div>
+                            <div>Cindy Sherman</div>
+
+                        <div> <img className="splash-artist-images" src={window.robertLongo} /> </div>
+                            <div>Robert Longo</div>
+
+                        <div><img className="splash-artist-images" src={window.jamesTurrell} /></div>
+                            <div>James Turrell</div>
+
+                        <div> <img className="splash-artist-images" src={window.donaldJudd} /> </div>
+                            <div>Donald Judd</div>
+                            
+                        <div> <img className="splash-artist-images" src={window.judyChicago} /> </div>
+                            <div>Judy Chicago</div>
                     </ul>
                 </div>
-
-                <br /><br /><br />
-                <div className="title-artists-to-follow">
-                    <h2>Artists to Follow</h2>
-                </div>
-                <div>
-                    <ul className="artists-to-follow-names">
-                        <div>Lucia Hierro</div>
-                        <div>Sadie Barnette</div>
-                        <div>Mark Yang</div>
-                        <div>Katie Stout</div>
-                        <div>The Haas Brothers</div>
-                        <div>Willam Brickel</div>
-                    </ul>
-                </div>
-
-            <div className="feat-container">
-                    {/* <FeaturedArtworksContainer /> */}
-            </div>
-
-            <div className="title-featured-galleries">
-                <h2> Featured Galleries</h2>
-            </div>
-            <div >
-                 <ul className="featured-galleries-names">
-                    <div>Charlie James Gallery</div>
-                    <div>R and Comapny</div>
-                    <div>Hauser and Wirth</div>
-                    <div>David Zwirner</div>
-                </ul>
-            </div>
             </div>
             </div>
             </div>

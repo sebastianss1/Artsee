@@ -1,5 +1,6 @@
 import { RECEIVE_ARTISTS, RECEIVE_ARTIST, TOGGLE_FOLLOW } from '../actions/artist_actions';
 import { RECEIVE_ARTWORK, RECEIVE_ARTWORKS } from '../actions/artwork_actions'
+import { RECEIVE_GALLERIES } from '../actions/gallery_actions'
 
 
 const artistsReducer = (state = {}, action) => {
@@ -15,7 +16,9 @@ const artistsReducer = (state = {}, action) => {
         case RECEIVE_ARTWORK: 
             return Object.assign({}, state, { [action.artist.id]: action.artist } )
         case RECEIVE_ARTWORKS:
-            return Object.assign({}, state, action.artworks);
+            return Object.assign({}, action.artist);
+        // case RECEIVE_GALLERIES:
+        //     return Object.assign({}, action.gallery);
         default:
             return state;
     }

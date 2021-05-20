@@ -127,6 +127,7 @@
 }
 
 .follow-button:hover {
+    cursor: pointer;
     color: rgb(110, 30, 255);
 }
 
@@ -147,5 +148,18 @@
     font-size: 24px;
     font-family: "Helvetica Neue", sans-serif; 
     text-decoration: underline;
+}
+
+.like-heart {
+    position: fixed;
+    top: 150px;
+    right: 900px;
+    width: 30px;
+
+}
+
+.like-heart:hover {
+    cursor: pointer;
+    color: rgb(110, 30, 255);
 }
 

@@ -1,3 +1,5 @@
-json.array! @galleries do |gallery|
-    json.extract! gallery, :id, :name, :location, :about
-end
+@galleries.each do |gallery|
+        json.set! gallery.id do
+             json.partial! 'api/galleries/gallery', gallery: gallery 
+        end 
+end 

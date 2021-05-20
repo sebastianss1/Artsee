@@ -3,17 +3,16 @@ import { fetchArtwork, fetchArtworks } from '../../actions/artwork_actions';
 import ArtworkIndex from './artwork_index';
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
     let artworks = Object.values(state.entities.artworks)
-    let artwork = state.entities.artworks[artworks.artworkId]
-    // let artist = state.entities.artists[artwork.artistId]
-    // let gallery = state.entities.galleries[artist.galleryId]
+    let artwork = state.entities.artworks[ownProps.match.params.artworkId]
+    let artist = state.entities.artists[artwork?.artistId]
+    let gallery = state.entities.artists[artist?.galleryId]
 
     return { 
         artworks: Object.values(state.entities.artworks),
-        artwork: state.entities.artworks[artworks.artworkId],
-        // artist: state.entities.artists[artwork?.artistId],
-        // gallery: state.entities.artists[artist?.galleryId]
+        artists: state.entities.artists,
+        galleries: state.entities.galleries
+
     }
 }
 

@@ -7,4 +7,6 @@ class Gallery < ApplicationRecord
 
     has_many :follows, as: :followable
 
+    has_one_attached :photo
+
 end 

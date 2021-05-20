@@ -100,12 +100,16 @@
 }
 
 .popular-artists {
+  display: flex;
+  flex-direction: row;
   border-top: none;
   margin: 0;
 }
 
 .popular-header {
   // position: relative;
+  font-family: Helvetica, sans-serif;
+  font-weight: lighter;
   display: flex;
   align-items: flex-end;
   width: 100%;
@@ -113,6 +117,14 @@
   height: 40px;
 }
 
+.popular-artist-names {
+  display: flex;
+  flex-direction: column;
+}
+
+.splash-artist-images {
+  width: 300px;
+}
 }
 
 // .title-popular-artists {

@@ -4,9 +4,9 @@ export const RECEIVE_ARTISTS = "RECEIVE_ARTISTS";
 export const RECEIVE_ARTIST = "RECEIVE_ARTIST";
 export const TOGGLE_FOLLOW = "TOGGLE_FOLLOW"
 
-export const receiveArtists = artists => ({
+export const receiveArtists = (artists, gallery) => ({
     type: RECEIVE_ARTISTS,
-    artists
+    artists, gallery
 })
 
 export const receiveArtist = (artist, gallery, artworks) => ({
@@ -25,7 +25,7 @@ const toggleFollow = value => {
 
 export const fetchArtists = (artists) => dispatch =>
     APIUtil.fetchArtists(artists)
-        .then(artists => dispatch(receiveArtists(artists)))
+        .then(({artists, gallery}) => dispatch(receiveArtists(artists, gallery)))
 
 
 export const fetchArtist = (artistId) => dispatch => (

@@ -1,10 +1,11 @@
 import { connect } from 'react-redux';
 import { fetchArtworks } from '../../actions/artwork_actions';
 import FeaturedArtworks from './featured_artworks'
-import { popUpModal, closeModal } from '../../actions/modal_actions';
+import { popUpModal } from '../../actions/modal_actions';
 
 
 const mapStateToProps = (state) => {
+    debugger
 
     return ({
         artworks: Object.values(state.entities.artworks)
@@ -14,7 +15,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return ({
-        fetchArtworks: (name) => dispatch(fetchArtworks(name)),
+        fetchArtworks: () => dispatch(fetchArtworks()),
         popUpModal: modal => dispatch(popUpModal(modal))
     })
 }

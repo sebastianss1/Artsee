@@ -5,14 +5,15 @@ class Api::GalleriesController < ApplicationController
         render '/api/galleries/index'
     end 
 
-  # def show
-  #   @gallery = Gallery.find(params[:id])
+  def show
+    @gallery = Gallery.find(params[:id])
 
-  #   if @gallery 
-  #       render '/api/galleries/show'
-  #   else 
-  #       render json: @gallery.errors.full_messages, status: 422
-  #   end 
+    if @gallery 
+        render '/api/galleries/show'
+    else 
+        render json: @gallery.errors.full_messages, status: 422
+    end 
+  end
     
 
 end 

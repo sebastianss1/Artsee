@@ -1,22 +1,20 @@
 import React from 'react';
 import FeaturedArtworkItem from './featured_artwork_item'
 
-
-
-
 class FeaturedArtworks extends React.Component {
     constructor(props) {
         super(props);
     }
 
     componentDidMount() {
-        // this.props.fetchArtworks(this.props.title)
+        this.props.fetchArtworks()
     }
 
     render() {
-        const { artworks } = this.props;
-
-        return (
+        if (!this.props.artworks) {
+            return null
+        } else {
+            return (
                 <div className="splash-home">
                     <div className="splash-artwork">
                         {artworks.map(artwork => {
@@ -30,8 +28,8 @@ class FeaturedArtworks extends React.Component {
                         })}
                     </div>
                 </div>
-        );
-    }
-}
+            );
+        }
+}}
 
 export default FeaturedArtworks;

@@ -39,11 +39,11 @@ class ArtworkShow extends React.Component {
                                     className="like-button" 
                                     value="Follow" 
                                     onClick={() => this.props.likeArtwork(artwork.id)}>
-                                    + Like</button> 
+                                    <img className="like-heart"src={window.like_heart} /></button>
                                 }
                         <ul className="artwork-show-text">
                         <div className="artwork-show-subheader">
-                            {/* {this.props.artist.name} */}
+                            {this.props.artist.name}
                         </div>
                             {
                                 window.currentUser && this.props.theBoolean ?

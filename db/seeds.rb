@@ -18,14 +18,34 @@ demoUser = User.create!(email: 'test@gmail.com', password: 'test1234', name: 'De
 
 # Galleries
 hauserWirth = Gallery.create!(name: "Hauser & Wirth", location: "New York, Los Angeles, London", about: "The gallery represents over 80 artists and estates who have been instrumental in shaping its identity over the past quarter century, and who are the inspiration for Hauser & Wirth’s diverse range of activities that engage with art, education, conservation and sustainability." )
+hauserWirth.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/25.jpeg"), filename: "25.jpeg")
+
 metroPictures = Gallery.create!(name: "Metro Pictures", location: "New York")
+metroPictures.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/26.jpeg"), filename: "26.jpeg")
+
 paceGallery = Gallery.create!(name: "Pace Gallery", location: "New York, London, Hong Kong", about: "Pace is a leading international art gallery representing some of the most influential contemporary artists and estates from the past century, holding decades-long relationships with Alexander Calder, Jean Dubuffet, Barbara Hepworth, Agnes Martin, Louise Nevelson, and Mark Rothko.")
+paceGallery.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/27.jpg"), filename: "27.jpg")
+
 davidZwirner = Gallery.create!(name: "David Zwirner", location: "New York, London, Paris, Hong Kong")
+davidZwirner.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/28.jpeg"), filename: "28.jpeg")
+
+
 salon94 = Gallery.create!(name: "Salon 94", location: "New York")
+salon94.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/29.jpeg"), filename: "29.jpeg")
+
 charlieJamesGallery = Gallery.create!(name: "Charlie James Gallery", location: "Los Angeles")
+charlieJamesGallery.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/30.jpeg"), filename: "30.jpeg")
+
 rAndCompany = Gallery.create!(name: "R & Company", location: "New York")
+rAndCompany.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/31.jpeg"), filename: "31.jpeg")
+
+
 steveTurner = Gallery.create!(name:"Steve Turner Gallery", location: "Los Angeles")
+steveTurner.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/32.jpeg"), filename: "32.jpeg")
+
 kohnGallery = Gallery.create!(name: "Kohn Gallery", location: "Los Angeles" )
+kohnGallery.photo.attach(io: File.open("/Users/sebastiansanchez/Desktop/AppAcademy/Full\ Stack\ Project/artworkimages/33.jpeg"), filename: "33.jpeg")
+
 
 
 #Artists

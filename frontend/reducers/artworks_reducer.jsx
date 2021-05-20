@@ -1,4 +1,6 @@
 import { RECEIVE_ARTWORKS, RECEIVE_ARTWORK, TOGGLE_LIKE } from '../actions/artwork_actions';
+import { RECEIVE_ARTISTS} from '../actions/artist_actions'
+import { RECEIVE_GALLERIES } from '../actions/gallery_actions'
 
 
 const artworksReducer = (state = {}, action) => {

@@ -9,13 +9,13 @@ const mapStateToProps = (state, ownProps) => {
     let artwork = state.entities.artworks[ownProps.match.params.artworkId]
     let artist = state.entities.artists[artwork?.artistId]
     let theBoolean = Object.values(state.entities.follows).some(follow => follow.followableId === artist.id && follow.followableType === 'Artist')
-    let gallery = state.entities.artists[artist?.galleryId]
 
     return {
+        artworks: Object.values(state.entities.artworks),
         artwork: state.entities.artworks[ownProps.match.params.artworkId],
         artist: state.entities.artists[artwork?.artistId],
         theBoolean,
-        gallery: state.entities.artists[artist?.galleryId],
+        // gallery: state.entities.artists[artist?.galleryId],
         currentUser: state.entities.users[state.session.id],
     }
 }
