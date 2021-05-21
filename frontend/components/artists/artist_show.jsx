@@ -17,9 +17,7 @@ class ArtistShow extends React.Component {
         if (!this.props.artist) {
             return null
         } else {
-            debugger
             const { artist } = this.props
-            // const artworks = this.props.artworks
             return (
                 <div className="artist-show-container">
                 <div className="artist-show-box">
@@ -27,7 +25,6 @@ class ArtistShow extends React.Component {
                             <div className="inner-artist-box"> 
                                 <div className="artist-box-subheader">{artist.name}</div> <br /> <br />
                                 <div className="artist-description-box">
-                                {/* <dl className="artist-div-list"> */}
                                     <div className="artist-birth-year">b.{artist.birthYear}
                                     {artist.deathYear}</div>
                                     <div className="artist-bio-show">

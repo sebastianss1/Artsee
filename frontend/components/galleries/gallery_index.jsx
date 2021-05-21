@@ -8,7 +8,6 @@ class GalleryIndex extends React.Component {
 
     componentDidMount() {
         this.props.fetchGalleries();
-        // window.scrollTo(0, 0);
 
     }
 

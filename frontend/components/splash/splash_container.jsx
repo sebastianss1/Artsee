@@ -11,7 +11,6 @@ class SplashContainer extends React.Component {
     }
     
     render() {
-        debugger
         return (
             <div className="splash-main-container">
                 <SplashHeader 
@@ -30,7 +29,6 @@ const mapStateToProps = ({ session, entities: { users } }) => {
 };
 
 const mapDispatchToProps = dispatch => {
-    debugger
     return {
         processForm: (user) => dispatch(login(user)),
         otherForm: (

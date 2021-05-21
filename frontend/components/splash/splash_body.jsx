@@ -9,7 +9,6 @@ class SplashBody extends React.Component {
 
 
     render() {
-    debugger
         return (
         <div className="splash-body-container">
             <div className="main-splash-body">

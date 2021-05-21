@@ -1,5 +1,4 @@
 import React from 'react';
-// import FeaturedArtworksContainer from './featured_artworks_container'
 
 class SplashHeader extends React.Component {
     constructor(props) {
@@ -8,7 +7,6 @@ class SplashHeader extends React.Component {
 
 
     render() {
-        debugger
         return (
             <div className="home-hero">
             <div className="banner-image"><img src={window.banner_image} />

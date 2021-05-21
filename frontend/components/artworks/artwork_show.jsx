@@ -5,23 +5,18 @@ class ArtworkShow extends React.Component {
     constructor(props) {
         super(props)
 
-        // this.handleLike = this.handleLike.bind(this)
     }
 
     componentDidMount() {
-        debugger
         this.props.fetchArtwork(this.props.match.params.artworkId);
-        // this.props.fetchArtist(this.props.artist)
         window.scroll(0,0)
     }
 
 
-    debugger 
     render() {
         if (!this.props.artwork) {
             return null
         } else { 
-            debugger
             const { artwork } = this.props; 
             return (
             <div>

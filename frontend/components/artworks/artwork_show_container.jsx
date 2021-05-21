@@ -15,7 +15,6 @@ const mapStateToProps = (state, ownProps) => {
         artwork: state.entities.artworks[ownProps.match.params.artworkId],
         artist: state.entities.artists[artwork?.artistId],
         theBoolean,
-        // gallery: state.entities.artists[artist?.galleryId],
         currentUser: state.entities.users[state.session.id],
     }
 }

@@ -16,7 +16,6 @@ export const receiveArtist = (artist, gallery, artworks) => ({
 
 
 const toggleFollow = value => {
-    debugger
     return ({
         type: TOGGLE_FOLLOW,
         value
@@ -42,7 +41,6 @@ export const fetchSearch = searchTerm => dispatch => (
 
 
 export const followArtist = artistId => dispatch => {
-    debugger
     return (
         APIUtil.followArtist(artistId).then(artist => (
             dispatch(toggleFollow(artist))

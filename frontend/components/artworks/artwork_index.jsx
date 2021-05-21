@@ -8,7 +8,6 @@ class ArtworkIndex extends React.Component {
 
 
     componentDidMount() {
-        debugger
         this.props.fetchArtworks()
         window.scroll(0,0)
     }
@@ -18,7 +17,6 @@ class ArtworkIndex extends React.Component {
         if (!this.props.artworks) {
             return null
         } else { 
-            debugger
         const { artworks } = this.props;
             return (
                 <div className="featured-artworks-title">

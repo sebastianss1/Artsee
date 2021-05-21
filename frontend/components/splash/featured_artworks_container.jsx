@@ -5,7 +5,6 @@ import { popUpModal } from '../../actions/modal_actions';
 
 
 const mapStateToProps = (state) => {
-    debugger
 
     return ({
         artworks: Object.values(state.entities.artworks)
