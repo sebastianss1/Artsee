@@ -2,27 +2,20 @@
 
 ## Artsee 
 
-Artsee is a 
+Artsee is an art platform that allows users to search, explore, inquire, purchase and learn about all things art.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Live Site: [Artsee](https://artsee-application.herokuapp.com/)
 
-Things you may want to cover:
+SCREENSHOT OF SPLASH PAGE HERE 
 
-* Ruby version
+## Technologies Used
+* Javascript 
+* React
+* Redux
+* Ruby on Rails
+* Postgres 
+* AWS
+* Heroku
 
-* System dependencies
+## Functionality 
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
