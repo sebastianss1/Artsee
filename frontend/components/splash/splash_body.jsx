@@ -23,73 +23,69 @@ class SplashBody extends React.Component {
 
                     <ul className="ul-splash-scroll">
                         <li className="li-splash-scroll">
-                        <Link to={'/artworks/1'} className="artwork-link-to-show" style={{ textDecoration: 'none' }}><img className="splash-artist-images" src={window.rashidJohnson} />
+                            <Link to={'/artworks/1'} className="artwork-link-to-show" style={{ textDecoration: 'none' }}><img className="splash-artist-images" src={window.rashidJohnson} /> </Link>
                                 <ul className="splash-index-text">
-                                    Rashid Johnson<br />
+                                    <Link to={'/artworks/1'} className="artwork-link-to-show" style={{ textDecoration: 'none' }} > Rashid Johnson </Link><br />
                                     Untitled Anxious Red Drawing, 2020<br />
                                     Hauser Wirth<br />
                                     $200,000<br />
                                 </ul>
-                                </Link>
                             </li>
 
                         <li className="li-splash-scroll">
                         <Link to={'/artworks/3'} className="artwork-link-to-show" style={{ textDecoration: 'none' }}>
-                        <img className="splash-artist-images" src={window.cindySherman} /> 
+                        <img className="splash-artist-images" src={window.cindySherman} /> </Link>
                                 <ul className="splash-index-text">
-                                    Cindy Sherman<br />
+                                    <Link to={'/artworks/3'} className="artwork-link-to-show" style={{ textDecoration: 'none' }}>Cindy Sherman     </Link><br />
                                     Untitled Film Still #21, 1977<br />
                                     Metro Pictures<br />
                                     Sold<br />
                                 </ul>
-                            </Link>
+                        
                         </li>
 
                         <li className="li-splash-scroll">
                         <Link to={'/artworks/6'} className="artwork-link-to-show" style={{ textDecoration: 'none' }}>
-                         <img className="splash-artist-images" src={window.robertLongo} />
+                         <img className="splash-artist-images" src={window.robertLongo} /> </Link>
                             <ul className="splash-index-text">
-                                Robert Longo<br />
+                                <Link to={'/artworks/6'} className="artwork-link-to-show" style={{ textDecoration: 'none' }}> Robert Longo </Link><br />
                                 Untitled (Cindy), from the Series 'Men in the Cities', 1981<br />
                                 Metro Pictures<br />
                                 Sold<br />
+
                             </ul>
-                            </Link>
                         </li>
 
                         <li className="li-splash-scroll">
-                        <Link to={'/artworks/8'} className="artwork-link-to-show" style={{ textDecoration: 'none' }}><img className="splash-artist-images" src={window.jamesTurrell} />
+                        <Link to={'/artworks/8'} className="artwork-link-to-show" style={{ textDecoration: 'none' }}><img className="splash-artist-images" src={window.jamesTurrell} /> </Link>
                             <ul className="splash-index-text">
-                                James Turrell<br />
+                                <Link to={'/artworks/8'} className="artwork-link-to-show" style={{ textDecoration: 'none' }}> James Turrell<br /></Link>
                                 Raethro Green, 1968<br />
                                 Pace Gallery<br />
                                 Sold<br />
                             </ul>
-                        </Link>
                         </li>
 
                         <li className="li-splash-scroll">
                             <Link to={'/artworks/9'} className="artwork-link-to-show" style={{ textDecoration: 'none' }}>
-                         <img className="splash-artist-images" src={window.donaldJudd} /> 
+                                <img className="splash-artist-images" src={window.donaldJudd} /> </Link>
                             <ul className="splash-index-text">
-                                Donald Judd<br />
+                                    <Link to={'/artworks/9'} className="artwork-link-to-show" style={{ textDecoration: 'none' }}>Donald Judd</Link><br />
                                 Untitled (1967), 1967<br />
                                 David Zwirner<br />
                                 Not for Sale<br />
                             </ul>
-                            </Link>
                         </li>
                             
                         <li className="li-splash-scroll">
                         <Link to={'/artworks/12'} className="artwork-link-to-show" style={{ textDecoration: 'none' }}>
-                         <img className="splash-artist-images" src={window.judyChicago} /> 
+                         <img className="splash-artist-images" src={window.judyChicago} /> </Link>
                              <ul className="splash-index-text">
-                                Judy Chicago<br />
+                                 <Link to={'/artworks/12'} className="artwork-link-to-show" style={{ textDecoration: 'none' }}>Judy Chicago</Link><br />
                                 The Dinner Party, 1974<br />
                                 Salon 94<br />
                                 Not for Sale<br />
                             </ul>
-                            </Link>
                         </li>
                     </ul>
                 </div>
@@ -110,51 +106,48 @@ class SplashBody extends React.Component {
 
                     <ul className="ul-splash-scroll">
                         <li className="li-splash-scroll">
-                        <Link to={'/galleries'} className="artwork-link-to-show" style={{ textDecoration: 'none' }}><img className="splash-artist-images" src={window.hauserWirth} />
+                        <Link to={'/galleries'} className="artwork-link-to-show" style={{ textDecoration: 'none' }}><img className="splash-artist-images" src={window.hauserWirth} /></Link>
                                 <ul className="artwork-index-text">
-                                    Hauser Wirth<br />
+                                    <Link to={'/galleries'} className="artwork-link-to-show" style={{ textDecoration: 'none' }}>Hauser Wirth</Link><br />
                                     New York, London, Los Angeles<br />
                                 </ul>
-                                </Link>
                             </li>
 
                         <li className="li-splash-scroll">
                         <Link to={'/galleries'} className="artwork-link-to-show" style={{ textDecoration: 'none' }}>
-                        <img className="splash-artist-images" src={window.metroPictures} /> 
+                        <img className="splash-artist-images" src={window.metroPictures} /> </Link>
                                 <ul className="splash-index-text">
-                                    Metro Pictures<br />
+                                    <Link to={'/galleries'} className="artwork-link-to-show" style={{ textDecoration: 'none' }}>Metro Pictures</Link><br />
                                     New York<br />
                                 </ul>
-                            </Link>
                         </li>
 
                         <li className="li-splash-scroll">
-                        <Link to={'/galleries'} className="artwork-link-to-show" style={{ textDecoration: 'none' }}><img className="splash-artist-images" src={window.paceGallery} />
+                        <Link to={'/galleries'} className="artwork-link-to-show" style={{ textDecoration: 'none' }}><img className="splash-artist-images" src={window.paceGallery} /></Link>
                             <ul className="splash-index-text">
-                                Pace Gallery<br />
+                                    <Link to={'/galleries'} className="artwork-link-to-show" style={{ textDecoration: 'none' }}>Pace Gallery</Link><br />
                                 New York, London<br />
                             </ul>
-                        </Link>
                         </li>
 
                         <li className="li-splash-scroll">
                             <Link to={'/galleries'} className="artwork-link-to-show" style={{ textDecoration: 'none' }}>
-                         <img className="splash-artist-images" src={window.davidZwirner} /> 
+                         <img className="splash-artist-images" src={window.davidZwirner} /> </Link>
                             <ul className="splash-index-text">
-                                David Zwirner<br />
+                                <Link to={'/galleries'} className="artwork-link-to-show" style={{ textDecoration: 'none' }}>David Zwirner
+                                </Link><br />
                                 New York, Paris<br />
                             </ul>
-                            </Link>
                         </li>
                             
                         <li className="li-splash-scroll">
                         <Link to={'/galleries'} className="artwork-link-to-show" style={{ textDecoration: 'none' }}>
-                         <img className="splash-artist-images" src={window.salon94} /> 
-                             <ul className="splash-index-text">
-                                Salon 94<br />
+                                <img className="splash-artist-images" src={window.salon94} /> </Link>
+                             <ul className="splash-index-text"> 
+                                <Link to={'/galleries'} className="artwork-link-to-show" style={{ textDecoration: 'none' }}> Salon 94 </Link>
+                                <br />
                                 New York<br />
                             </ul>
-                            </Link>
                         </li>
                     </ul>
                 </div>

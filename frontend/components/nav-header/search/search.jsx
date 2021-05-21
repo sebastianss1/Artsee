@@ -8,7 +8,7 @@ class Search extends React.Component {
     render() {
         return (
             <div className="search">
-                <p>Search by artwork, artist, gallery, institution</p>
+                <p> &nbsp; Search by artwork, artist, gallery, institution</p>
             </div>
         )
     }
