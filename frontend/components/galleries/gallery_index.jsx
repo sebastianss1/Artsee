@@ -19,19 +19,19 @@ class GalleryIndex extends React.Component {
         } else {
             const { galleries } = this.props;
             return (
-            <div className="featured-galleries-title ">
-                <h1> Featured Galleries </h1>
+            <div className="featured-galleries-box">
+                <div className="featured-galleries-title"> Featured Galleries </div>
             <div className="artist-index-container">
             <div className="artist-index-scroll">
                         {this.props.galleries.map(gallery => {
                             return (
                             <div>
-                                <h2 className="artist-show-subheader">{gallery.name}</h2>
                                 <ul className="ul-artist-scroll">
                                     <li className="li-artist-scroll">
                                         <img className="artist-index-item" src={gallery.photoUrl} /> <br />
-                                        <div className="text">{gallery.location}</div> <br/><br/>
-                                        <div className="text">{gallery.about}
+                                <div className="gallery-show-subheader">{gallery.name}</div>
+                                        <div className="gallery-index-subtext">{gallery.location}</div> <br/><br/>
+                                        <div className="gallery-index-subtext">{gallery.about}
                                         </div>
                                     </li>
                                     </ul>

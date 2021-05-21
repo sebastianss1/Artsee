@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 class ArtworkShow extends React.Component {
     constructor(props) {
@@ -28,22 +29,10 @@ class ArtworkShow extends React.Component {
                         <img className="artwork-show-item" 
                         src={artwork.photoUrl} 
                         />
-                         {
-                                window.current_user && this.props.currentUser.likedArtworks.some(artwork.artist) ?
-                                <button 
-                                    className="like-button" 
-                                    value="Unfollow" 
-                                    onClick={() => this.props.unlikeArtwork(artwork.id)}>
-                                    - Unlike</button> :
-                                <button 
-                                    className="like-button" 
-                                    value="Follow" 
-                                    onClick={() => this.props.likeArtwork(artwork.id)}>
-                                    <img className="like-heart"src={window.like_heart} /></button>
-                                }
+
                         <ul className="artwork-show-text">
                         <div className="artwork-show-subheader">
-                            {this.props.artist.name}
+                                <Link to={`/artists/${this.props.artist.id}`} style={{ textDecoration: 'none', color: 'black' }}>{this.props.artist.name} </Link>
                         </div>
                             {
                                 window.currentUser && this.props.theBoolean ?
@@ -59,16 +48,32 @@ class ArtworkShow extends React.Component {
                                     + Follow</button> 
                                 }
                         <br/> <br />
-                                        {artwork.title}, {artwork.year}<br />
+                                <div className="artwork-show-description-text">
+                                    <em>{artwork.title}</em>, {artwork.year}<br />
                                         {artwork.description}<br />
 
-                                        {artwork.height_dimensions} x {artwork.width_dimensions}<br />
+                                        {artwork.heightDimensions} x {artwork.widthDimensions}in<br />
 
                                         {artwork.price}<br /><br /><br /><br />
-
+                                {
+                                    window.current_user && this.props.currentUser.likedArtworks.some(artwork.artist) ?
+                                        <button
+                                            className="like-button"
+                                            value="Unfollow"
+                                            onClick={() => this.props.unlikeArtwork(artwork.id)}>
+                                            - Unlike</button> :
+                                        <button
+                                            className="like-button"
+                                            value="Follow"
+                                            onClick={() => this.props.likeArtwork(artwork.id)}>
+                                            <img className="like-heart" src={window.like_heart} /></button>
+                                }
+                                </div>
+                                    <div className="button-area">
                                         <button className="signup-submit-form">
                                         Contact Gallery</button><br/> <br/>
                                         {/* {artwork.artist.gallery.name}<br /> */}
+                                </div>
                                 </ul>
                             </div>
 
@@ -79,7 +84,7 @@ class ArtworkShow extends React.Component {
                     <div className="category-artwork-show">
                     Category: 
                     {/* {{artwork.medium.name} */}
-                    </div><br /> <br />
+                    </div>
                     <div className="condition-artwork-show">
                     Condition: {artwork.condition} </div>
                 </div>
@@ -88,7 +93,6 @@ class ArtworkShow extends React.Component {
 
         );
      }
-    debugger 
     }
 };
 

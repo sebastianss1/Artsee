@@ -89,7 +89,7 @@
 .splash-body-container {
   position: relative;
   display: block;
-  margin: 0px 55px;
+  margin: 0px 200px 0px;
 }
 
 .main-splash-body: {
@@ -97,24 +97,25 @@
   display: block;
   max-width: 1110px;
   margin: auto;
+  margin: 0px 180px 0px;
 }
 
 .popular-artists {
   display: flex;
   flex-direction: row;
   border-top: none;
-  margin: 0;
+  // margin: 0px 180px 0px;
 }
 
 .popular-header {
   // position: relative;
   font-family: Helvetica, sans-serif;
-  font-weight: lighter;
+  font-size: 20px;
   display: flex;
   align-items: flex-end;
   width: 100%;
-  margin-bottom: 20px;
   height: 40px;
+
 }
 
 .popular-artist-names {
@@ -123,61 +124,55 @@
 }
 
 .splash-artist-images {
-  width: 300px;
+  max-width: auto;
+  max-height: 300px;
 }
+
+.splash-index-scroll {
+    display: flex;
+    height: 100%;
+    padding: 20px;
+    overflow: scroll hidden;
+    scroll-snap-type: x mandatory;
+    margin-left: 180px;
+    margin-right: 200px;
 }
 
-// .title-popular-artists {
-//   font-family: "Helvetica Neue", sans-serif;
-//   font-size: 20px;
-//   max-width: 1200px;
-//   margin: 0 auto;
-// }
+.splash-index-text {
+    font-size: 12px;
+    font-family: "Helvetica Neue", sans-serif;
+    color: gray;
+    text-decoration: none;
+    left: 0;
+    padding: 0px;
+}
 
-// .artist-names-ul {
-//   font-family: "Helvetica Neue", sans-serif;
-//   max-width: 1200px;
-//   margin: 0 auto;
-//   display: grid;
-//   grid-gap: 1rem;
-// }
+.ul-splash-scroll {
+    position: relative;
+    display: flex;
+    width: 100%;
+    margin: 5px;
+    padding: 0px;
+    list-style: none;
+    white-space: nowrap;
+    align-items: flex-end;
+}
 
-// .popular-artist-names {
-//   font-family: "Helvetica Neue", sans-serif;
-//   max-width: 1200px;
-//   margin: 0 auto;
-//   display: grid;
-//   grid-gap: 1rem;
-// }
+.li-splash-scroll {
+    padding-right: 20px;
+    white-space: normal;
 
-// .title-artists-to-follow {
-//   font-family: "Helvetica Neue", sans-serif;
-//   font-size: 20px;
-//   max-width: 1200px;
-//   margin: 0 auto;
-// }
+}
 
-// .artists-to-follow-names {
-//   font-family: "Helvetica Neue", sans-serif;
-//   max-width: 1200px;
-//   margin: 0 auto;
-//   display: grid;
-//   grid-gap: 1rem;
-// }
+.splash-index-container {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
 
-// .title-featured-galleries {
-//   font-family: "Helvetica Neue", sans-serif;
-//   font-size: 20px;
-//   max-width: 1200px;
-//   margin: 0 auto;
-// }
+}
 
-// .featured-galleries-names {
-//   font-family: "Helvetica Neue", sans-serif;
-//   max-width: 1200px;
-//   margin: 0 auto;
-//   display: grid;
-//   grid-gap: 1rem;
-// }
-
-// }

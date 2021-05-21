@@ -49,6 +49,7 @@
 .artwork-show-text {
     font-family: "Helvetica Neue", sans-serif;
     text-decoration: none;
+    margin-left: 0px;
 
 }
 
@@ -57,6 +58,7 @@
     font-family: "Helvetica Neue", sans-serif;
     color: gray;
     text-decoration: none;
+    padding: 0px 5px 0px;
 }
 
 .artwork-index-item {
@@ -74,7 +76,7 @@
 .box-under-artwork-show {
     // display: flex;
     margin-top: 80px;
-    margin-left: 400px;
+    margin-left: 200px;
     width: 500px;
     height: 200px;
     border: 1px solid lightgray;
@@ -85,21 +87,26 @@
 
 .category-artwork-show,
 .condition-artwork-show {
-    margin-top: 20px;
+    // margin-top: 20px;
     display:flex;
     flex-direction: column;
     align-items: left;
     margin-left: 10px;
+    font-family: Helvetica, sans-serif;
+    margin: 10px;
 }
 
 .title-above-artwork-show-box {
-    font-weight: bold;
-    font-family: "Helvetica-Neue", sans-serif;
+    font-weight: normal;
+    position: relative;
+    display: flex;
+    font-family: Helvetica, sans-serif;
     border-bottom: 1px solid lightgray;
     align-items: center;
     margin-top: 60px;
-    margin-left: 400px;
+    margin-left: 200px;
     margin-right: 200px;
+    font-size: 18px;
 }
 
 .individual-artwork-box {
@@ -109,13 +116,17 @@
     margin-left: 0px;
     align-items: left;
     text-decoration: none;
-    margin: 0px;
+    margin: 10px;
 }
 }
 
 .artwork-link-to-show {
     color: black;
     text-decoration: none;
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 12px;
+    // line-height: 28px;
+    margin-top: 10px;
 }
 
 .follow-button {
@@ -130,6 +141,7 @@
     cursor: pointer;
     color: rgb(110, 30, 255);
 }
+
 
 .like-button {
     text-decoration: none;
@@ -151,15 +163,37 @@
 }
 
 .like-heart {
-    position: fixed;
-    top: 150px;
-    right: 900px;
+    position: relative;
     width: 30px;
+    top: -20px;
+    left: -10px;
 
 }
 
 .like-heart:hover {
     cursor: pointer;
-    color: rgb(110, 30, 255);
+    background-color: rgb(110, 30, 255);
 }
+
+.featured-artworks-text {
+    font-size: 34px;
+    font-family: "Helvetica Neue", sans-serif;
+    margin-bottom: 40px;
+    padding-left: 5px;
+}
+
+.artwork-show-description-text {
+    color: gray; 
+    font-size: 14px;
+    margin: 0px;
+    margin-top: 20px;
+    border-bottom: 1px solid lightgray;
+}
+
+.button-area {
+    margin-top: 50px;
+}
+// .artist-artwork-show-container {
+//     display: flex;
+// }
 

@@ -1,12 +1,16 @@
 json.artist do 
     json.extract! @artist, :id, :name, :birth_year, :death_year, :bio, :gallery_id
+    json.photoUrl url_for(@artist.photo)
+
 end 
 
 json.gallery do 
     json.extract! @artist.gallery, :id, :name
 end 
 
-json.artworks @artist.artworks
+json.artworks @artist.artworks.each do |artwork|
+        json.partial! 'api/artworks/artwork', artwork: artwork
+end
 
 
 

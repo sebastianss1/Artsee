@@ -6,6 +6,7 @@ import ArtistIndex from './artist_index';
 const mapStateToProps = (state) => {
     return {
         artists: Object.values(state.entities.artists),
+        galleries: state.entities.galleries
     }
 }
 

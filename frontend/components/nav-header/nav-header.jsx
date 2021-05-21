@@ -17,7 +17,6 @@ class NavHeader extends React.Component {
                     <SearchContainer />
                     <div className="header-text">
                         <Link to="/artworks" className="buy-button" style={{ textDecoration: 'none' }}>Buy</Link>
-                        <p className="sell-button">Sell</p>
                     </div>
 
                     <WelcomeContainer />

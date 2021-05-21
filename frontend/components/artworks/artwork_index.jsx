@@ -22,7 +22,7 @@ class ArtworkIndex extends React.Component {
         const { artworks } = this.props;
             return (
                 <div className="featured-artworks-title">
-                    <h1> Collect art and design online </h1>
+                    <div className="featured-artworks-text"> Collect art and design online </div>
                     <div className="artwork-index-container">
                             {this.props.artworks.map(artwork => {
 
@@ -31,7 +31,7 @@ class ArtworkIndex extends React.Component {
 
                                 return (
                                     <div className="individual-artwork-box">
-                                        <img className="artwork-index-item" src={artwork.photoUrl} /> <br/>
+                                        <Link to={`/artworks/${artwork.id}`} className="artwork-link-to-show" style={{ textDecoration: 'none' }}><img className="artwork-index-item" src={artwork.photoUrl} /></Link>
                                         <ul className="artwork-index-text">
                                             <Link to={`/artworks/${artwork.id}`} className="artwork-link-to-show" style={{ textDecoration: 'none' }}>{artist && artist.name} </Link><br/>
                                         {artwork.title}, {artwork.year}<br/>

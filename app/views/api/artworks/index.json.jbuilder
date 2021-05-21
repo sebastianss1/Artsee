@@ -13,7 +13,7 @@
 
     json.gallery do 
         json.set! artwork.artist.gallery.id do 
-            json.extract! artwork.artist.gallery, :id, :name
+            json.partial! 'api/galleries/gallery', gallery: artwork.artist.gallery
         end 
     end
             

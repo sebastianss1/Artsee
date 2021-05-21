@@ -15,8 +15,9 @@ class ArtistIndex extends React.Component {
     render() {
         const { artist } = this.props;
         return (
-            <div className="featured-artists-title">
-                <h1> Featured Artists </h1>
+            <div>
+            <div className="featured-artists-container">
+                    <div className="featured-artists-title">Featured Artists</div>
                     <div className="artist-index-container">
                         <div className="artist-index-scroll">
                         {this.props.artists.map(artist => {
@@ -24,8 +25,9 @@ class ArtistIndex extends React.Component {
                             <div>
                                 <ul className="ul-artist-scroll">
                                     <li className="li-artist-scroll">
+                                        <Link to={`/artists/${artist.id}`} className="artist-link-to-show" style={{ textDecoration: 'none' }}>
                                         <img className="artist-index-item" src={artist.photoUrl} /> <br/>
-                                        <Link to={`/artists/${artist.id}`} className="artwork-link-to-show" style={{ textDecoration: 'none' }}>{artist.name} </Link>
+                                        {artist.name} </Link>
                                     </li>
                                 </ul>
 
@@ -34,6 +36,7 @@ class ArtistIndex extends React.Component {
                             )
 
                         })}
+            </div>
             </div>
             </div>
             </div>
