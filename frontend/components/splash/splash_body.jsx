@@ -23,7 +23,7 @@ class SplashBody extends React.Component {
 
                     <ul className="ul-splash-scroll">
                         <li className="li-splash-scroll">
-                            <Link to={'/artworks/1'} className="artwork-link-to-show" style={{ textDecoration: 'none' }}><img className="splash-artist-images" src={window.rashidJohnson} /> </Link>
+                            <Link to={'/artworks/25'} className="artwork-link-to-show" style={{ textDecoration: 'none' }}><img className="splash-artist-images" src={window.rashidJohnson} /> </Link>
                                 <ul className="splash-index-text">
                                     <Link to={'/artworks/1'} className="artwork-link-to-show" style={{ textDecoration: 'none' }} > Rashid Johnson </Link><br />
                                     Untitled Anxious Red Drawing, 2020<br />
